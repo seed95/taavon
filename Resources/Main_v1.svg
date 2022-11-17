@@ -8,8 +8,8 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
-   sodipodi:docname="Main_v1.svg"
-   inkscape:export-filename="MainV1.png"
+   sodipodi:docname="Edit_v1.svg"
+   inkscape:export-filename="EditV1.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -40,15 +40,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="610.23315"
-     inkscape:cy="457.49809"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="970.50406"
+     inkscape:cy="565.33187"
      inkscape:window-width="1920"
      inkscape:window-height="1003"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer6"
+     inkscape:current-layer="layer4"
      inkscape:lockguides="true"
      inkscape:measure-start="715.504,776.315"
      inkscape:measure-end="722.84,776.315"
@@ -84,169 +84,172 @@
      inkscape:label="Bottom"
      style="display:inline">
     <rect
-       style="display:inline;fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.22745;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect92127-6"
-       width="34.772549"
-       height="8.7725496"
-       x="-40.583534"
-       y="207.44786"
-       rx="0.99975228"
-       ry="1.2936649"
-       transform="scale(-1,1)" />
-    <g
-       style="display:inline"
-       id="g395689"
-       transform="translate(9.178981,0.65476826)">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="23.162899"
-         y="212.00211"
-         id="text92131-3"><tspan
-           sodipodi:role="line"
-           id="tspan92129-5"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
-           x="23.162899"
-           y="212.00211">خروجی اکسل</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
-         x="24.391148"
-         y="212.46045"
-         id="text349205"><tspan
-           sodipodi:role="line"
-           id="tspan349203"
-           style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:4.23333px;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
-           x="24.391148"
-           y="212.46045"></tspan></text>
-    </g>
-    <rect
-       style="display:inline;fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.200386;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:#c5c9d3;fill-opacity:1;stroke:#2f343f;stroke-width:0.200386;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect335846"
        width="39.799614"
        height="8.799614"
-       x="-84.758469"
-       y="207.44048"
+       x="-84.758217"
+       y="207.44034"
        rx="1"
        ry="1"
        transform="scale(-1,1)" />
-    <g
-       style="display:inline"
-       id="g5171"
-       transform="translate(9.1321634,0.98816089)">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="67.841904"
-         y="211.67302"
-         id="text347919"><tspan
-           sodipodi:role="line"
-           id="tspan347917"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
-           x="67.841904"
-           y="211.67302">ثبت پرونده جدید</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-size:2.82222px;line-height:1.25;font-family:sans-serif;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
-         x="68.811142"
-         y="212.43962"
-         id="text427591"><tspan
-           sodipodi:role="line"
-           id="tspan427589"
-           style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:4.23333px;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
-           x="68.811142"
-           y="212.43962">+</tspan></text>
-    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#2f343f;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="76.973808"
+       y="212.66104"
+       id="text347919"><tspan
+         sodipodi:role="line"
+         id="tspan347917"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#2f343f;fill-opacity:1;stroke-width:0.264583"
+         x="76.973808"
+         y="212.66104">ثبت پرونده جدید</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82222px;line-height:1.25;font-family:sans-serif;fill:#2f343f;fill-opacity:1;stroke-width:0.264583"
+       x="77.943047"
+       y="213.42764"
+       id="text427591"><tspan
+         sodipodi:role="line"
+         id="tspan427589"
+         style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:4.23333px;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';fill:#2f343f;fill-opacity:1;stroke-width:0.264583"
+         x="77.943047"
+         y="213.42764">+</tspan></text>
+    <rect
+       style="display:inline;fill:#c5c9d3;fill-opacity:1;stroke:#21242c;stroke-width:0.22745;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect92127-6-1"
+       width="34.772549"
+       height="8.7725496"
+       x="-40.583275"
+       y="207.44772"
+       rx="0.99975228"
+       ry="1.2936649"
+       transform="scale(-1,1)" />
+    <text
+       xml:space="preserve"
+       style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#2f343f;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="32.341618"
+       y="212.65674"
+       id="text92131-3-3"><tspan
+         sodipodi:role="line"
+         id="tspan92129-5-0"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#2f343f;fill-opacity:1;stroke-width:0.264583"
+         x="32.341618"
+         y="212.65674">خروجی اکسل</tspan></text>
+    <text
+       xml:space="preserve"
+       style="display:inline;font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';fill:#21242c;fill-opacity:1;stroke-width:0.264583"
+       x="33.808525"
+       y="213.15692"
+       id="text9269"><tspan
+         sodipodi:role="line"
+         id="tspan9267"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro';fill:#21242c;fill-opacity:1;stroke-width:0.264583"
+         x="33.808525"
+         y="213.15692"></tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer8"
-     inkscape:label="MainBackground"
-     sodipodi:insensitive="true">
+     inkscape:label="MainBackground">
     <rect
-       style="display:inline;fill:#576075;fill-opacity:1;stroke:none;stroke-width:0.30000001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:#576075;fill-opacity:1;stroke:none;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect167635"
        width="330"
        height="11.999999"
        x="10"
        y="31.237495" />
     <rect
-       style="display:inline;fill:#414858;fill-opacity:1;stroke:none;stroke-width:0.30000001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:#414858;fill-opacity:1;stroke:none;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect242270"
        width="330"
        height="11.999999"
        x="10"
        y="43.237495" />
     <rect
-       style="display:inline;fill:#576075;fill-opacity:1;stroke:none;stroke-width:0.30000001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:#576075;fill-opacity:1;stroke:none;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect247022"
        width="330"
        height="11.999999"
        x="10"
        y="55.237495" />
     <rect
-       style="display:inline;fill:#414858;fill-opacity:1;stroke:none;stroke-width:0.30000001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:#414858;fill-opacity:1;stroke:none;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect260233"
        width="330"
        height="11.999999"
        x="10"
        y="67.237495" />
     <rect
-       style="display:inline;fill:#576075;fill-opacity:1;stroke:none;stroke-width:0.30000001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:#576075;fill-opacity:1;stroke:none;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect260291"
        width="330"
        height="11.999999"
        x="10"
        y="79.237488" />
     <rect
-       style="display:inline;fill:#414858;fill-opacity:1;stroke:none;stroke-width:0.30000001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:#414858;fill-opacity:1;stroke:none;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect260349"
        width="330"
        height="11.999999"
        x="10"
        y="91.237473" />
     <rect
-       style="display:inline;fill:#576075;fill-opacity:1;stroke:none;stroke-width:0.30000001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:#576075;fill-opacity:1;stroke:none;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect266866"
        width="330"
        height="11.999999"
        x="10"
        y="103.23753" />
     <rect
-       style="display:inline;fill:#414858;fill-opacity:1;stroke:none;stroke-width:0.30000001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:#414858;fill-opacity:1;stroke:none;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect266924"
        width="330"
        height="11.999999"
        x="10"
        y="115.23753" />
     <rect
-       style="display:inline;fill:#576075;fill-opacity:1;stroke:none;stroke-width:0.30000001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:#576075;fill-opacity:1;stroke:none;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect266982"
        width="330"
        height="11.999999"
        x="10"
        y="127.23747" />
     <rect
-       style="display:inline;fill:#414858;fill-opacity:1;stroke:none;stroke-width:0.30000001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:#414858;fill-opacity:1;stroke:none;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect267040"
        width="330"
        height="11.999999"
        x="10"
        y="139.23749" />
     <rect
-       style="display:inline;fill:#576075;fill-opacity:1;stroke:none;stroke-width:0.30000001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:#576075;fill-opacity:1;stroke:none;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect267098"
        width="330"
        height="11.999999"
        x="10"
        y="151.23747" />
     <rect
-       style="display:inline;fill:#414858;fill-opacity:1;stroke:none;stroke-width:0.30000001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:#414858;fill-opacity:1;stroke:none;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect267156"
        width="330"
        height="11.999999"
        x="10"
        y="163.23747" />
+    <rect
+       style="display:inline;fill:#576075;fill-opacity:1;stroke:none;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect12834"
+       width="330"
+       height="11.999999"
+       x="10"
+       y="175.05003" />
+    <rect
+       style="display:inline;fill:#414858;fill-opacity:1;stroke:none;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect12836"
+       width="330"
+       height="11.999999"
+       x="10"
+       y="187.05003" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -330,7 +333,7 @@
        width="330"
        height="9.541522"
        x="10"
-       y="21.463142" />
+       y="21.695976" />
     <rect
        style="opacity:0.453;fill:#000000;fill-opacity:1;stroke-width:0.392792"
        y="31.237495"
@@ -364,8 +367,7 @@
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="Main"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -2082,6 +2084,292 @@
          style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:4.23333px;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';fill:#0e0b0b;fill-opacity:1;stroke-width:0.264583"
          x="12.474999"
          y="170.82498"></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="335.82666"
+       y="183.04074"
+       id="text12840"><tspan
+         sodipodi:role="line"
+         id="tspan12838"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:7.05556px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="335.82666"
+         y="183.04074">128</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.93889px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="312.78372"
+       y="182.34702"
+       id="text12844"><tspan
+         sodipodi:role="line"
+         id="tspan12842"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="312.78372"
+         y="182.34702">بایگانی</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.93889px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="287.39343"
+       y="182.34702"
+       id="text12848"><tspan
+         sodipodi:role="line"
+         id="tspan12846"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="287.39343"
+         y="182.34702">منحل</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="265.92078"
+       y="183.2664"
+       id="text12852"><tspan
+         sodipodi:role="line"
+         id="tspan12850"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:7.05556px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="265.92078"
+         y="183.2664">۱۲</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="250.35422"
+       y="183.2664"
+       id="text12856"><tspan
+         sodipodi:role="line"
+         id="tspan12854"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:7.05556px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="250.35422"
+         y="183.2664">۳</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="231.41908"
+       y="182.02463"
+       id="text12860"><tspan
+         sodipodi:role="line"
+         id="tspan12858"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="231.41908"
+         y="182.02463">پسته کاری گلچهرگان آران</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="175.09814"
+       y="183.2664"
+       id="text12864"><tspan
+         sodipodi:role="line"
+         id="tspan12862"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:7.05556px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="175.09814"
+         y="183.2664">1059</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.93889px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="154.55598"
+       y="182.53386"
+       id="text12868"><tspan
+         sodipodi:role="line"
+         id="tspan12866"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="154.55598"
+         y="182.53386">1395/8/16</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.93889px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="126.96489"
+       y="182.68092"
+       id="text12872"><tspan
+         sodipodi:role="line"
+         id="tspan12870"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="126.96489"
+         y="182.68092">10260098471</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="90.117393"
+       y="181.8553"
+       id="text12876"><tspan
+         sodipodi:role="line"
+         id="tspan12874"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="90.117393"
+         y="181.8553">محسن اکبری</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="57.785675"
+       y="182.38997"
+       id="text12880"><tspan
+         sodipodi:role="line"
+         id="tspan12878"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="57.785675"
+         y="182.38997">۰۹۱۲۳۴۵۶۷۸۹</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="26.753874"
+       y="182.37749"
+       id="text12884"><tspan
+         sodipodi:role="line"
+         id="tspan12882"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="26.753874"
+         y="182.37749">-</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#0e0b0b;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="12.474999"
+       y="182.63753"
+       id="text12888"><tspan
+         sodipodi:role="line"
+         id="tspan12886"
+         style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:4.23333px;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';fill:#0e0b0b;fill-opacity:1;stroke-width:0.264583"
+         x="12.474999"
+         y="182.63753"></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="335.49664"
+       y="195.04074"
+       id="text12892"><tspan
+         sodipodi:role="line"
+         id="tspan12890"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:7.05556px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="335.49664"
+         y="195.04074">129</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.93889px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="310.54047"
+       y="194.34703"
+       id="text12896"><tspan
+         sodipodi:role="line"
+         id="tspan12894"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="310.54047"
+         y="194.34703">دایی</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.93889px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="290.12875"
+       y="194.34703"
+       id="text12900"><tspan
+         sodipodi:role="line"
+         id="tspan12898"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="290.12875"
+         y="194.34703">غیر فعال</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.93889px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="269.75912"
+       y="194.00777"
+       id="text12904"><tspan
+         sodipodi:role="line"
+         id="tspan12902"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="269.75912"
+         y="194.00777">زوم کن</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="249.29979"
+       y="195.2664"
+       id="text12908"><tspan
+         sodipodi:role="line"
+         id="tspan12906"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:7.05556px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="249.29979"
+         y="195.2664">۱</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="231.41908"
+       y="194.02464"
+       id="text12912"><tspan
+         sodipodi:role="line"
+         id="tspan12910"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="231.41908"
+         y="194.02464">پسته کاری گلچهرگان آران</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="175.09814"
+       y="195.2664"
+       id="text12916"><tspan
+         sodipodi:role="line"
+         id="tspan12914"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:7.05556px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="175.09814"
+         y="195.2664">1059</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.93889px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="154.55598"
+       y="194.53386"
+       id="text12920"><tspan
+         sodipodi:role="line"
+         id="tspan12918"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="154.55598"
+         y="194.53386">1395/8/16</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.93889px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="126.96489"
+       y="194.68094"
+       id="text12924"><tspan
+         sodipodi:role="line"
+         id="tspan12922"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="126.96489"
+         y="194.68094">10260098471</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="90.117393"
+       y="193.8553"
+       id="text12928"><tspan
+         sodipodi:role="line"
+         id="tspan12926"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="90.117393"
+         y="193.8553">محسن اکبری</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="57.785675"
+       y="194.38997"
+       id="text12932"><tspan
+         sodipodi:role="line"
+         id="tspan12930"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="57.785675"
+         y="194.38997">۰۹۱۲۳۴۵۶۷۸۹</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="26.753874"
+       y="194.37749"
+       id="text12936"><tspan
+         sodipodi:role="line"
+         id="tspan12934"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="26.753874"
+         y="194.37749">-</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#0e0b0b;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="12.474999"
+       y="194.63754"
+       id="text12940"><tspan
+         sodipodi:role="line"
+         id="tspan12938"
+         style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:4.23333px;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';fill:#0e0b0b;fill-opacity:1;stroke-width:0.264583"
+         x="12.474999"
+         y="194.63754"></tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -2095,134 +2383,134 @@
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="338.2966"
        y="27.247141"
        id="text143175"><tspan
          sodipodi:role="line"
          id="tspan143173"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke-width:0.264583"
          x="338.2966"
          y="27.247141">کد پرونده</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="317.2128"
        y="27.264627"
        id="text143281"><tspan
          sodipodi:role="line"
          id="tspan143279"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke-width:0.264583"
          x="317.2128"
          y="27.264627">محل نگهداری</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="288.65817"
        y="27.176281"
        id="text143987"><tspan
          sodipodi:role="line"
          id="tspan143985"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke-width:0.264583"
          x="288.65817"
          y="27.176281">وضعیت</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="268.13605"
        y="27.263556"
        id="text145499"><tspan
          sodipodi:role="line"
          id="tspan145497"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke-width:0.264583"
          x="268.13605"
          y="27.263556">کد فایل</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="254.77422"
        y="27.239016"
        id="text148601"><tspan
          sodipodi:role="line"
          id="tspan148599"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke-width:0.264583"
          x="254.77422"
          y="27.239016">تعداد جلد</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="219.46429"
        y="27.153273"
        id="text152283"><tspan
          sodipodi:role="line"
          id="tspan152281"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke-width:0.264583"
          x="219.46429"
          y="27.153273">اسم پرونده</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="176.85381"
        y="27.299601"
        id="text152389"><tspan
          sodipodi:role="line"
          id="tspan152387"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke-width:0.264583"
          x="176.85381"
          y="27.299601">شماره ثبت</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="151.34157"
        y="27.261866"
        id="text157571"><tspan
          sodipodi:role="line"
          id="tspan157569"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke-width:0.264583"
          x="151.34157"
          y="27.261866">تاریخ ثبت</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="122.02808"
        y="27.306963"
        id="text158811"><tspan
          sodipodi:role="line"
          id="tspan158809"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke-width:0.264583"
          x="122.02808"
          y="27.306963">شناسه ملی</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="90.044838"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="87.195229"
        y="27.184563"
        id="text162595"><tspan
          sodipodi:role="line"
          id="tspan162593"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
-         x="90.044838"
-         y="27.184563">نام مدیر عامل</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke-width:0.264583"
+         x="87.195229"
+         y="27.184563">مدیر عامل</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="54.901913"
        y="27.094835"
        id="text164419"><tspan
          sodipodi:role="line"
          id="tspan164417"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke-width:0.264583"
          x="54.901913"
          y="27.094835">شماره موبایل</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="33.745129"
        y="27.137781"
        id="text167331"><tspan
          sodipodi:role="line"
          id="tspan167329"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke-width:0.264583"
          x="33.745129"
          y="27.137781">سال انحلال</tspan></text>
   </g>
@@ -2233,24 +2521,24 @@
      style="display:inline">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="331.6572"
        y="14.780405"
        id="text3595"><tspan
          sodipodi:role="line"
          id="tspan3593"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke-width:0.264583"
          x="331.6572"
          y="14.780405">کد پرونده:</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="286.12573"
        y="14.686536"
        id="text48829"><tspan
          sodipodi:role="line"
          id="tspan48827"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke-width:0.264583"
          x="286.12573"
          y="14.686536">اسم پرونده:</tspan></text>
     <rect
@@ -2261,7 +2549,7 @@
        height="8.79774"
        width="49.797741"
        id="rect48831"
-       style="fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.20226024;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.20226;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <text
        id="text48835"
        y="15.033486"
@@ -2275,32 +2563,32 @@
          sodipodi:role="line">تعاونی مصرف آران و بیدگل</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="209.83075"
        y="14.832862"
        id="text87517"><tspan
          sodipodi:role="line"
          id="tspan87515"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke-width:0.264583"
          x="209.83075"
          y="14.832862">شماره ثبت:</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="137.91653"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="127.33319"
        y="14.709543"
        id="text92125"><tspan
          sodipodi:role="line"
          id="tspan92123"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
-         x="137.91653"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke-width:0.264583"
+         x="127.33319"
          y="14.709543">وضعیت:</tspan></text>
     <rect
        transform="scale(-1,1)"
        ry="1"
        rx="1"
        y="9.6124249"
-       x="-121.7405"
+       x="-111.15718"
        height="8.7751503"
        width="24.77515"
        id="rect92127"
@@ -2308,41 +2596,41 @@
     <text
        id="text94870"
        y="15.322917"
-       x="118.01105"
+       x="107.42771"
        style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';fill:#7f8185;fill-opacity:1;stroke:none;stroke-width:0.264583"
        xml:space="preserve"><tspan
          y="15.322917"
-         x="118.01105"
+         x="107.42771"
          style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:4.23333px;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';fill:#7f8185;fill-opacity:1;stroke-width:0.264583"
          id="tspan94868"
          sodipodi:role="line"></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="115.99433"
-       y="14.962009"
+       x="105.41101"
+       y="14.962008"
        id="text92131"><tspan
          sodipodi:role="line"
          id="tspan92129"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
-         x="115.99433"
-         y="14.962009">غیر فعال</tspan></text>
+         x="105.41101"
+         y="14.962008">غیر فعال</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="80.144722"
-       y="14.797891"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="79.61557"
+       y="15.030724"
        id="text103824"><tspan
          sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
-         x="80.144722"
-         y="14.797891"
-         id="tspan33294">محل نگهداری:</tspan></text>
+         id="tspan103822"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke-width:0.264583"
+         x="79.61557"
+         y="15.030724">محل نگهداری:</tspan></text>
     <g
        id="g5159"
        transform="translate(0,0.03384829)">
       <rect
-         style="fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.20012879;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.200129;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect103826"
          width="37.799873"
          height="8.7998714"
@@ -2375,7 +2663,7 @@
          x="47.430218"
          y="15.324549">بایگانی - دایی</tspan></text>
     <rect
-       style="display:inline;fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.2042689;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.204269;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect993"
        width="17.795731"
        height="8.7957315"
@@ -2402,7 +2690,7 @@
        height="8.7957315"
        width="17.795731"
        id="rect5109"
-       style="display:inline;fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.2042689;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="display:inline;fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.204269;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <text
        id="text5175"
        y="15.691337"
@@ -2417,10 +2705,617 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     id="layer6"
-     inkscape:label="Hover"
+     id="layer9"
+     inkscape:label="Edit"
      style="display:none"
      sodipodi:insensitive="true">
+    <g
+       inkscape:groupmode="layer"
+       id="layer10"
+       inkscape:label="BackgroundEdit"
+       sodipodi:insensitive="true"
+       style="display:inline">
+      <rect
+         style="display:inline;fill:#2f343f;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.400072;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1267"
+         width="249.59993"
+         height="109.59993"
+         x="50.200035"
+         y="55.200035"
+         rx="1.0001099"
+         ry="1.0002503" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="289.44363"
+       y="66.650124"
+       id="text1985"><tspan
+         sodipodi:role="line"
+         id="tspan1983"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="289.44363"
+         y="66.650124">کد پرونده:</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="243.91217"
+       y="66.556252"
+       id="text1989"><tspan
+         sodipodi:role="line"
+         id="tspan1987"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="243.91217"
+         y="66.556252">اسم پرونده:</tspan></text>
+    <rect
+       ry="1"
+       rx="1"
+       y="61.543571"
+       x="73.286308"
+       height="8.6522827"
+       width="149.65228"
+       id="rect1991"
+       style="display:inline;fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       id="text1995"
+       y="66.903206"
+       x="220.66928"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         y="66.903206"
+         x="220.66928"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         id="tspan1993"
+         sodipodi:role="line">تعاونی مصرف آران و بیدگل</tspan></text>
+    <rect
+       style="display:inline;fill:#363d4a;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.204269;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1997"
+       width="17.795731"
+       height="8.7957315"
+       x="253.13451"
+       y="61.471851"
+       rx="1"
+       ry="1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#8f8f8f;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="265.62018"
+       y="67.479149"
+       id="text2001"><tspan
+         sodipodi:role="line"
+         id="tspan1999"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#8f8f8f;fill-opacity:1;stroke-width:0.264583"
+         x="265.62018"
+         y="67.479149">127</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="172.61859"
+       y="83.195045"
+       id="text2462"><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="172.61859"
+         y="83.195045"
+         id="tspan3110">کد فایل:</tspan></text>
+    <rect
+       style="display:inline;fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.204269;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2464"
+       width="17.795731"
+       height="8.7957315"
+       x="140.01349"
+       y="78.016777"
+       rx="1"
+       ry="1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="150.38121"
+       y="84.031593"
+       id="text2468"><tspan
+         sodipodi:role="line"
+         id="tspan2466"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="150.38121"
+         y="84.031593">۵</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="128.6978"
+       y="83.195045"
+       id="text2574"><tspan
+         sodipodi:role="line"
+         id="tspan2572"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="128.6978"
+         y="83.195045">تعداد جلد:</tspan></text>
+    <rect
+       style="display:inline;fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.204269;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2576"
+       width="17.795731"
+       height="8.7957315"
+       x="92.388649"
+       y="78.016777"
+       rx="1"
+       ry="1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="102.54021"
+       y="83.962875"
+       id="text2580"><tspan
+         sodipodi:role="line"
+         id="tspan2578"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="102.54021"
+         y="83.962875">۲</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="289.49887"
+       y="83.124184"
+       id="text2584"><tspan
+         sodipodi:role="line"
+         id="tspan2582"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="289.49887"
+         y="83.124184">وضعیت:</tspan></text>
+    <rect
+       transform="scale(-1,1)"
+       ry="1"
+       rx="1"
+       y="78.027069"
+       x="-273.32288"
+       height="8.7751503"
+       width="24.77515"
+       id="rect2586"
+       style="display:inline;fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.224849;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       id="text2590"
+       y="83.737556"
+       x="269.59341"
+       style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';display:inline;fill:#7f8185;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         y="83.737556"
+         x="269.59341"
+         style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:4.23333px;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';fill:#7f8185;fill-opacity:1;stroke-width:0.264583"
+         id="tspan2588"
+         sodipodi:role="line"></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="267.57672"
+       y="83.376648"
+       id="text2594"><tspan
+         sodipodi:role="line"
+         id="tspan2592"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="267.57672"
+         y="83.376648">غیر فعال</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="242.31041"
+       y="83.212532"
+       id="text2619"><tspan
+         sodipodi:role="line"
+         id="tspan2617"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="242.31041"
+         y="83.212532">محل نگهداری:</tspan></text>
+    <g
+       id="g2627"
+       transform="translate(163.22401,68.448491)"
+       style="display:inline">
+      <rect
+         style="fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.200129;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2621"
+         width="37.799873"
+         height="8.7998714"
+         x="-53.842571"
+         y="9.5615597"
+         rx="1.0002432"
+         ry="1.001045"
+         transform="scale(-1,1)" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';fill:#7f8185;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="49.851543"
+         y="15.322917"
+         id="text2625"><tspan
+           sodipodi:role="line"
+           id="tspan2623"
+           style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:4.23333px;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';fill:#7f8185;fill-opacity:1;stroke-width:0.264583"
+           x="49.851543"
+           y="15.322917"></tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="210.65422"
+       y="83.739189"
+       id="text2631"><tspan
+         sodipodi:role="line"
+         id="tspan2629"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="210.65422"
+         y="83.739189">بایگانی - دایی</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="289.48047"
+       y="116.27558"
+       id="text3146"><tspan
+         sodipodi:role="line"
+         id="tspan3144"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="289.48047"
+         y="116.27558">مدیر عامل:</tspan></text>
+    <rect
+       style="display:inline;fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.200025;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3148"
+       width="49.799976"
+       height="8.7999754"
+       x="220.9603"
+       y="111.16542"
+       rx="1.0000367"
+       ry="1.0002074" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="267.76758"
+       y="116.53923"
+       id="text3152"><tspan
+         sodipodi:role="line"
+         id="tspan3150"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="267.76758"
+         y="116.53923">محسن فرقانی نوش ...</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="215.39717"
+       y="116.27558"
+       id="text4623"><tspan
+         sodipodi:role="line"
+         id="tspan4621"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="215.39717"
+         y="116.27558">شماره موبایل:</tspan></text>
+    <rect
+       style="display:inline;fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.201427;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4625"
+       width="39.798573"
+       height="8.7985725"
+       x="152.1507"
+       y="111.14758"
+       rx="1"
+       ry="1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="187.21667"
+       y="117.2382"
+       id="text4629"><tspan
+         sodipodi:role="line"
+         id="tspan4627"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="187.21667"
+         y="117.2382">09123456789</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="146.60544"
+       y="116.27558"
+       id="text4633"><tspan
+         sodipodi:role="line"
+         id="tspan4631"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="146.60544"
+         y="116.27558">شماره تلفن ثابت:</tspan></text>
+    <rect
+       style="display:inline;fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.201427;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4635"
+       width="39.798573"
+       height="8.7985725"
+       x="76.479889"
+       y="111.14758"
+       rx="1"
+       ry="1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="112.18149"
+       y="117.22502"
+       id="text4639"><tspan
+         sodipodi:role="line"
+         id="tspan4637"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="112.18149"
+         y="117.22502">03154745474</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="289.55042"
+       y="99.735313"
+       id="text3116"><tspan
+         sodipodi:role="line"
+         id="tspan3114"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="289.55042"
+         y="99.735313">شماره ثبت:</tspan></text>
+    <rect
+       style="display:inline;fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.204269;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3118"
+       width="17.795731"
+       height="8.7957315"
+       x="251.12466"
+       y="94.557045"
+       rx="1"
+       ry="1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="264.91202"
+       y="100.64625"
+       id="text3122"><tspan
+         sodipodi:role="line"
+         id="tspan3120"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="264.91202"
+         y="100.64625">1059</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="241.92546"
+       y="99.735313"
+       id="text3126"><tspan
+         sodipodi:role="line"
+         id="tspan3124"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="241.92546"
+         y="99.735313">تاریخ ثبت:</tspan></text>
+    <rect
+       style="display:inline;fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.201187;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3128"
+       width="34.798813"
+       height="8.7988129"
+       x="187.13591"
+       y="94.597511"
+       rx="1"
+       ry="1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="217.47951"
+       y="100.51003"
+       id="text3132"><tspan
+         sodipodi:role="line"
+         id="tspan3130"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="217.47951"
+         y="100.51003">1395/05/06</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="181.60036"
+       y="99.735313"
+       id="text3136"><tspan
+         sodipodi:role="line"
+         id="tspan3134"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="181.60036"
+         y="99.735313">شناسه ملی:</tspan></text>
+    <rect
+       style="display:inline;fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.201427;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3138"
+       width="39.798573"
+       height="8.7985725"
+       x="121.52896"
+       y="94.607307"
+       rx="1"
+       ry="1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="155.13104"
+       y="100.56434"
+       id="text3142"><tspan
+         sodipodi:role="line"
+         id="tspan3140"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="155.13104"
+         y="100.56434">10260157312</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="114.92537"
+       y="99.735313"
+       id="text5142"><tspan
+         sodipodi:role="line"
+         id="tspan5140"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="114.92537"
+         y="99.735313">سال انحلال:</tspan></text>
+    <rect
+       style="display:inline;fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.204269;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5144"
+       width="17.795731"
+       height="8.7957315"
+       x="75.970413"
+       y="94.557045"
+       rx="1"
+       ry="1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="89.497955"
+       y="100.57652"
+       id="text5148"><tspan
+         sodipodi:role="line"
+         id="tspan5146"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="89.497955"
+         y="100.57652">1400</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="289.43997"
+       y="132.7021"
+       id="text5152"><tspan
+         sodipodi:role="line"
+         id="tspan5150"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="289.43997"
+         y="132.7021">آدرس:</tspan></text>
+    <rect
+       ry="1"
+       rx="1"
+       y="127.70676"
+       x="97.652336"
+       height="8.7978449"
+       width="179.79784"
+       id="rect5154"
+       style="display:inline;fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.202155;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       id="text5158"
+       y="133.16586"
+       x="273.60559"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         y="133.16586"
+         x="273.60559"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         id="tspan5156"
+         sodipodi:role="line">آران و بیدگل، شهرک صنعتی هلال، کارخانه مشهد نگین توس</tspan></text>
+    <rect
+       style="display:inline;fill:#c5c9d3;fill-opacity:1;stroke:#2f343f;stroke-width:0.200386;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect335846-5"
+       width="39.799614"
+       height="8.799614"
+       x="-101.89594"
+       y="149.93192"
+       rx="1"
+       ry="1"
+       transform="scale(-1,1)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#2f343f;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="89.973"
+       y="155.09744"
+       id="text347919-9"><tspan
+         sodipodi:role="line"
+         id="tspan347917-3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#2f343f;fill-opacity:1;stroke-width:0.264583"
+         x="89.973"
+         y="155.09744">حذف پرونده</tspan></text>
+    <rect
+       style="display:inline;fill:#c5c9d3;fill-opacity:1;stroke:#2f343f;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect10469"
+       width="39.801834"
+       height="8.801836"
+       x="-149.30714"
+       y="149.91676"
+       rx="1"
+       ry="1"
+       transform="scale(-1,1)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';display:inline;fill:#2f343f;fill-opacity:1;stroke-width:0.264583"
+       x="141.28751"
+       y="155.90518"
+       id="text28577-7"><tspan
+         sodipodi:role="line"
+         id="tspan28575-3"
+         style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:4.23333px;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';fill:#2f343f;fill-opacity:1;stroke-width:0.264583"
+         x="141.28751"
+         y="155.90518"></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#2f343f;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="139.04973"
+       y="155.13676"
+       id="text10473"><tspan
+         sodipodi:role="line"
+         id="tspan10471"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#2f343f;fill-opacity:1;stroke-width:0.264583"
+         x="139.04973"
+         y="155.13676">ذخیره تغییرات</tspan></text>
+    <g
+       inkscape:groupmode="layer"
+       id="layer11"
+       inkscape:label="HoverEdit"
+       style="display:none">
+      <rect
+         ry="1"
+         rx="1"
+         y="61.543571"
+         x="73.286308"
+         height="8.6522827"
+         width="149.65228"
+         id="rect25387"
+         style="display:inline;fill:#576075;fill-opacity:1;stroke:#fafbf9;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         id="text25391"
+         y="66.903206"
+         x="220.66928"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#fafbf9;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         xml:space="preserve"><tspan
+           y="66.903206"
+           x="220.66928"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#fafbf9;fill-opacity:1;stroke-width:0.264583"
+           id="tspan25389"
+           sodipodi:role="line">تعاونی مصرف آران و بیدگل</tspan></text>
+      <rect
+         style="display:inline;fill:#576075;fill-opacity:1;stroke:#fafbf9;stroke-width:0.200386;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect27790"
+         width="39.799614"
+         height="8.799614"
+         x="-101.89594"
+         y="149.93192"
+         rx="1"
+         ry="1"
+         transform="scale(-1,1)" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#fafbf9;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="89.973"
+         y="155.09744"
+         id="text27794"><tspan
+           sodipodi:role="line"
+           id="tspan27792"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#fafbf9;fill-opacity:1;stroke-width:0.264583"
+           x="89.973"
+           y="155.09744">حذف پرونده</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.82222px;line-height:1.25;font-family:sans-serif;display:inline;fill:#fafbf9;fill-opacity:1;stroke-width:0.264583"
+         x="90.942238"
+         y="155.86404"
+         id="text27798"><tspan
+           sodipodi:role="line"
+           id="tspan27796"
+           style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:4.23333px;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';fill:#fafbf9;fill-opacity:1;stroke-width:0.264583"
+           x="90.942238"
+           y="155.86404">+</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';display:inline;fill:#2f343f;fill-opacity:1;stroke-width:0.264583"
+       x="93.133324"
+       y="155.91922"
+       id="text35047-5"><tspan
+         sodipodi:role="line"
+         id="tspan35045-2"
+         style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:4.23333px;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';fill:#2f343f;fill-opacity:1;stroke-width:0.264583"
+         x="93.133324"
+         y="155.91922"></tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="Hover"
+     style="display:none">
     <rect
        ry="1"
        rx="1"
@@ -2462,39 +3357,68 @@
          x="262.8829"
          y="15.033486">تعاونی مصرف آران و بیدگل</tspan></text>
     <rect
-       style="display:inline;fill:#576075;fill-opacity:1;stroke:#fafbf9;stroke-width:0.22745;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:#e2e4e9;fill-opacity:1;stroke:#21242c;stroke-width:0.22745;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect2284"
        width="34.772549"
        height="8.7725496"
-       x="-40.583534"
-       y="207.44786"
+       x="-40.583275"
+       y="196.86438"
        rx="0.99975228"
        ry="1.2936649"
        transform="scale(-1,1)" />
-    <g
-       id="g3008">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#fafbf9;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="32.341881"
-         y="212.65688"
-         id="text2288"><tspan
-           sodipodi:role="line"
-           id="tspan2286"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#fafbf9;fill-opacity:1;stroke-width:0.264583"
-           x="32.341881"
-           y="212.65688">خروجی اکسل</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';fill:#fafbf9;fill-opacity:1;stroke-width:0.264583"
-         x="33.570129"
-         y="213.11522"
-         id="text2292"><tspan
-           sodipodi:role="line"
-           id="tspan2290"
-           style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:4.23333px;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';fill:#fafbf9;fill-opacity:1;stroke-width:0.264583"
-           x="33.570129"
-           y="213.11522"></tspan></text>
-    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#21242c;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="32.341618"
+       y="202.07341"
+       id="text2288"><tspan
+         sodipodi:role="line"
+         id="tspan2286"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#21242c;fill-opacity:1;stroke-width:0.264583"
+         x="32.341618"
+         y="202.07341">خروجی اکسل</tspan></text>
+    <rect
+       style="display:inline;fill:#576075;fill-opacity:1;stroke:#fafbf9;stroke-width:0.22745;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8354"
+       width="34.772549"
+       height="8.7725496"
+       x="-40.583275"
+       y="186.28104"
+       rx="0.99975228"
+       ry="1.2936649"
+       transform="scale(-1,1)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#fafbf9;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="32.341618"
+       y="191.49007"
+       id="text8358"><tspan
+         sodipodi:role="line"
+         id="tspan8356"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#fafbf9;fill-opacity:1;stroke-width:0.264583"
+         x="32.341618"
+         y="191.49007">خروجی اکسل</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';display:inline;fill:#21242c;fill-opacity:1;stroke-width:0.264583"
+       x="33.808525"
+       y="202.57358"
+       id="text9273"><tspan
+         sodipodi:role="line"
+         id="tspan9271"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro';fill:#21242c;fill-opacity:1;stroke-width:0.264583"
+         x="33.808525"
+         y="202.57358"></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';display:inline;fill:#21242c;fill-opacity:1;stroke-width:0.264583"
+       x="33.808525"
+       y="191.99023"
+       id="text9277"><tspan
+         sodipodi:role="line"
+         id="tspan9275"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro';fill:#21242c;fill-opacity:1;stroke-width:0.264583"
+         x="33.808525"
+         y="191.99023"></tspan></text>
   </g>
 </svg>
