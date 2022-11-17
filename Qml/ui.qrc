@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>TvnConstants.qml</file>
+        <file>TvnButton.qml</file>
+        <file>TvnSearchBtn.qml</file>
+        <file>TvnSearch.qml</file>
+    </qresource>
+</RCC>
