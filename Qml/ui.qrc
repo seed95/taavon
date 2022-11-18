@@ -5,5 +5,10 @@
         <file>TvnButton.qml</file>
         <file>TvnSearchBtn.qml</file>
         <file>TvnSearch.qml</file>
+        <file>TvnFileElement.qml</file>
+        <file>TvnLabel.qml</file>
+        <file>TvnFileList.qml</file>
+        <file>TvnComboBox.qml</file>
+        <file>TvnComboBoxItem.qml</file>
     </qresource>
 </RCC>

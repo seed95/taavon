@@ -17,11 +17,12 @@ RESOURCES += Qml/ui.qrc \
 
 OTHER_FILES += Qml/*.qml
 
-
-# Additional import path used to resolve QML modules in Qt Creator's code model
-#QML_IMPORT_PATH += Qml/
-
 DISTFILES += \
     Qml/TvnButton.qml \
     Qml/TvnSearchBtn.qml \
-    Qml/TvnSearch.qml
+    Qml/TvnSearch.qml \
+    Qml/TvnFileElement.qml \
+    Qml/TvnLabel.qml \
+    Qml/TvnFileList.qml \
+    Qml/TvnComboBox.qml \
+    Qml/TvnComboBoxItem.qml

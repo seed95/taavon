@@ -1,20 +1,11 @@
 <RCC>
     <qresource prefix="/">
-        <file>Fonts/Roboto/Roboto-Medium.ttf</file>
-        <file>Fonts/Roboto/Roboto-Regular.ttf</file>
         <file>Fonts/Fontawesome/fa-regular.ttf</file>
         <file>Fonts/Fontawesome/fa-regular-brand.ttf</file>
         <file>Fonts/Fontawesome/fa-solid.ttf</file>
         <file>Fonts/Fontawesome/fa-brands-400.ttf</file>
         <file>Fonts/Fontawesome/fa-regular-400.ttf</file>
-        <file>Fonts/Roboto/Roboto-Light.ttf</file>
         <file>Fonts/Fontawesome/fasolid.ttf</file>
-        <file>Fonts/Roboto/Roboto-Bold.ttf</file>
-        <file>Fonts/Arial/Arial-Black.ttf</file>
-        <file>Fonts/Arial/Arial-Bold.ttf</file>
-        <file>Fonts/Arial/Arial-BoldItalic.ttf</file>
-        <file>Fonts/Arial/Arial-Regular.ttf</file>
-        <file>Fonts/Arial/Arial-Light.ttf</file>
         <file>Fonts/IRANSansWeb/IRANSansWeb.ttf</file>
         <file>Fonts/IRANSansWeb/IRANSansWebBold.ttf</file>
         <file>Fonts/IRANSansWeb/IRANSansWebLight.ttf</file>

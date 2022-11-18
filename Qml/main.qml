@@ -80,6 +80,22 @@ Window
         id: constant
     }
 
+    TvnSearch
+    {
+        id: search
+        anchors.right: parent.right
+        anchors.rightMargin: 30
+        anchors.top: parent.top
+        anchors.topMargin: 30
+    }
+
+//    TvnFileList
+//    {
+//        id: file_list
+//        anchors.top: search.bottom
+//        anchors.bottom: parent.bottom
+//        anchors.right: search.right
+//    }
 
     TvnButton
     {
@@ -90,13 +106,6 @@ Window
         btnIcon: "+"
     }
 
-    TvnSearch
-    {
-        anchors.right: parent.right
-        anchors.rightMargin: 30
-        anchors.top: parent.top
-        anchors.topMargin: 30
-    }
 
     //Functions
     /*** Call this functions from cpp ***/

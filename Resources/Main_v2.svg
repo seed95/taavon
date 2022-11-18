@@ -40,13 +40,13 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="1"
-     inkscape:cx="633"
-     inkscape:cy="341.5"
-     inkscape:window-width="2400"
-     inkscape:window-height="1261"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="680.23672"
+     inkscape:cy="185.96908"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
      inkscape:window-x="-9"
-     inkscape:window-y="-5"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer6"
      inkscape:lockguides="true"
@@ -153,7 +153,7 @@
      inkscape:groupmode="layer"
      id="layer8"
      inkscape:label="MainBackground"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <rect
        style="display:inline;fill:#576075;fill-opacity:1;stroke:none;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect167635"
@@ -347,8 +347,7 @@
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="Main"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -2157,15 +2156,15 @@
          sodipodi:role="line"></tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="105.41101"
-       y="14.962008"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="107.52769"
+       y="14.700954"
        id="text92131"><tspan
          sodipodi:role="line"
          id="tspan92129"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
-         x="105.41101"
-         y="14.962008">غیر فعال</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+         x="107.52769"
+         y="14.700954">در دست اقدام</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -3620,7 +3619,7 @@
      inkscape:groupmode="layer"
      id="layer6"
      inkscape:label="Hover"
-     style="display:none">
+     style="display:inline">
     <rect
        ry="1"
        rx="1"

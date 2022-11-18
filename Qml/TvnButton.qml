@@ -1,8 +1,7 @@
 import QtQuick 2.0
 
-Rectangle {
-    id: container
-
+Rectangle
+{
     property string btnText: ""
     property string btnIcon: ""
 
@@ -12,8 +11,8 @@ Rectangle {
     property color color_text_normal:     "#2f343f"
     property color color_text_hovered:    "#21242c"
 
-    property color color_border_normal:     container.color_text_normal
-    property color color_border_hovered:    container.color_text_hovered
+    property color color_border_normal:     color_text_normal
+    property color color_border_hovered:    color_text_hovered
 
     property bool isHovered:    false
 
@@ -93,6 +92,7 @@ Rectangle {
     {
         anchors.fill: parent
         hoverEnabled: true
+        cursorShape: Qt.PointingHandCursor
 
         onEntered: isHovered = true
         onExited: isHovered = false
