@@ -19,7 +19,7 @@ Window
 
     visible: true
     width: 1300
-    height: 700
+    height: 800
     minimumHeight: height
     maximumHeight: height
     minimumWidth: width
