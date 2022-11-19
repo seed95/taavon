@@ -2,31 +2,51 @@ import QtQuick 2.0
 
 Rectangle
 {
-    color: "#00003b"
-//    color: "transparent"
-    width: 1247
+    width: 1250
     height: 45
+    color: "transparent"
+//    color: "#00003b"
 
-    TvnSearchBtn
+    TvnSearchNumberBtn
     {
         id: file_code
         anchors.right: parent.right
         anchors.rightMargin: 20
         anchors.verticalCenter: parent.verticalCenter
         titleText: "کد پرونده"
-        inputWidth: 68
+        inputWidth: 60
     }
 
-    TvnComboBox
+    TvnSearchStringBtn
     {
-        id: state
-//        width: 130
-        height: 34
-        anchors.left: parent.left
-        anchors.leftMargin: 100
+        id: file_name
+        anchors.right: file_code.left
+        anchors.rightMargin: 20
         anchors.verticalCenter: parent.verticalCenter
-        titleText: "وضعیت"
-        comboWidth: 100
+        titleText: "اسم پرونده"
+        inputWidth: 280
     }
+
+    TvnSearchNumberBtn
+    {
+        id: registration_number
+        anchors.right: file_name.left
+        anchors.rightMargin: 20
+        anchors.verticalCenter: parent.verticalCenter
+        titleText: "شماره ثبت"
+        inputWidth: 70
+    }
+
+//    TvnComboBox
+//    {
+//        id: state
+////        width: 130
+//        height: 34
+//        anchors.left: parent.left
+//        anchors.leftMargin: 100
+//        anchors.verticalCenter: parent.verticalCenter
+//        titleText: "وضعیت"
+//        comboWidth: 100
+//    }
 
 }

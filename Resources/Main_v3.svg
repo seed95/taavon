@@ -40,15 +40,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="1"
-     inkscape:cx="613.99998"
-     inkscape:cy="364.49999"
+     inkscape:zoom="0.7071068"
+     inkscape:cx="469.51889"
+     inkscape:cy="316.07672"
      inkscape:window-width="1920"
      inkscape:window-height="991"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer6"
+     inkscape:current-layer="layer4"
      inkscape:lockguides="true"
      inkscape:measure-start="715.504,776.315"
      inkscape:measure-end="722.84,776.315"
@@ -203,8 +203,7 @@
      inkscape:groupmode="layer"
      id="layer7"
      inkscape:label="Support"
-     style="display:none"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <rect
        style="display:inline;opacity:1;fill:#00003b;fill-opacity:1;stroke:none;stroke-width:0.24161;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect5053"
@@ -308,8 +307,7 @@
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="Main"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Medium';display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -1112,7 +1110,8 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="Header"
-     style="display:inline">
+     style="display:inline"
+     sodipodi:insensitive="true">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -1378,7 +1377,7 @@
       </g>
     </g>
     <g
-       id="g5087">
+       id="g64919">
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -1414,43 +1413,40 @@
              y="11.266726">127</tspan></text>
       </g>
     </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="185.78607"
+       y="10.490153"
+       id="text87517"><tspan
+         sodipodi:role="line"
+         id="tspan87515"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke-width:0.264583"
+         x="185.78607"
+         y="10.490153">شماره ثبت:</tspan></text>
     <g
-       id="g46397"
+       id="g46389"
        transform="translate(-2.8779982,-4.2333332)">
+      <rect
+         ry="1.3229166"
+         rx="1.3229166"
+         y="9.3926964"
+         x="149.82957"
+         height="8.9958582"
+         width="18.256275"
+         id="rect5109"
+         style="display:inline;fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.264558;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="188.66406"
-         y="14.723487"
-         id="text87517"><tspan
-           sodipodi:role="line"
-           id="tspan87515"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke-width:0.264583"
-           x="188.66406"
-           y="14.723487">شماره ثبت:</tspan></text>
-      <g
-         id="g46389">
-        <rect
-           ry="1.3229166"
-           rx="1.3229166"
-           y="9.3926964"
-           x="149.82957"
-           height="8.9958582"
-           width="18.256275"
-           id="rect5109"
-           style="display:inline;fill:#3b4351;fill-opacity:1;stroke:#e8e9e3;stroke-width:0.264558;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-        <text
-           id="text5175"
+         id="text5175"
+         y="15.581964"
+         x="163.84721"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         xml:space="preserve"><tspan
            y="15.581964"
            x="163.84721"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#e8e9e3;fill-opacity:1;stroke:none;stroke-width:0.264583"
-           xml:space="preserve"><tspan
-             y="15.581964"
-             x="163.84721"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
-             id="tspan5173"
-             sodipodi:role="line">1059</tspan></text>
-      </g>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
+           id="tspan5173"
+           sodipodi:role="line">1059</tspan></text>
     </g>
   </g>
   <g

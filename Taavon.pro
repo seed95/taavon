@@ -19,7 +19,6 @@ OTHER_FILES += Qml/*.qml
 
 DISTFILES += \
     Qml/TvnButton.qml \
-    Qml/TvnSearchBtn.qml \
     Qml/TvnSearch.qml \
     Qml/TvnFileElement.qml \
     Qml/TvnLabel.qml \
@@ -27,4 +26,6 @@ DISTFILES += \
     Qml/TvnComboBox.qml \
     Qml/TvnComboBoxItem.qml \
     Qml/TvnHeader.qml \
-    Qml/TvnHeaderLabel.qml
+    Qml/TvnHeaderLabel.qml \
+    Qml/TvnSearchNumberBtn.qml \
+    Qml/TvnSearchStringBtn.qml

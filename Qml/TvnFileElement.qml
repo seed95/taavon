@@ -4,7 +4,6 @@ Rectangle
 {
     id: container
 
-
     /***** Set this variables in qml *****/
     // Show this variable in element
     property string colorBackground: ""
@@ -31,51 +30,150 @@ Rectangle
     property string address: ""
 
     signal clickItem()
+    signal editItem()
 
     height: 45
-    width: 1247
+    width: 1250
     color: colorBackground
 
     TvnLabel
     {
         id: label_file_code
-        width: 72
+        width: 70
         anchors.right: parent.right
         anchors.top: parent.top
-        labelText: "127"
+        labelText: fileCode
         labelFontSize: 22
     }
 
     TvnLabel
     {
         id: label_keeping_place
-        width: 113
+        width: 118
         anchors.right: label_file_code.left
         anchors.top: parent.top
-        labelText: "بایگانی دایی"
+        labelText: keepingPlace
         labelFontSize: 16
     }
 
-//    MouseArea
-//    {
-//        anchors.fill: parent
-//        hoverEnabled: true
+    TvnLabel
+    {
+        id: label_status
+        width: 82
+        anchors.right: label_keeping_place.left
+        anchors.top: parent.top
+        labelText: status
+        labelFontSize: 12
+    }
 
-//        onEntered:
-//        {
-//            container.isHovered = true
-//        }
+    TvnLabel
+    {
+        id: ledger_binder
+        width: 65
+        anchors.right: label_status.left
+        anchors.top: parent.top
+        labelText: ledgerBinder
+        labelFontSize: 16
+    }
 
-//        onExited:
-//        {
-//            container.isHovered = false
-//        }
+    TvnLabel
+    {
+        id: number_of_cover
+        width: 38
+        anchors.right: ledger_binder.left
+        anchors.top: parent.top
+        labelText: numberOfCover
+        labelFontSize: 22
+    }
 
-//        onClicked:
-//        {
-//            clickItem()
-//        }
+    TvnLabel
+    {
+        id: file_name
+        width: 293
+        anchors.right: number_of_cover.left
+        anchors.top: parent.top
+        labelText: fileName
+        labelFontSize: 14
+    }
 
-//    }
+    TvnLabel
+    {
+        id: registration_number
+        width: 75
+        anchors.right: file_name.left
+        anchors.top: parent.top
+        labelText: registrationNumber
+        labelFontSize: 22
+    }
+
+    TvnLabel
+    {
+        id: date_of_last_meeting
+        width: 110
+        anchors.right: registration_number.left
+        anchors.top: parent.top
+        labelText: dateOfLastMeeting
+        labelFontSize: 16
+    }
+
+    TvnLabel
+    {
+        id: national_id
+        width: 115
+        anchors.right: date_of_last_meeting .left
+        anchors.top: parent.top
+        labelText: nationalId
+        labelFontSize: 16
+    }
+
+    TvnLabel
+    {
+        id: ceo_name
+        width: 145
+        anchors.right: national_id.left
+        anchors.top: parent.top
+        labelText: ceoName
+        labelFontSize: 14
+    }
+
+    TvnLabel
+    {
+        id: mobile_number
+        width: 106
+        anchors.right: ceo_name.left
+        anchors.top: parent.top
+        labelText: mobileNumber
+        labelFontSize: 14
+    }
+
+    TvnLabel
+    {
+        id: edit
+        width: 38
+        anchors.right: mobile_number.left
+        anchors.top: parent.top
+        labelText: "+"
+        labelFontName: fontAwesomeSolid.name
+        labelFontWeight: Font.Medium
+        labelFontSize: 16
+        labelColor: "#0e0b0b"
+
+        MouseArea
+        {
+            anchors.fill: parent
+            hoverEnabled: true
+            cursorShape: Qt.PointingHandCursor
+            onClicked: editItem()
+        }
+    }
+
+    MouseArea
+    {
+        anchors.right: parent.right
+        anchors.left: edit.right
+        height: parent.height
+        anchors.top: parent.top
+        onDoubleClicked: clickItem()
+    }
 
 }

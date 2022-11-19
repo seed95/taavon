@@ -18,12 +18,8 @@ Item
     property color color_border_hovered:        color_text_hovered
 
 
-    property bool isHovered: false
-    property bool isActive: false
-
-
     height: 45
-    width: title.contentWidth + rect_input.width
+    width: title.contentWidth + rect_input.width + rect_input.anchors.rightMargin
 
     Text
     {
@@ -33,7 +29,7 @@ Item
         anchors.right: parent.right
         anchors.verticalCenter: parent.verticalCenter
         font.family: iranSansWebBold.name
-        font.pixelSize: 18
+        font.pixelSize: 14
         font.bold: true
     }
 
@@ -41,66 +37,30 @@ Item
     {
         id: rect_input
         width: inputWidth
-        height: 34
+        height: 35
         anchors.right: title.left
         anchors.rightMargin: 5
         anchors.verticalCenter: parent.verticalCenter
-        radius: 4
+        radius: 5
         border.width: 1
-        border.color:
-        {
-            if(text_input.focus)
-            {
-                color_border_hovered
-            }
-            else
-            {
-                color_border_normal
-            }
-        }
-        color:
-        {
-            if(text_input.focus)
-            {
-                color_background_hovered
-            }
-            else
-            {
-                color_background_normal
-            }
-        }
-
+        border.color: text_input.focus? color_border_hovered : color_border_normal
+        color: text_input.focus? color_background_hovered : color_background_normal
 
         TextField
         {
             id: text_input
 
             width: inputWidth
-            text: "127"
+            text: ""
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: parent.right
-            horizontalAlignment: TextInput.AlignHCenter
+            anchors.rightMargin: 3
+            horizontalAlignment: TextInput.AlignRight
             font.family: iranSansWeb.name
             font.pixelSize: 16
             selectByMouse: true
-            enabled: true
-            validator: IntValidator {bottom: 1; top: 1000}
-//            selectedTextColor: "#888"
-//            selectionColor: "#222"
             background: Rectangle{color: "transparent"}
-            color:
-            {
-                if(focus)
-                {
-                    color_text_hovered
-                }
-                else
-                {
-                    color_text_normal
-                }
-            }
-
-
+            color: focus? color_text_hovered: color_text_normal
             onFocusChanged:
             {
                 if( focus )
@@ -108,13 +68,19 @@ Item
                     text = ""
                 }
             }
-            onAccepted:
-            {
-                focus = false
-            }
+            onAccepted: focus = false
+            Keys.onEscapePressed: focus = false
+//            Keys.onEnterPressed:
+//            {
+//                dataEntered();
+//            }
+
+//            Keys.onReturnPressed:
+//            {
+//                dataEntered();
+//            }
+
         }
     }
-
-
 
 }

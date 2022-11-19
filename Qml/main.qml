@@ -80,14 +80,12 @@ Window
         id: constant
     }
 
-//    TvnSearch
-//    {
-//        id: search
-//        anchors.right: parent.right
-//        anchors.rightMargin: 30
-//        anchors.top: parent.top
-//        anchors.topMargin: 30
-//    }
+    TvnSearch
+    {
+        id: search
+        x: 25
+        y: 14
+    }
 
     TvnHeader
     {
@@ -96,13 +94,17 @@ Window
         y: 82
     }
 
-//    TvnFileList
-//    {
-//        id: file_list
-//        anchors.top: search.bottom
-//        anchors.bottom: parent.bottom
-//        anchors.right: search.right
-//    }
+    TvnFileList
+    {
+        id: file_list
+//        width: parent.width.
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.rightMargin: 25
+//        anchors.right: header.right
+        anchors.top: header.bottom
+        anchors.bottom: excel_output.top
+    }
 
     TvnButton
     {

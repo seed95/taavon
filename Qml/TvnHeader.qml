@@ -103,7 +103,7 @@ Rectangle {
 
     TvnHeaderLabel
     {
-        id: ceoName
+        id: ceo_name
         width: 145
         labelText: "مدیر عامل"
         labelFontSize: normal_font_size
@@ -113,12 +113,23 @@ Rectangle {
 
     TvnHeaderLabel
     {
-        id: mobileNumber
+        id: mobile_number
         width: 106
         labelText: "شماره موبایل"
         labelFontSize: normal_font_size
-        anchors.right: ceoName.left
+        anchors.right: ceo_name.left
         anchors.verticalCenter: parent.verticalCenter
+    }
+
+
+    Rectangle
+    {
+        id: line
+        width: parent.width
+        height: 2
+        anchors.left: parent.left
+        anchors.bottom: parent.bottom
+        color: "#e8e9e3"
     }
 
 }

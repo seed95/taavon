@@ -3,7 +3,6 @@
         <file>main.qml</file>
         <file>TvnConstants.qml</file>
         <file>TvnButton.qml</file>
-        <file>TvnSearchBtn.qml</file>
         <file>TvnSearch.qml</file>
         <file>TvnFileElement.qml</file>
         <file>TvnLabel.qml</file>
@@ -12,5 +11,7 @@
         <file>TvnComboBoxItem.qml</file>
         <file>TvnHeader.qml</file>
         <file>TvnHeaderLabel.qml</file>
+        <file>TvnSearchNumberBtn.qml</file>
+        <file>TvnSearchStringBtn.qml</file>
     </qresource>
 </RCC>

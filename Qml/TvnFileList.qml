@@ -7,7 +7,7 @@ Item
 
     /***** Set this variables in cpp *****/
     property string fileCode: "127"
-    property string keepingPlace: "بایگانی - دایی"
+    property string keepingPlace: "بایگانی/دایی"
     property string status: "غیر فعال"
     property string ledgerBinder: "زونکن"
     property string numberOfCover: "3"
@@ -30,7 +30,13 @@ Item
     property string color_background_1: "#414858"
     property string color_background_2: "#576075"
 
-    Component.onCompleted: {addToList(); addToList();}
+    Component.onCompleted:
+    {
+        for(var i=0; i<10; i++)
+        {
+            addToList()
+        }
+    }
 
 //    //Cpp Signals
 //    signal readEmail(int idEmail)
@@ -39,14 +45,12 @@ Item
 //    signal clickEmail(int idEmail, int idItem)
 
 
-    width: 1247
-
     ListView
     {
         id: lv_file
 
         width: parent.width
-        anchors.left: parent.left
+        anchors.right: parent.right
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         model: ListModel{id: lm_file}
@@ -54,6 +58,7 @@ Item
 
         delegate: TvnFileElement
         {
+            anchors.right: parent.right
             colorBackground: elementColorBackground
             fileCode: elementFileCode
             keepingPlace: elementKeepingPlace
@@ -75,15 +80,16 @@ Item
             phoneNumber: elementPhoneNumber
             address: elementAddress
 
-//            onClickItem:
-//            {
-//                if( !emailOpened )
-//                {
-//                    emailOpened = true
-//                    readEmail(emailId)
-//                }
-//                clickEmail(emailId, caseNumber)
-//            }
+            onClickItem:
+            {
+                console.log("clieck item", ceoName)
+            }
+
+            onEditItem:
+            {
+                console.log("edit item", fileCode)
+
+            }
         }
 
         ScrollBar.vertical: scrollbar
@@ -93,8 +99,12 @@ Item
     {
         id: scrollbar
         anchors.left: parent.left
+        anchors.leftMargin: 10
         anchors.top: parent.top
         anchors.bottom: parent.bottom
+        anchors.bottomMargin: 100
+        policy: ScrollBar.AsNeeded
+
         background: Rectangle
         {
             width: 6
@@ -111,8 +121,6 @@ Item
             implicitHeight: 400
             color: "#646464"
         }
-
-        policy: ScrollBar.AsNeeded
     }
 
 
