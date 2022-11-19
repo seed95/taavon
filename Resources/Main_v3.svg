@@ -41,8 +41,8 @@
      inkscape:document-units="px"
      showgrid="false"
      inkscape:zoom="0.7071068"
-     inkscape:cx="469.51889"
-     inkscape:cy="316.07672"
+     inkscape:cx="598.21232"
+     inkscape:cy="366.98841"
      inkscape:window-width="1920"
      inkscape:window-height="991"
      inkscape:window-x="-9"
@@ -203,7 +203,7 @@
      inkscape:groupmode="layer"
      id="layer7"
      inkscape:label="Support"
-     style="display:inline">
+     style="display:none">
     <rect
        style="display:inline;opacity:1;fill:#00003b;fill-opacity:1;stroke:none;stroke-width:0.24161;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect5053"
