@@ -25,4 +25,6 @@ DISTFILES += \
     Qml/TvnLabel.qml \
     Qml/TvnFileList.qml \
     Qml/TvnComboBox.qml \
-    Qml/TvnComboBoxItem.qml
+    Qml/TvnComboBoxItem.qml \
+    Qml/TvnHeader.qml \
+    Qml/TvnHeaderLabel.qml

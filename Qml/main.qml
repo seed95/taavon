@@ -80,13 +80,20 @@ Window
         id: constant
     }
 
-    TvnSearch
+//    TvnSearch
+//    {
+//        id: search
+//        anchors.right: parent.right
+//        anchors.rightMargin: 30
+//        anchors.top: parent.top
+//        anchors.topMargin: 30
+//    }
+
+    TvnHeader
     {
-        id: search
-        anchors.right: parent.right
-        anchors.rightMargin: 30
-        anchors.top: parent.top
-        anchors.topMargin: 30
+        id: header
+        x: 25
+        y: 82
     }
 
 //    TvnFileList
@@ -100,9 +107,20 @@ Window
     TvnButton
     {
         id: excel_output
-        width: 132
-        anchors.centerIn: parent
+        width: 135
+        x: 20
+        y: 750
         btnText: "خروجی اکسل"
+        btnIcon: "+"
+    }
+
+    TvnButton
+    {
+        id: register_new_file
+        width: 145
+        x: 170
+        y: 750
+        btnText: "ثبت پرونده جدید"
         btnIcon: "+"
     }
 

@@ -10,5 +10,7 @@
         <file>TvnFileList.qml</file>
         <file>TvnComboBox.qml</file>
         <file>TvnComboBoxItem.qml</file>
+        <file>TvnHeader.qml</file>
+        <file>TvnHeaderLabel.qml</file>
     </qresource>
 </RCC>

@@ -6,16 +6,17 @@ Item
     property string labelText: ""
     property int labelFontSize: 0
 
-    height: 45
+    height: 36
 
     Text
     {
-        anchors.centerIn: parent
+        id: file_code
         text: labelText
-        font.family: iranSansWebMedium.name
-        font.weight: Font.Medium
+        color: "#c5c74d"
+        anchors.centerIn: parent
+        font.family: iranSansWebBold.name
+        font.weight: Font.Bold
         font.pixelSize: labelFontSize
-        color: "#e8e9e3"
     }
 
 }
