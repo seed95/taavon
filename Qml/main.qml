@@ -106,6 +106,13 @@ Window
         anchors.bottom: excel_output.top
     }
 
+    TvnDetail
+    {
+        id: detail
+        x: 177.5
+        y: 192.5
+    }
+
     TvnButton
     {
         id: excel_output

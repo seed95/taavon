@@ -13,5 +13,7 @@
         <file>TvnHeaderLabel.qml</file>
         <file>TvnSearchNumberBtn.qml</file>
         <file>TvnSearchStringBtn.qml</file>
+        <file>TvnDetail.qml</file>
+        <file>TvnDetailLabel.qml</file>
     </qresource>
 </RCC>

@@ -28,4 +28,6 @@ DISTFILES += \
     Qml/TvnHeader.qml \
     Qml/TvnHeaderLabel.qml \
     Qml/TvnSearchNumberBtn.qml \
-    Qml/TvnSearchStringBtn.qml
+    Qml/TvnSearchStringBtn.qml \
+    Qml/TvnDetail.qml \
+    Qml/TvnDetailLabel.qml
