@@ -86,9 +86,21 @@ Rectangle {
 
         TvnDetailLabel
         {
+            id: file_name
+            width: 380
+            anchors.right: parent.right
+            anchors.top: parent.top
+            titleText: "اسم پرونده"
+            contentText: " و عمران زینبیه یزدل توسعه و عمران زینبیه یزدسس سی لس"
+            contentFontSize: 16
+            haveBorder: true
+        }
+
+        TvnDetailLabel
+        {
             id: registration_number
             width: 127
-            anchors.right: parent.right
+            anchors.right: file_name.left
             anchors.top: parent.top
             titleText: "شماره ثبت"
             contentText: "1059"
@@ -117,16 +129,6 @@ Rectangle {
             contentFontSize: 16
         }
 
-        TvnDetailLabel
-        {
-            id: file_name
-            width: 380
-            anchors.right: national_id.left
-            anchors.top: parent.top
-            titleText: "اسم پرونده"
-            contentText: "توسعه و عمران زینبیه یزدل"
-            contentFontSize: 16
-        }
     }
 
     Item
@@ -181,5 +183,13 @@ Rectangle {
             contentText: "1400"
             contentFontSize: 16
         }
+    }
+
+
+    TvnTable
+    {
+        anchors.right: parent.right
+        anchors.rightMargin: 40
+        anchors.top: row3.bottom
     }
 }

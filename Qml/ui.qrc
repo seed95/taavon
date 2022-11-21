@@ -15,5 +15,7 @@
         <file>TvnSearchStringBtn.qml</file>
         <file>TvnDetail.qml</file>
         <file>TvnDetailLabel.qml</file>
+        <file>TvnTable.qml</file>
+        <file>TvnTableItem.qml</file>
     </qresource>
 </RCC>

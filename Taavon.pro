@@ -30,4 +30,6 @@ DISTFILES += \
     Qml/TvnSearchNumberBtn.qml \
     Qml/TvnSearchStringBtn.qml \
     Qml/TvnDetail.qml \
-    Qml/TvnDetailLabel.qml
+    Qml/TvnDetailLabel.qml \
+    Qml/TvnTableItem.qml \
+    Qml/TvnTable.qml

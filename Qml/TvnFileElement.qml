@@ -25,6 +25,7 @@ Rectangle
     property string lastRegisteredCapital: ""
     property string yearOfDissolution: ""
     property string chairmanName: ""
+    property string viceName: ""
     property string secretaryName: ""
     property string phoneNumber: ""
     property string address: ""

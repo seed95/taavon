@@ -17,10 +17,6 @@ Item
     property color color_border_normal:         color_text_normal
     property color color_border_hovered:        color_text_hovered
 
-
-    property bool isHovered: false
-    property bool isActive: false
-
     height: 45
     width: title.contentWidth + rect_input.width + rect_input.anchors.rightMargin
 
