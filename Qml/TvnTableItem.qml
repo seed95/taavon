@@ -7,7 +7,8 @@ Item {
     property string positionText: ""
     property string nameText: ""
     property bool hasBottomLine: true
-    property bool selectable: true
+    property bool selectable: false
+    property bool readOnlyItem: true
 
     height: 35
     width: 300
@@ -51,15 +52,13 @@ Item {
         font.family: iranSansWeb.name
         font.pixelSize: 14
         selectByMouse: selectable
-        readOnly: true
+        readOnly: readOnlyItem
         clip: true
         background: Rectangle{color: "transparent"}
         color: colorText
         onAccepted: focus = false
-        Keys.onEscapePressed: focus = false
-
+        Keys.onEscapePressed: {focus = false;root.updateFocus()}
     }
-
 
     Rectangle
     {

@@ -37,15 +37,15 @@ Item
     {
         for(var i=0; i<10; i++)
         {
+            container.fileCode = i+1
             addToList()
         }
     }
 
-//    //Cpp Signals
-//    signal readEmail(int idEmail)
+    Keys.onEscapePressed: root.pageMode = constant.tvn_LIST_FILE
+    //Cpp Signals
 
-//    //Qml Signals
-//    signal clickEmail(int idEmail, int idItem)
+    //Qml Signals
 
 
     ListView
@@ -63,6 +63,7 @@ Item
         {
             anchors.right: parent.right
             colorBackground: elementColorBackground
+            index: elementIndex
             fileCode: elementFileCode
             keepingPlace: elementKeepingPlace
             status: elementStatus
@@ -88,35 +89,21 @@ Item
 
             onClickItem:
             {
-                root.fileCode = fileCode
-                root.fileStatus = status
-                root.keepingPlace = keepingPlace
-                root.ledgerBinder = ledgerBinder
-                root.numberOfCover = numberOfCover
-                root.fileName = fileName
-                root.registrationNumber = registrationNumber
-                root.dateOfRegistration = dateOfRegistration
-                root.nationalId = nationalId
-                root.dateOfLastMeeting = dateOfLastMeeting
-                root.numberOfPrimaryMembers = numberOfPrimaryMembers
-                root.numberOfCurrentMembers = numberOfCurrentMembers
-                root.valuePerShare = valuePerShare
-                root.startingCapital = startingCapital
-                root.currentCapital = currentCapital
-                root.phoneNumber = phoneNumber
-                root.mobileNumber = mobileNumber
-                root.officeAddress = address
-                root.ceoName = ceoName
-                root.chairmanName = chairmanName
-                root.viceName = viceName
-                root.secretaryName = secretaryName
-                root.viewFile()
+                if (root.pageMode===constant.tvn_LIST_FILE)
+                {
+                    handleClickItem(index)
+                    root.pageMode = constant.tvn_VIEW_FILE
+                }
+
             }
 
             onEditItem:
             {
-                root.editFile()
-
+                if (root.pageMode===constant.tvn_LIST_FILE)
+                {
+                    handleClickItem(index)
+                    root.pageMode = constant.tvn_EDIT_FILE
+                }
             }
         }
 
@@ -161,6 +148,7 @@ Item
         }
 
         lm_file.append({"elementColorBackground": color_background,
+                        "elementIndex" : lm_file.count,
                         "elementFileCode" : container.fileCode,
                         "elementKeepingPlace" : container.keepingPlace,
                         "elementStatus" : container.status,
@@ -185,5 +173,31 @@ Item
                         "elementAddress" : container.address})
     }
 
+    function handleClickItem(index)
+    {
+        var item = lm_file.get(index)
+        root.fileCode = item.elementFileCode
+        root.fileStatus = item.elementStatus
+        root.keepingPlace = item.elementKeepingPlace
+        root.ledgerBinder = item.elementLedgerBinder
+        root.numberOfCover = item.elementNumberOfCover
+        root.fileName = item.elementFileName
+        root.registrationNumber = item.elementRegistrationNumber
+        root.dateOfRegistration = item.elementDateOfRegistration
+        root.nationalId = item.elementNationalId
+        root.dateOfLastMeeting = item.elementDateOfLastMeeting
+        root.numberOfPrimaryMembers = item.elementNumberOfPrimaryMembers
+        root.numberOfCurrentMembers = item.elementNumberOfCurrentMembers
+        root.valuePerShare = item.elementValuePerShare
+        root.startingCapital = item.elementStartingCapital
+        root.currentCapital = item.elementCurrentCapital
+        root.phoneNumber = item.elementPhoneNumber
+        root.mobileNumber = item.elementMobileNumber
+        root.officeAddress = item.elementAddress
+        root.ceoName = item.elementCeoName
+        root.chairmanName = item.elementChairmanName
+        root.viceName = item.elementViceName
+        root.secretaryName = item.elementSecretaryName
+    }
 
 }

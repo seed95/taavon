@@ -14,10 +14,10 @@ Item
     property int hhm_TABLE_VIEW_INBOX_MODE:     2
     property int hhm_TABLE_VIEW_OUTBOX_MODE:    3
 
-    property int hhm_MESSAGE_MODE:      0
-    property int hhm_DOCUMENT_MODE:     1
-    property int hhm_PROFILE_MODE:      2
-    property int hhm_ADMINPANEL_MODE:   3
+    property int tvn_LIST_FILE:     0
+    property int tvn_NEW_FILE:      1
+    property int tvn_EDIT_FILE:     2
+    property int tvn_VIEW_FILE:     3
 
     property int hhm_MTIT_DEFAULT:      0//Message TextInput Type
     property int hhm_MTIT_USERNAME:     1//Message TextInput Type

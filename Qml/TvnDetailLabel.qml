@@ -8,6 +8,7 @@ Item {
     property string parenthesesText: ""
     property int contentFontSize: 19
     property bool contentReadOnly: true
+    property bool contentEnable: true // used for file code to show disable
     property bool haveBackground: false
     property bool haveBorder: !contentReadOnly
     property int inputWidth: 0
@@ -56,7 +57,11 @@ Item {
         {
             if (haveBorder)
             {
-                if (content.focus)
+                if (!contentEnable)
+                {
+                    "#80807f"
+                }
+                else if (content.focus)
                 {
                     "#fafbf9"
                 }
@@ -74,7 +79,11 @@ Item {
         {
             if (haveBackground)
             {
-                if (content.focus)
+                if (!contentEnable)
+                {
+                    "#3b4351"
+                }
+                else if (content.focus)
                 {
                     "#576075"
                 }
@@ -121,10 +130,24 @@ Item {
             readOnly: contentReadOnly
             clip: true
             background: Rectangle{color: "transparent"}
-            color: "#e8e9e2"
-            onAccepted: focus = false
-            Keys.onEscapePressed: focus = false
+            color:
+            {
+                if (!contentEnable)
+                {
+                    "#b3b3b2"
+                }
+                else if (content.focus)
+                {
+                    "#fafbf9"
+                }
+                else
+                {
+                    "#e8e9e3"
+                }
 
+            }
+            onAccepted: focus = false
+            Keys.onEscapePressed: {focus = false;root.updateFocus()}
         }
     }
 

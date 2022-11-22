@@ -17,6 +17,8 @@ Rectangle
 
     property bool isHovered:    false
 
+    signal clickButton()
+
     height: 35
     radius: 5
     border.width: 1
@@ -53,7 +55,6 @@ Rectangle
 
     }
 
-
     MouseArea
     {
         anchors.fill: parent
@@ -62,6 +63,7 @@ Rectangle
 
         onEntered: isHovered = true
         onExited: isHovered = false
+        onClicked: clickButton()
     }
 
 }

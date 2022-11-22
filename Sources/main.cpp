@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
     app.setOrganizationName("SEED");
     app.setOrganizationDomain("seed.com");
-    app.setApplicationName("Cooperative Files Management");
+//    app.setApplicationName("Cooperative Files Management");
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));

@@ -10,7 +10,7 @@ Rectangle
     property string displayText: ""
 
 
-    property color color_background_normal: "#3b4351"
+    property color color_background_normal: "#2b313b"
     property color color_background_hovered: "#576075"
 
     property color color_text_normal: "#e8e9e3"

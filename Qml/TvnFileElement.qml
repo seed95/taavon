@@ -7,6 +7,7 @@ Rectangle
     /***** Set this variables in qml *****/
     // Show this variable in element
     property string colorBackground: ""
+    property int index: 0
     property string fileCode: ""
     property string keepingPlace: ""
     property string status: ""
@@ -46,27 +47,27 @@ Rectangle
         anchors.right: parent.right
         anchors.top: parent.top
         labelText: fileCode
-        labelFontSize: 22
+        labelFontSize: 24
     }
 
     TvnLabel
     {
         id: label_keeping_place
-        width: 118
+        width: 100
         anchors.right: label_file_code.left
         anchors.top: parent.top
         labelText: keepingPlace
-        labelFontSize: 16
+        labelFontSize: 18
     }
 
     TvnLabel
     {
         id: label_status
-        width: 82
+        width: 95
         anchors.right: label_keeping_place.left
         anchors.top: parent.top
         labelText: status
-        labelFontSize: 12
+        labelFontSize: 17
     }
 
     TvnLabel
@@ -76,7 +77,7 @@ Rectangle
         anchors.right: label_status.left
         anchors.top: parent.top
         labelText: ledgerBinder
-        labelFontSize: 16
+        labelFontSize: 17
     }
 
     TvnLabel
@@ -86,7 +87,7 @@ Rectangle
         anchors.right: ledger_binder.left
         anchors.top: parent.top
         labelText: numberOfCover
-        labelFontSize: 22
+        labelFontSize: 24
     }
 
     TvnLabel
@@ -96,7 +97,7 @@ Rectangle
         anchors.right: number_of_cover.left
         anchors.top: parent.top
         labelText: fileName
-        labelFontSize: 14
+        labelFontSize: 16
     }
 
     TvnLabel
@@ -106,7 +107,7 @@ Rectangle
         anchors.right: file_name.left
         anchors.top: parent.top
         labelText: registrationNumber
-        labelFontSize: 22
+        labelFontSize: 24
     }
 
     TvnLabel
@@ -116,7 +117,7 @@ Rectangle
         anchors.right: registration_number.left
         anchors.top: parent.top
         labelText: dateOfLastMeeting
-        labelFontSize: 16
+        labelFontSize: 19
     }
 
     TvnLabel
@@ -126,7 +127,7 @@ Rectangle
         anchors.right: date_of_last_meeting .left
         anchors.top: parent.top
         labelText: nationalId
-        labelFontSize: 16
+        labelFontSize: 20
     }
 
     TvnLabel
@@ -136,7 +137,7 @@ Rectangle
         anchors.right: national_id.left
         anchors.top: parent.top
         labelText: ceoName
-        labelFontSize: 14
+        labelFontSize: 16
     }
 
     TvnLabel
@@ -176,6 +177,7 @@ Rectangle
         anchors.left: edit.right
         height: parent.height
         anchors.top: parent.top
+        onClicked: file_list.forceActiveFocus()
         onDoubleClicked: clickItem()
     }
 

@@ -11,7 +11,6 @@ Window
     property string error_text:         ""
     property int    error_duration:     100
 
-
     /***** Set this variables in qml *****/
     // Variables that show in edit or view page
     property string fileCode: ""
@@ -37,6 +36,9 @@ Window
     property string viceName: ""
     property string secretaryName: ""
 
+    // show edit/view/new/list file based on mode
+    property int pageMode: constant.tvn_LIST_FILE
+
 
     signal loginUser(string username, string pass)
     signal replyButtonClicked()
@@ -52,6 +54,9 @@ Window
     minimumWidth: width
     maximumWidth: width
     color: "#2f343f"
+    title: "مدیریت پرونده های تعاونی"
+
+    onFocusObjectChanged: console.log("focus", activeFocusItem)
 
     //Fonts:
     FontLoader
@@ -101,6 +106,15 @@ Window
 //        property alias mode: root.hhm_mode
 //    }
 
+    MouseArea
+    {
+        anchors.fill: parent
+        onClicked:
+        {
+            file_list.forceActiveFocus()
+        }
+    }
+
     //Main UI
     TvnConstants
     {
@@ -125,29 +139,28 @@ Window
     TvnFileList
     {
         id: file_list
-//        width: parent.width.
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.rightMargin: 25
-//        anchors.right: header.right
         anchors.top: header.bottom
         anchors.bottom: excel_output.top
+        focus: true
     }
 
     TvnViewFile
     {
         id: view
-        anchors.centerIn: parent
-        visible: false
+//        x: 177
+//        y: 192
+        visible: root.pageMode === constant.tvn_VIEW_FILE
     }
 
     TvnEditFile
     {
         id: edit
-        anchors.centerIn: parent
-        visible: false
-//        anchors.bottom: parent.bottom
-//        anchors.horizontalCenter: parent.horizontalCenter
+//        x: 177
+//        y: 192
+        visible: root.pageMode === constant.tvn_EDIT_FILE
     }
 
     TvnButton
@@ -159,6 +172,7 @@ Window
         btnText: "خروجی اکسل"
         btnIcon: "\uf56e"
         textWidth: 110
+        onClickButton: console.log("excel output")
     }
 
     TvnButton
@@ -170,45 +184,29 @@ Window
         btnText: "ثبت پرونده جدید"
         btnIcon: "+"
         textWidth: 128
+        onClickButton: console.log("new file")
     }
-
 
     //Functions
     /*** Call this functions from cpp ***/
-    function loginSuccessfully()
-    {
-        animateHideLogin.start()
-    }
-
-    //call this function when have a error and must be
-    //set properites `error_text`, `error_duration`.
-    function showMessage()
-    {
-        error_messae.showMessage(error_text, error_duration)
-    }
 
     /*** Call this function from qml ***/
-    function viewFile()
-    {
-        view.visible = true
-    }
-
-    function editFile()
-    {
-        edit.visible = true
-    }
-
-    function signOut()
-    {
-        login.visible = true
-        animateShowLogin.start()
-        page.signOut()
-    }
 
     /*** Utilities functions ***/
-    function isAdmin()
+    function updateFocus()
     {
-        return root.username.toLowerCase()==="admin"
+        if (root.pageMode === constant.tvn_VIEW_FILE)
+        {
+            view.forceFocus()
+        }
+        else if (root.pageMode === constant.tvn_EDIT_FILE)
+        {
+            edit.forceFocus()
+        }
+        else
+        {
+            file_list.forceActiveFocus()
+        }
     }
 
     //Slice string from 0 with amount len

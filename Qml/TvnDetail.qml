@@ -6,8 +6,7 @@ Item
 
     property bool readOnly: false
     property bool containBackground: false
-    property bool fileCodeReadOnly: false
-
+    property bool fileCodeEnable: false
 
     width: 887
     height: 325
@@ -21,6 +20,7 @@ Item
         anchors.top: parent.top
         z: 1
 
+        // TODO check input only number
         TvnDetailLabel
         {
             id: file_code
@@ -28,23 +28,40 @@ Item
             anchors.right: parent.right
             anchors.top: parent.top
             titleText: "کد پرونده"
-            contentText: fileCode
-            contentReadOnly: readOnly
+            contentText: root.fileCode
+            contentReadOnly: true
             haveBackground: containBackground
+            haveBorder: !readOnly
+            alignCenter: !readOnly
+            contentEnable: fileCodeEnable
             inputWidth: 65
         }
 
-
-        TvnComboBox
+        TvnDetailLabel
         {
             id: status
             width: 193
             anchors.right: file_code.left
+            anchors.top: parent.top
+            titleText: "وضعیت"
+            contentText: root.fileStatus
+            inputWidth: 120
+            visible: readOnly
+        }
+
+        TvnComboBox
+        {
+            id: combo_status
+            width: 193
+            anchors.right: file_code.left
             anchors.verticalCenter: parent.verticalCenter
             titleText: "وضعیت"
-            headerText: fileStatus
-            comboWidth: 130
+            headerText: root.fileStatus
+            comboWidth: 120
             textItems: ["منحل", "غیر فعال","فعال","در دست اجرا"]
+            singleChoice: true
+            visible: !readOnly
+            onChangeSelected: root.fileStatus = selectedItemText
         }
 
         TvnDetailLabel
@@ -54,23 +71,40 @@ Item
             anchors.right: status.left
             anchors.top: parent.top
             titleText: "محل نگهداری"
-            contentText: "بایگانی/دایی"
+            contentText: root.keepingPlace
             inputWidth: 120
+            visible: readOnly
+        }
+
+        TvnComboBox
+        {
+            id: combo_keeping_place
+            width: 247
+            anchors.right: status.left
+            anchors.verticalCenter: parent.verticalCenter
+            titleText: "محل نگهداری"
+            headerText: root.keepingPlace
+            comboWidth: 145
+            textItems: ["بایگانی/دایی", "نیست","دایی","بایگانی"]
+            singleChoice: true
+            visible: !readOnly
+            onChangeSelected: root.fileStatus = selectedItemText
         }
 
         TvnDetailLabel
         {
             id: ledger_binder
             width: 140
-            anchors.right: keeping_place.left
+            anchors.right: readOnly? keeping_place.left : combo_keeping_place.left
             anchors.top: parent.top
             titleText: "کد فایل"
-            contentText: ledgerBinder
+            contentText: root.ledgerBinder
             contentReadOnly: readOnly
             haveBackground: containBackground
             inputWidth: 65
         }
 
+        // TODO check input only number
         TvnDetailLabel
         {
             id: number_of_cover
@@ -78,7 +112,7 @@ Item
             anchors.right: ledger_binder.left
             anchors.top: parent.top
             titleText: "تعداد جلد"
-            contentText: numberOfCover
+            contentText: root.numberOfCover
             contentReadOnly: readOnly
             haveBackground: containBackground
             inputWidth: 35
@@ -101,7 +135,7 @@ Item
             anchors.right: parent.right
             anchors.top: parent.top
             titleText: "اسم پرونده"
-            contentText: fileName
+            contentText: root.fileName
             haveBorder: true
             contentReadOnly: readOnly
             haveBackground: containBackground
@@ -109,6 +143,7 @@ Item
             inputWidth: 285
         }
 
+        // TODO check input only number
         TvnDetailLabel
         {
             id: registration_number
@@ -116,7 +151,7 @@ Item
             anchors.right: file_name.left
             anchors.top: parent.top
             titleText: "شماره ثبت"
-            contentText: registrationNumber
+            contentText: root.registrationNumber
             contentFontSize: 17
             contentReadOnly: readOnly
             haveBackground: containBackground
@@ -130,13 +165,14 @@ Item
             anchors.right: registration_number.left
             anchors.top: parent.top
             titleText: "تاریخ ثبت"
-            contentText: dateOfRegistration
+            contentText: root.dateOfRegistration
             contentFontSize: 17
             contentReadOnly: readOnly
             haveBackground: containBackground
             inputWidth: 105
         }
 
+        // TODO check input only number
         TvnDetailLabel
         {
             id: national_id
@@ -144,7 +180,7 @@ Item
             anchors.right: date_of_registration.left
             anchors.top: parent.top
             titleText: "شناسه ملی"
-            contentText: nationalId
+            contentText: root.nationalId
             contentFontSize: 17
             contentReadOnly: readOnly
             haveBackground: containBackground
@@ -168,7 +204,7 @@ Item
             anchors.right: parent.right
             anchors.top: parent.top
             titleText: "تاریخ آخرین مجمع"
-            contentText: dateOfLastMeeting
+            contentText: root.dateOfLastMeeting
             contentReadOnly: readOnly
             haveBackground: containBackground
             inputWidth: 115
@@ -183,6 +219,7 @@ Item
         anchors.right: parent.right
         anchors.top: row3.bottom
 
+        // TODO check input only number
         TvnDetailLabel
         {
             id: number_of_primary_members
@@ -191,12 +228,13 @@ Item
             anchors.rightMargin: 321
             anchors.top: parent.top
             titleText: "تعداد اعضاء اولیه"
-            contentText: numberOfPrimaryMembers
+            contentText: root.numberOfPrimaryMembers
             contentReadOnly: readOnly
             haveBackground: containBackground
             inputWidth: 35
         }
 
+        // TODO check input only number
         TvnDetailLabel
         {
             id: number_of_current_members
@@ -204,12 +242,13 @@ Item
             anchors.right: number_of_primary_members.left
             anchors.top: parent.top
             titleText: "تعداد اعضاء فعلی"
-            contentText: numberOfCurrentMembers
+            contentText: root.numberOfCurrentMembers
             contentReadOnly: readOnly
             haveBackground: containBackground
             inputWidth: 35
         }
 
+        // TODO check input only number and show with ,
         TvnDetailLabel
         {
             id: value_per_share
@@ -218,7 +257,7 @@ Item
             anchors.top: parent.top
             titleText: "ارزش هر سهم"
             parenthesesText: "ریال"
-            contentText: valuePerShare
+            contentText: root.valuePerShare
             contentReadOnly: readOnly
             haveBackground: containBackground
             inputWidth: 107
@@ -233,6 +272,7 @@ Item
         anchors.right: parent.right
         anchors.top: row4.bottom
 
+        // TODO check input only number and show with ,
         TvnDetailLabel
         {
             id: starting_capital
@@ -242,13 +282,14 @@ Item
             anchors.top: parent.top
             titleText: "سرمایه اولیه"
             parenthesesText: "ریال"
-            contentText: startingCapital
+            contentText: root.startingCapital
             contentReadOnly: readOnly
             haveBackground: containBackground
             alignCenter: false
             inputWidth: 138
         }
 
+        // TODO check input only number and show with ,
         TvnDetailLabel
         {
             id: current_capital
@@ -258,7 +299,7 @@ Item
             anchors.top: parent.top
             titleText: "سرمایه فعلی"
             parenthesesText: "ریال"
-            contentText: currentCapital
+            contentText: root.currentCapital
             contentReadOnly: readOnly
             haveBackground: containBackground
             alignCenter: false
@@ -274,6 +315,7 @@ Item
         anchors.right: parent.right
         anchors.top: row5.bottom
 
+        // TODO check input only number
         TvnDetailLabel
         {
             id: phone_number
@@ -282,20 +324,21 @@ Item
             anchors.rightMargin: 321
             anchors.top: parent.top
             titleText: "شماره تلفن ثابت"
-            contentText: phoneNumber
+            contentText: root.phoneNumber
             contentReadOnly: readOnly
             haveBackground: containBackground
             inputWidth: 144
         }
 
+        // TODO check input only number
         TvnDetailLabel
         {
             id: mobile_number
             width: 242
             anchors.right: phone_number.left
             anchors.top: parent.top
-            titleText: mobileNumber
-            contentText: "09123456789"
+            titleText: "شماره موبایل"
+            contentText: root.mobileNumber
             contentReadOnly: readOnly
             haveBackground: containBackground
             inputWidth: 144
@@ -318,7 +361,8 @@ Item
             anchors.rightMargin: 321
             anchors.top: parent.top
             titleText: "آدرس"
-            contentText: officeAddress
+            haveBorder: true
+            contentText: root.officeAddress
             contentReadOnly: readOnly
             haveBackground: containBackground
             contentFontSize: 15
@@ -329,12 +373,13 @@ Item
 
     TvnTable
     {
+        anchors.right: parent.right
+        anchors.top: row3.bottom
+        anchors.topMargin: 7
         ceoName: root.ceoName
         chairmanName: root.chairmanName
         viceName: root.viceName
         secretaryName: root.secretaryName
-        anchors.right: parent.right
-        anchors.top: row3.bottom
-        anchors.topMargin: 7
+        readOnlyTable: readOnly
     }
 }

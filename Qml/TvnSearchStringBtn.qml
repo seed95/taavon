@@ -28,9 +28,9 @@ Item
         color: "#c5c74d"
         anchors.right: parent.right
         anchors.verticalCenter: parent.verticalCenter
+        font.pixelSize: 16
         font.family: iranSansWebBold.name
-        font.pixelSize: 14
-        font.bold: true
+        font.weight: Font.Bold
     }
 
     Rectangle
@@ -39,7 +39,7 @@ Item
         width: inputWidth
         height: 35
         anchors.right: title.left
-        anchors.rightMargin: 5
+        anchors.rightMargin: 9
         anchors.verticalCenter: parent.verticalCenter
         radius: 5
         border.width: 1
@@ -63,13 +63,13 @@ Item
             color: focus? color_text_hovered: color_text_normal
             onFocusChanged:
             {
-                if( focus )
+                if (focus)
                 {
                     text = ""
                 }
             }
             onAccepted: focus = false
-            Keys.onEscapePressed: focus = false
+            Keys.onEscapePressed: {focus = false;root.updateFocus()}
 //            Keys.onEnterPressed:
 //            {
 //                dataEntered();

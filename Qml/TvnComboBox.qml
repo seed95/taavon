@@ -1,8 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.12
 
-
-
 Item
 {
     id: container
@@ -11,6 +9,7 @@ Item
     property string headerText: ""
     property int comboWidth: 0
     property var textItems: []
+    property bool singleChoice: false
 
     property color color_background_normal: "#3b4351"
     property color color_background_hovered: "#576075"
@@ -22,8 +21,11 @@ Item
     property color color_border_hovered: color_text_hovered
 
     property bool isHovered: false
+    property bool showList: false
     property int highlighedItemIndex: 0
     property var selectedItem: []
+
+    signal changeSelected(string selectedItemText)
 
     height: 35
 
@@ -35,10 +37,10 @@ Item
         text: titleText + ":"
         anchors.right: parent.right
         anchors.verticalCenter: parent.verticalCenter
+        color: "#c5c74d"
+        font.pixelSize: 16
         font.family: iranSansWebBold.name
         font.weight: Font.Bold
-        font.pixelSize: 14
-        color: "#c5c74d"
     }
 
     Item
@@ -100,9 +102,16 @@ Item
 
                 onClicked:
                 {
-                    header.text = getSelectedItemText()
-                    lv_combo.visible = !lv_combo.visible
+                    if (container.focus)
+                    {
+                        root.updateFocus()
+                    }
+                    else
+                    {
+                        container.forceActiveFocus()
+                    }
                 }
+
             }
 
         }
@@ -117,36 +126,62 @@ Item
             model: ListModel{id: lm_combo}
             clip: true
             interactive: false
-            visible: false
+            visible: container.focus
+            onVisibleChanged:
+            {
+                if (visible)
+                {
+                    selectHeaderItem()
+                }
+            }
 
             delegate: TvnComboBoxItem
             {
                 displayText: itemText
                 index: itemIndex
                 isHovered: index === container.highlighedItemIndex
-                isChecked: itemSelected
+                isChecked: isSelected
 
                 MouseArea
                 {
                     anchors.fill: parent
                     hoverEnabled: true
                     onEntered: container.highlighedItemIndex = index
-                    onClicked:
-                    {
-                        isChecked = !isChecked
-                        if (isChecked)
-                        {
-                            selectedItem.push(index)
-                        }
-                        else
-                        {
-                            removeIndex(index)
-                        }
-                    }
+                    onClicked: handleClickItem(index)
                 }
             }
         }
 
+    }
+
+    function handleClickItem(index)
+    {
+        var item = lm_combo.get(index)
+        if ( container.singleChoice )
+        {
+            if ( item.isSelected )
+            {
+                return
+            }
+            deselectAllItem()
+            item.isSelected = true
+            selectedItem = []
+            selectedItem.push(index)
+        }
+        else
+        {
+            item.isSelected = !item.isSelected
+            if (item.isSelected)
+            {
+                selectedItem.push(index)
+            }
+            else
+            {
+                removeIndex(index)
+            }
+        }
+
+        changeSelected(getSelectedItemText())
     }
 
     function removeIndex(index)
@@ -155,7 +190,8 @@ Item
         {
             if (selectedItem[i] === index)
             {
-                selectedItem.pop(i)
+                selectedItem.splice(i, 1)
+                return
             }
         }
     }
@@ -174,28 +210,42 @@ Item
                 txt += " - " + lm_combo.get(selectedItem[i]).itemText
             }
         }
-        console.log(txt)
         return txt
     }
 
-
-    function addToList()
+    function deselectAllItem()
     {
-        var itemSelected = false
-        for (var i=0; i<textItems.length; i++)
+        for (var i=0; i<lm_combo.count; i++)
         {
-            if (textItems[i] === headerText)
+            lm_combo.get(i).isSelected = false
+        }
+    }
+
+    function selectHeaderItem()
+    {
+        for (var i=0; i<lm_combo.count; i++)
+        {
+            if (lm_combo.get(i).itemText === headerText)
             {
-                itemSelected = true
+                lm_combo.get(i).isSelected = true
+                // TODO fix this segment
+                selectedItem = []
+                selectedItem.push(i)
             }
             else
             {
-                itemSelected = false
+                lm_combo.get(i).isSelected = false
             }
+        }
+    }
 
+    function addToList()
+    {
+        for (var i=0; i<textItems.length; i++)
+        {
             lm_combo.append({"itemText": textItems[i],
                              "itemIndex":i,
-                            "itemSelected": itemSelected})
+                             "isSelected": false})
         }
     }
 

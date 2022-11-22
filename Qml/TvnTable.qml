@@ -8,6 +8,7 @@ Rectangle
     property string chairmanName: ""
     property string viceName: ""
     property string secretaryName: ""
+    property bool readOnlyTable: false
 
     border.color: "#e8e9e3"
     border.width: 1
@@ -24,7 +25,7 @@ Rectangle
         positionText: "سمت"
         nameText: "نام و نام خانوادگی"
         colorText: "#c5c74d"
-        selectable: false
+        readOnlyItem: true
     }
 
     TvnTableItem
@@ -34,6 +35,8 @@ Rectangle
         anchors.right: parent.right
         positionText: "مدیر عامل"
         nameText: ceoName
+        readOnlyItem: readOnlyTable
+        selectable: true
     }
 
     TvnTableItem
@@ -43,6 +46,8 @@ Rectangle
         anchors.right: parent.right
         positionText: "رئیس"
         nameText: chairmanName
+        readOnlyItem: readOnlyTable
+        selectable: true
     }
 
     TvnTableItem
@@ -52,6 +57,8 @@ Rectangle
         anchors.right: parent.right
         positionText: "نائب رئیس"
         nameText: viceName
+        readOnlyItem: readOnlyTable
+        selectable: true
     }
 
     TvnTableItem
@@ -61,7 +68,9 @@ Rectangle
         anchors.right: parent.right
         positionText: "منشی"
         nameText: secretaryName
+        readOnlyItem: readOnlyTable
         hasBottomLine: false
+        selectable: true
     }
 
 }

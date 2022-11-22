@@ -8,8 +8,8 @@ Rectangle {
 //    color: "#00003b"
 
 
-    property int normal_font_size: 14
-    property int small_font_size: 12
+    property int normal_font_size: 16
+    property int small_font_size: 14
 
     TvnHeaderLabel
     {
@@ -24,7 +24,7 @@ Rectangle {
     TvnHeaderLabel
     {
         id: keeping_place
-        width: 113
+        width: 100
         labelText: "محل نگهداری"
         labelFontSize: normal_font_size
         anchors.right: file_code.left
@@ -34,7 +34,7 @@ Rectangle {
     TvnHeaderLabel
     {
         id: status
-        width: 82
+        width: 95
         labelText: "وضعیت"
         labelFontSize: normal_font_size
         anchors.right: keeping_place.left

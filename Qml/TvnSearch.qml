@@ -20,7 +20,7 @@ Rectangle
     {
         id: file_name
         anchors.right: file_code.left
-        anchors.rightMargin: 20
+        anchors.rightMargin: 30
         anchors.verticalCenter: parent.verticalCenter
         titleText: "اسم پرونده"
         inputWidth: 280
@@ -46,6 +46,7 @@ Rectangle
         titleText: "وضعیت"
         comboWidth: 130
         textItems: ["منحل", "غیر فعال","فعال","در دست اجرا"]
+        onChangeSelected: headerText = selectedItemText
     }
 
     TvnComboBox
@@ -56,8 +57,9 @@ Rectangle
         anchors.rightMargin: 30
         anchors.verticalCenter: parent.verticalCenter
         titleText: "محل نگهداری"
-        comboWidth: 150
+        comboWidth: 160
         textItems: ["بایگانی/دایی", "نیست","دایی","بایگانی"]
+        onChangeSelected: headerText = selectedItemText
     }
 
 
