@@ -1,6 +1,13 @@
 import QtQuick 2.0
 
-Rectangle {
+Rectangle
+{
+
+    /***** Set this variables in qml *****/
+    property string ceoName: ""
+    property string chairmanName: ""
+    property string viceName: ""
+    property string secretaryName: ""
 
     border.color: "#e8e9e3"
     border.width: 1
@@ -26,7 +33,7 @@ Rectangle {
         anchors.top: title.bottom
         anchors.right: parent.right
         positionText: "مدیر عامل"
-        nameText: "سجاد داداشی آرانی"
+        nameText: ceoName
     }
 
     TvnTableItem
@@ -35,7 +42,7 @@ Rectangle {
         anchors.top: ceo.bottom
         anchors.right: parent.right
         positionText: "رئیس"
-        nameText: "سجاد داداشی آرانی و بیدگلی"
+        nameText: chairmanName
     }
 
     TvnTableItem
@@ -44,7 +51,7 @@ Rectangle {
         anchors.top: chairman.bottom
         anchors.right: parent.right
         positionText: "نائب رئیس"
-        nameText: "سجاد داداشی آرانی و بیدگلی سجاد داداشی آرانی و بیدگلی"
+        nameText: viceName
     }
 
     TvnTableItem
@@ -53,7 +60,7 @@ Rectangle {
         anchors.top: vice.bottom
         anchors.right: parent.right
         positionText: "منشی"
-        nameText: "سجاد داداشی آرانی و بیدگلی"
+        nameText: secretaryName
         hasBottomLine: false
     }
 

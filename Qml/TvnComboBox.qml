@@ -3,12 +3,14 @@ import QtQuick.Controls 2.12
 
 
 
-Rectangle
+Item
 {
     id: container
 
     property string titleText: ""
+    property string headerText: ""
     property int comboWidth: 0
+    property var textItems: []
 
     property color color_background_normal: "#3b4351"
     property color color_background_hovered: "#576075"
@@ -20,10 +22,10 @@ Rectangle
     property color color_border_hovered: color_text_hovered
 
     property bool isHovered: false
+    property int highlighedItemIndex: 0
+    property var selectedItem: []
 
-    height: 34
-    width: title.width + combo.width + 5
-    color: "transparent"
+    height: 35
 
     Component.onCompleted: {addToList()}
 
@@ -39,69 +41,53 @@ Rectangle
         color: "#c5c74d"
     }
 
-    Rectangle
+    Item
     {
         id: combo
         width: comboWidth
-        height: 1000
         anchors.right: title.left
         anchors.rightMargin: 5
         anchors.top: parent.top
-        color: "transparent"
 
         Rectangle
         {
             id: combo_header
             width: parent.width
-            height: 34
+            height: 35
             anchors.right: parent.right
             anchors.top: parent.top
-
             border.width: 1
-            border.color: isHovered? color_border_hovered:color_border_normal
+            border.color: isHovered? color_border_hovered : color_border_normal
             radius: 5
-            color: isHovered? color_background_hovered:color_background_normal
+            color: isHovered? color_background_hovered : color_background_normal
 
-            Rectangle
+            Text
             {
-                id: rect_caret
-                width: 20
-                height: parent.height
+                id: caret
                 anchors.right: parent.right
-                color: "transparent"
-
-                Text
-                {
-                    id: caret
-                    anchors.centerIn: parent
-                    text: "+"
-                    font.family: fontAwesomeSolid.name
-                    font.pixelSize: 12
-                    color: isHovered? color_text_normal:color_text_normal
-                }
+                anchors.rightMargin: 10
+                anchors.verticalCenter: parent.verticalCenter
+                text: "\uf0d7"
+                font.family: fontAwesomeSolid.name
+                font.weight: Font.Medium
+                font.pixelSize: 16
+                color: isHovered? "#97989b" : "#7f8185"
             }
 
-            Rectangle
+            Text
             {
-                height: parent.height
-                anchors.right: rect_caret.left
+                id: header
+                anchors.right: caret.left
+                anchors.rightMargin: 5
                 anchors.left: parent.left
                 anchors.leftMargin: 5
-                color: "transparent"
-
-                Text
-                {
-                    id: hedear_text
-                    anchors.centerIn: parent
-                    text: "در دست اقدام"
-                    font.family: iranSansWeb.name
-                    font.pixelSize: 14
-                    color: isHovered? color_text_normal:color_text_normal
-                    elide: Text.ElideLeft
-                }
-
+                anchors.verticalCenter: parent.verticalCenter
+                text: headerText
+                font.family: iranSansWeb.name
+                font.pixelSize: 17
+                color: isHovered? color_text_normal : color_text_normal
+                elide: Text.ElideRight
             }
-
 
             MouseArea
             {
@@ -112,7 +98,11 @@ Rectangle
                 onEntered: isHovered = true
                 onExited: isHovered = false
 
-                onClicked: lv_combo.visible = !lv_combo.visible
+                onClicked:
+                {
+                    header.text = getSelectedItemText()
+                    lv_combo.visible = !lv_combo.visible
+                }
             }
 
         }
@@ -120,57 +110,93 @@ Rectangle
         ListView
         {
             id: lv_combo
-            height: contentHeight
+            height: 1000
             width: parent.width
             anchors.left: parent.left
-//            anchors.right: parent.right
             anchors.top: combo_header.bottom
-            anchors.topMargin: -1
-            visible: false
-    //        anchors.bottom: parent.bottom
-    //        implicitHeight: contentHeight
-    //        model: control.popup.visible ? control.delegateModel : null
-    //        currentIndex: control.highlightedIndex
+            model: ListModel{id: lm_combo}
             clip: true
             interactive: false
+            visible: false
 
-            model: ListModel{id: lm_combo}
             delegate: TvnComboBoxItem
             {
-                width: lv_combo.width
                 displayText: itemText
                 index: itemIndex
+                isHovered: index === container.highlighedItemIndex
+                isChecked: itemSelected
 
                 MouseArea
                 {
                     anchors.fill: parent
                     hoverEnabled: true
-                    onEntered: {console.log(lv_combo.currentIndex);lv_combo.currentIndex = index}
+                    onEntered: container.highlighedItemIndex = index
+                    onClicked:
+                    {
+                        isChecked = !isChecked
+                        if (isChecked)
+                        {
+                            selectedItem.push(index)
+                        }
+                        else
+                        {
+                            removeIndex(index)
+                        }
+                    }
                 }
             }
-
-            onCountChanged: {
-               lv_combo.currentIndex = -1
-            }
-
-
-            highlight: Rectangle{width: lv_combo.width; height: 35;color: "#576075"}
-            highlightFollowsCurrentItem: false
-
-//            ScrollIndicator.vertical: ScrollIndicator { }
         }
-
-
 
     }
 
+    function removeIndex(index)
+    {
+        for (var i=0; i<selectedItem.length; i++)
+        {
+            if (selectedItem[i] === index)
+            {
+                selectedItem.pop(i)
+            }
+        }
+    }
+
+    function getSelectedItemText()
+    {
+        var txt = ""
+        for (var i=0; i<selectedItem.length; i++)
+        {
+            if ( i==0 )
+            {
+                txt = lm_combo.get(selectedItem[i]).itemText
+            }
+            else
+            {
+                txt += " - " + lm_combo.get(selectedItem[i]).itemText
+            }
+        }
+        console.log(txt)
+        return txt
+    }
 
 
-    function addToList() {
-        lm_combo.append({"itemText": "در دست اقدام", "itemIndex":0})
-        lm_combo.append({"itemText": "فعال", "itemIndex":1})
-        lm_combo.append({"itemText": "غیر فعال", "itemIndex":2})
-        lm_combo.append({"itemText": "منحل", "itemIndex":3})
+    function addToList()
+    {
+        var itemSelected = false
+        for (var i=0; i<textItems.length; i++)
+        {
+            if (textItems[i] === headerText)
+            {
+                itemSelected = true
+            }
+            else
+            {
+                itemSelected = false
+            }
+
+            lm_combo.append({"itemText": textItems[i],
+                             "itemIndex":i,
+                            "itemSelected": itemSelected})
+        }
     }
 
 }

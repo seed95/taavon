@@ -17,5 +17,7 @@
         <file>TvnDetailLabel.qml</file>
         <file>TvnTable.qml</file>
         <file>TvnTableItem.qml</file>
+        <file>TvnViewFile.qml</file>
+        <file>TvnEditFile.qml</file>
     </qresource>
 </RCC>

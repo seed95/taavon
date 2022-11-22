@@ -5,7 +5,6 @@ Rectangle
     width: 1250
     height: 45
     color: "transparent"
-//    color: "#00003b"
 
     TvnSearchNumberBtn
     {
@@ -37,16 +36,29 @@ Rectangle
         inputWidth: 70
     }
 
-//    TvnComboBox
-//    {
-//        id: state
-////        width: 130
-//        height: 34
-//        anchors.left: parent.left
-//        anchors.leftMargin: 100
-//        anchors.verticalCenter: parent.verticalCenter
-//        titleText: "وضعیت"
-//        comboWidth: 100
-//    }
+    TvnComboBox
+    {
+        id: status
+        width: 193
+        anchors.right: registration_number.left
+        anchors.rightMargin: 32
+        anchors.verticalCenter: parent.verticalCenter
+        titleText: "وضعیت"
+        comboWidth: 130
+        textItems: ["منحل", "غیر فعال","فعال","در دست اجرا"]
+    }
+
+    TvnComboBox
+    {
+        id: ledger_binder
+        width: 247
+        anchors.right: status.left
+        anchors.rightMargin: 30
+        anchors.verticalCenter: parent.verticalCenter
+        titleText: "محل نگهداری"
+        comboWidth: 150
+        textItems: ["بایگانی/دایی", "نیست","دایی","بایگانی"]
+    }
+
 
 }

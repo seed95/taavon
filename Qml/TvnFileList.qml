@@ -18,10 +18,13 @@ Item
     property string ceoName: "محسن اکبری"
     property string mobileNumber: "09123456789"
     property string dateOfRegistration: "۱۳۹۵/۸/۱۶"
-    property string numberOfMembers: "7"
-    property string lastRegisteredCapital: "100230000"
-    property string yearOfDissolution: "1400"
+    property string numberOfPrimaryMembers: "7"
+    property string numberOfCurrentMembers: "7"
+    property string valuePerShare: "1000000"
+    property string startingCapital: "100000000"
+    property string currentCapital: "90000000"
     property string chairmanName: "محسن فرقانی نوش آبادی"
+    property string viceName: "محسن فرقانی نوش آبادی"
     property string secretaryName: "محسن فرقانی نوش آبادی"
     property string phoneNumber: "03154754744"
     property string address: "آران و بیدگل شهرک صنعتی هلال کارخانه مشهد نگین توس"
@@ -72,22 +75,47 @@ Item
             ceoName: elementCeoName
             mobileNumber: elementMobileNumber
             dateOfRegistration: elementDateOfRegistration
-            numberOfMembers: elementNumberOfMembers
-            lastRegisteredCapital: elementLastRegisteredCapital
-            yearOfDissolution: elementYearOfDissolution
+            numberOfPrimaryMembers: elementNumberOfPrimaryMembers
+            numberOfCurrentMembers: elementNumberOfCurrentMembers
+            valuePerShare: elementValuePerShare
+            startingCapital: elementStartingCapital
+            currentCapital: elementCurrentCapital
             chairmanName: elementChairmanName
+            viceName: elementViceName
             secretaryName: elementSecretaryName
             phoneNumber: elementPhoneNumber
             address: elementAddress
 
             onClickItem:
             {
-                console.log("clieck item", ceoName)
+                root.fileCode = fileCode
+                root.fileStatus = status
+                root.keepingPlace = keepingPlace
+                root.ledgerBinder = ledgerBinder
+                root.numberOfCover = numberOfCover
+                root.fileName = fileName
+                root.registrationNumber = registrationNumber
+                root.dateOfRegistration = dateOfRegistration
+                root.nationalId = nationalId
+                root.dateOfLastMeeting = dateOfLastMeeting
+                root.numberOfPrimaryMembers = numberOfPrimaryMembers
+                root.numberOfCurrentMembers = numberOfCurrentMembers
+                root.valuePerShare = valuePerShare
+                root.startingCapital = startingCapital
+                root.currentCapital = currentCapital
+                root.phoneNumber = phoneNumber
+                root.mobileNumber = mobileNumber
+                root.officeAddress = address
+                root.ceoName = ceoName
+                root.chairmanName = chairmanName
+                root.viceName = viceName
+                root.secretaryName = secretaryName
+                root.viewFile()
             }
 
             onEditItem:
             {
-                console.log("edit item", fileCode)
+                root.editFile()
 
             }
         }
@@ -145,10 +173,13 @@ Item
                         "elementCeoName" : container.ceoName,
                         "elementMobileNumber" : container.mobileNumber,
                         "elementDateOfRegistration" : container.dateOfRegistration,
-                        "elementNumberOfMembers" : container.numberOfMembers,
-                        "elementLastRegisteredCapital" : container.lastRegisteredCapital,
-                        "elementYearOfDissolution" : container.yearOfDissolution,
+                        "elementNumberOfPrimaryMembers" : container.numberOfPrimaryMembers,
+                        "elementNumberOfCurrentMembers" : container.numberOfCurrentMembers,
+                        "elementValuePerShare" : container.valuePerShare,
+                        "elementStartingCapital" : container.startingCapital,
+                        "elementCurrentCapital" : container.currentCapital,
                         "elementChairmanName" : container.chairmanName,
+                        "elementViceName" : container.chairmanName,
                         "elementSecretaryName" : container.secretaryName,
                         "elementPhoneNumber" : container.phoneNumber,
                         "elementAddress" : container.address})

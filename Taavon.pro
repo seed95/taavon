@@ -13,7 +13,8 @@ CONFIG += c++11
 SOURCES += Sources/main.cpp
 
 RESOURCES += Qml/ui.qrc \
-             Resources/fonts.qrc
+             Resources/fonts.qrc \
+    Qml/ui.qrc
 
 OTHER_FILES += Qml/*.qml
 
@@ -32,4 +33,23 @@ DISTFILES += \
     Qml/TvnDetail.qml \
     Qml/TvnDetailLabel.qml \
     Qml/TvnTableItem.qml \
-    Qml/TvnTable.qml
+    Qml/TvnTable.qml \
+    Qml/TvnViewFile.qml \
+    Qml/TvnTableItem.qml \
+    Qml/TvnTable.qml \
+    Qml/TvnSearchStringBtn.qml \
+    Qml/TvnSearchNumberBtn.qml \
+    Qml/TvnSearch.qml \
+    Qml/TvnLabel.qml \
+    Qml/TvnHeaderLabel.qml \
+    Qml/TvnHeader.qml \
+    Qml/TvnFileList.qml \
+    Qml/TvnFileElement.qml \
+    Qml/TvnEditFile.qml \
+    Qml/TvnDetailLabel.qml \
+    Qml/TvnDetail.qml \
+    Qml/TvnConstants.qml \
+    Qml/TvnComboBoxItem.qml \
+    Qml/TvnComboBox.qml \
+    Qml/TvnButton.qml \
+    Qml/main.qml

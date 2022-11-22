@@ -1,53 +1,70 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.0
 
-Rectangle {
-
+Rectangle
+{
 
     property int index: 0
+    property bool isHovered: false
+    property bool isChecked: false
     property string displayText: ""
 
 
     property color color_background_normal: "#3b4351"
     property color color_background_hovered: "#576075"
 
+    property color color_text_normal: "#e8e9e3"
+    property color color_text_hovered: "#fafbf9"
+
+    property color color_box_normal: color_text_normal
+    property color color_box_hovered: color_text_hovered
 
     height: 35
-//    color: color_background_normal
-    color: "transparent"
+    width: parent.width
+    color: isHovered? color_background_hovered : color_background_normal
 
     Rectangle
     {
         id: check_box
-        width: 10
-        height: parent.height
+        width: 12
+        height: 12
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: parent.right
         anchors.rightMargin: 5
-    }
-
-    Rectangle
-    {
-        height: parent.height
-        anchors.right: check_box.left
-        anchors.left: parent.left
-//        anchors.verticalCenter: parent.verticalCenter
-        anchors.top: parent.top
         color: "transparent"
+        border.width: 1
+        border.color: isHovered? color_box_hovered : color_box_normal
 
         Text
         {
+            id: checked
             anchors.centerIn: parent
-//            anchors.leftMargin: 10
-            text: displayText
-            font: iranSansWeb.name
-//            color: control.pressed ? "#fafbf9" : "#e8e9e3"
-//            horizontalAlignment: Text.AlignHCenter
-//            verticalAlignment: Text.AlignVCenter
-            elide: Text.ElideRight
+            text: "\uf00c"
+            font.family: fontAwesomeSolid.name
+            font.pixelSize: 12
+            color: isHovered? color_box_hovered : color_box_normal
+            visible: isChecked
         }
+
     }
 
+    Item
+    {
+        height: parent.height
+        anchors.right: check_box.left
+        anchors.rightMargin: 5
+        anchors.left: parent.left
+        anchors.leftMargin: 5
+        anchors.verticalCenter: parent.verticalCenter
 
+        Text
+        {
+            text: displayText
+            anchors.centerIn: parent
+            font.family: iranSansWeb.name
+            font.pixelSize: 17
+            color: isHovered? color_text_hovered : color_text_normal
+        }
+    }
 
 }

@@ -11,6 +11,33 @@ Window
     property string error_text:         ""
     property int    error_duration:     100
 
+
+    /***** Set this variables in qml *****/
+    // Variables that show in edit or view page
+    property string fileCode: ""
+    property string fileStatus: ""
+    property string keepingPlace: ""
+    property string ledgerBinder: ""
+    property string numberOfCover: ""
+    property string fileName: ""
+    property string registrationNumber: ""
+    property string dateOfRegistration: ""
+    property string nationalId: ""
+    property string dateOfLastMeeting: ""
+    property string numberOfPrimaryMembers: ""
+    property string numberOfCurrentMembers: ""
+    property string valuePerShare: ""
+    property string startingCapital: ""
+    property string currentCapital: ""
+    property string phoneNumber: ""
+    property string mobileNumber: ""
+    property string officeAddress: ""
+    property string ceoName: ""
+    property string chairmanName: ""
+    property string viceName: ""
+    property string secretaryName: ""
+
+
     signal loginUser(string username, string pass)
     signal replyButtonClicked()
     signal archiveButtonClicked()
@@ -85,6 +112,7 @@ Window
         id: search
         x: 25
         y: 14
+        z: 1
     }
 
     TvnHeader
@@ -106,11 +134,20 @@ Window
         anchors.bottom: excel_output.top
     }
 
-    TvnDetail
+    TvnViewFile
     {
-        id: detail
-        x: 177.5
-        y: 192.5
+        id: view
+        anchors.centerIn: parent
+        visible: false
+    }
+
+    TvnEditFile
+    {
+        id: edit
+        anchors.centerIn: parent
+        visible: false
+//        anchors.bottom: parent.bottom
+//        anchors.horizontalCenter: parent.horizontalCenter
     }
 
     TvnButton
@@ -120,7 +157,8 @@ Window
         x: 20
         y: 750
         btnText: "خروجی اکسل"
-        btnIcon: "+"
+        btnIcon: "\uf56e"
+        textWidth: 110
     }
 
     TvnButton
@@ -131,6 +169,7 @@ Window
         y: 750
         btnText: "ثبت پرونده جدید"
         btnIcon: "+"
+        textWidth: 128
     }
 
 
@@ -149,6 +188,16 @@ Window
     }
 
     /*** Call this function from qml ***/
+    function viewFile()
+    {
+        view.visible = true
+    }
+
+    function editFile()
+    {
+        edit.visible = true
+    }
+
     function signOut()
     {
         login.visible = true

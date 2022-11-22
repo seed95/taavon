@@ -5,6 +5,7 @@ Makefile.Release
 Build
 debug
 release
+Taavon
 
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------

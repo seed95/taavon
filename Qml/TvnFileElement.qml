@@ -21,9 +21,11 @@ Rectangle
 
     // Save this variable in element for used in detail
     property string dateOfRegistration: ""
-    property string numberOfMembers: ""
-    property string lastRegisteredCapital: ""
-    property string yearOfDissolution: ""
+    property string numberOfPrimaryMembers: ""
+    property string numberOfCurrentMembers: ""
+    property string valuePerShare: ""
+    property string startingCapital: ""
+    property string currentCapital: ""
     property string chairmanName: ""
     property string viceName: ""
     property string secretaryName: ""
@@ -153,10 +155,10 @@ Rectangle
         width: 38
         anchors.right: mobile_number.left
         anchors.top: parent.top
-        labelText: "+"
+        labelText: "\uf044"
         labelFontName: fontAwesomeSolid.name
         labelFontWeight: Font.Medium
-        labelFontSize: 16
+        labelFontSize: 15
         labelColor: "#0e0b0b"
 
         MouseArea
