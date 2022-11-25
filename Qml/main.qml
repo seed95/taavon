@@ -14,8 +14,8 @@ Window
     /***** Set this variables in qml *****/
     // Variables that show in edit or view page
     property string fileCode: ""
-    property string fileStatus: ""
     property string keepingPlace: ""
+    property string fileStatus: ""
     property string ledgerBinder: ""
     property string numberOfCover: ""
     property string fileName: ""
@@ -56,7 +56,7 @@ Window
     color: "#2f343f"
     title: "مدیریت پرونده های تعاونی"
 
-    onFocusObjectChanged: console.log("focus", activeFocusItem)
+//    onFocusObjectChanged: console.log("focus", activeFocusItem)
 
     //Fonts:
     FontLoader
@@ -145,6 +145,7 @@ Window
         anchors.top: header.bottom
         anchors.bottom: excel_output.top
         focus: true
+        objectName: "FileList"
     }
 
     TvnViewFile
@@ -190,7 +191,7 @@ Window
     //Functions
     /*** Call this functions from cpp ***/
 
-    /*** Call this function from qml ***/
+    /*** Call this functions from qml ***/
 
     /*** Utilities functions ***/
     function updateFocus()

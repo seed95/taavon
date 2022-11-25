@@ -10,7 +10,10 @@ QMLCACHE_DIR = Build/
 
 CONFIG += c++11
 
-SOURCES += Sources/main.cpp
+SOURCES += Sources/main.cpp \
+    Sources/tvn_csv.cpp \
+    Sources/tvn_utility.cpp \
+    Sources/tvn_config.cpp
 
 RESOURCES += Qml/ui.qrc \
              Resources/fonts.qrc \
@@ -53,3 +56,8 @@ DISTFILES += \
     Qml/TvnComboBox.qml \
     Qml/TvnButton.qml \
     Qml/main.qml
+
+HEADERS += \
+    Sources/tvn_csv.h \
+    Sources/tvn_utility.h \
+    Sources/tvn_config.h

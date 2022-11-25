@@ -29,18 +29,9 @@ Item
     property string phoneNumber: "03154754744"
     property string address: "آران و بیدگل شهرک صنعتی هلال کارخانه مشهد نگین توس"
 
-
     property string color_background_1: "#414858"
     property string color_background_2: "#576075"
 
-    Component.onCompleted:
-    {
-        for(var i=0; i<10; i++)
-        {
-            container.fileCode = i+1
-            addToList()
-        }
-    }
 
     Keys.onEscapePressed: root.pageMode = constant.tvn_LIST_FILE
     //Cpp Signals
@@ -139,6 +130,8 @@ Item
     }
 
 
+    //Functions
+    /*** Call this functions from cpp ***/
     function addToList()
     {
         var color_background = color_background_1
@@ -173,6 +166,7 @@ Item
                         "elementAddress" : container.address})
     }
 
+    /*** Call this functions from qml ***/
     function handleClickItem(index)
     {
         var item = lm_file.get(index)
