@@ -181,7 +181,7 @@ Rectangle
         anchors.left: edit.right
         height: parent.height
         anchors.top: parent.top
-        onClicked: file_list.forceActiveFocus()
+        onClicked: list_file.forceActiveFocus()
         onDoubleClicked: clickItem()
     }
 

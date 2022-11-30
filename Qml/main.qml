@@ -7,12 +7,9 @@ Window
 {
     id: root
 
-    //Error properties
-    property string error_text:         ""
-    property int    error_duration:     100
-
-    /***** Set this variables in qml *****/
+    /***** Set this variables in qml and read in cpp *****/
     // Variables that show in edit or view page
+    property int selectedFileIndex: 0
     property string fileCode: ""
     property string keepingPlace: ""
     property string fileStatus: ""
@@ -42,6 +39,10 @@ Window
 
     // show edit/view/new/list file based on mode
     property int pageMode: constant.tvn_LIST_FILE
+
+    /***** Set this variables in cpp *****/
+    //Error properties
+    property string errorMessage: "آپلود عکس با مشکل مواجه شد"
 
     // cpp signals
     signal updateImageInCsv()
@@ -112,7 +113,7 @@ Window
         anchors.fill: parent
         onClicked:
         {
-            file_list.forceActiveFocus()
+            list_file.forceActiveFocus()
         }
     }
 
@@ -139,7 +140,7 @@ Window
 
     TvnListFile
     {
-        id: file_list
+        id: list_file
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.rightMargin: 25
@@ -187,18 +188,33 @@ Window
         onClickButton: console.log("new file")
     }
 
+    TvnError
+    {
+        id: error
+        visible: root.errorMessage !== ""
+    }
+
     //Functions
     /*** Call this functions from cpp ***/
     function deleteSuccessfully(type)
     {
         updateHasImage(type, false)
-        // TODO update csv file, has image for type
     }
 
     function uploadSuccessfully(type)
     {
         updateHasImage(type, true)
-        // TODO update csv file, has image for type
+    }
+
+    function saveChangesSuccessfully()
+    {
+        root.pageMode = constant.tvn_LIST_FILE
+        list_file.updateFile()
+    }
+
+    function saveImageChangesSuccessfully()
+    {
+        list_file.updateImageFile()
     }
 
     /*** Call this functions from qml ***/
@@ -216,7 +232,7 @@ Window
         }
         else
         {
-            file_list.forceActiveFocus()
+            list_file.forceActiveFocus()
         }
     }
 

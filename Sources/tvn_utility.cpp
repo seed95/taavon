@@ -24,6 +24,11 @@ void TvnUtility::log(QString message)
     }
 }
 
+void TvnUtility::setError(QObject *ui, QString message)
+{
+    QQmlProperty::write(ui, "errorMessage", message);
+}
+
 QString TvnUtility::getFileCode(QObject *ui)
 {
     return getQmlProperty(ui, "fileCode");

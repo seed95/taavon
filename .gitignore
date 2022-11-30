@@ -9,6 +9,7 @@ Taavon
 *.log
 *.csv
 data
+backup
 
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------

@@ -22,5 +22,6 @@
         <file>TvnImageBtn.qml</file>
         <file>TvnDetailImage.qml</file>
         <file>TvnRoundBtn.qml</file>
+        <file>TvnError.qml</file>
     </qresource>
 </RCC>

@@ -182,6 +182,7 @@ Item
     function handleClickItem(index)
     {
         var item = lm_file.get(index)
+        root.selectedFileIndex = index
         root.fileCode = item.elementFileCode
         root.fileStatus = item.elementStatus
         root.keepingPlace = item.elementKeepingPlace
@@ -208,6 +209,42 @@ Item
         root.generalMeetingHasImage = item.elementGeneralMeetingImage
         root.licenceHasImage = item.elementLicenceImage
         root.registrationAdHasImage = item.elementRegistrationAdImage
+    }
+
+    function updateFile(index)
+    {
+        var item = lm_file.get(index)
+        item.elementFileCode = root.fileCode
+        item.elementStatus = root.fileStatus
+        item.elementKeepingPlace = root.keepingPlace
+        item.elementLedgerBinder = root.ledgerBinder
+        item.elementNumberOfCover = root.numberOfCover
+        item.elementFileName = root.fileName
+        item.elementRegistrationNumber = root.registrationNumber
+        item.elementDateOfRegistration = root.dateOfRegistration
+        item.elementNationalId = root.nationalId
+        item.elementDateOfLastMeeting = root.dateOfLastMeeting
+        item.elementNumberOfPrimaryMembers = root.numberOfPrimaryMembers
+        item.elementNumberOfCurrentMembers = root.numberOfCurrentMembers
+        item.elementValuePerShare = root.valuePerShare
+        item.elementStartingCapital = root.startingCapital
+        item.elementCurrentCapital = root.currentCapital
+        item.elementPhoneNumber = root.phoneNumber
+        item.elementMobileNumber = root.mobileNumber
+        item.elementAddress = root.officeAddress
+        item.elementCeoName = root.ceoName
+        item.elementChairmanName = root.chairmanName
+        item.elementViceName = root.viceName
+        item.elementSecretaryName = root.secretaryName
+    }
+
+    function updateImageFile(index)
+    {
+        var item = lm_file.get(index)
+        item.elementExtraordinaryMeetingImage = root.extraordinaryMeetingHasImage
+        item.elementGeneralMeetingImage = root.generalMeetingHasImage
+        item.elementLicenceImage = root.licenceHasImage
+        item.elementRegistrationAdImage = root.registrationAdHasImage
     }
 
 }

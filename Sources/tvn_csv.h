@@ -33,6 +33,10 @@
 
 #define HEADER_INDEX_TOTAL_NUMBER 26
 
+#define ERROR_MESSAGE_SAVE_CHANGES          "امکان ذخیره تغییرات وجود ندارد"
+#define ERROR_MESSAGE_SAVE_IMAGE_CHANGES    "امکان ذخیره تغییرات وجود ندارد"
+
+
 class TvnCsv : public QObject
 {
     Q_OBJECT

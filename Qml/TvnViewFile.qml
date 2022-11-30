@@ -39,7 +39,7 @@ ApplicationWindow
 
         Keys.onEscapePressed:
         {
-            file_list.forceActiveFocus()
+            list_file.forceActiveFocus()
             root.pageMode = constant.tvn_LIST_FILE
         }
 

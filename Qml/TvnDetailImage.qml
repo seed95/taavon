@@ -84,12 +84,10 @@ Item {
         {
             if (hasImage)
             {
-                // TODO update root.image path because deleted
                 deleteImage(type)
             }
             else
             {
-                // TODO update root.image path because added
                 uploadImage(type)
             }
         }

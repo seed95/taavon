@@ -25,7 +25,7 @@ void TvnCsv::LoadCsv()
     QFile file(conf.csvFilePath);
     if (!file.open(QIODevice::ReadOnly)) {
         TvnUtility::log(QString("load csv file error (%1)").arg(file.errorString()));
-        //TODO handle error and show in ui
+        TvnUtility::setError(root, "امکان باز کردن فایل csv وجود ندارد.");
         return;
     }
 
@@ -77,12 +77,11 @@ void TvnCsv::LoadCsv()
 
 void TvnCsv::SaveChanges()
 {
-    qDebug() << "save changes";
     QFile file(conf.csvFilePath);
     if (!file.open(QIODevice::ReadOnly))
     {
         TvnUtility::log(QString("SaveChanges:: read csv file error (%1)").arg(file.errorString()));
-        //TODO handle error and show in ui
+        TvnUtility::setError(root, ERROR_MESSAGE_SAVE_CHANGES);
         return;
     }
 
@@ -90,7 +89,7 @@ void TvnCsv::SaveChanges()
     if (!tempFile.open())
     {
         TvnUtility::log(QString("SaveChanges:: write temp file error (%1)").arg(tempFile.errorString()));
-        //TODO handle error and show in ui
+        TvnUtility::setError(root, ERROR_MESSAGE_SAVE_CHANGES);
         return;
     }
     QTextStream out(&tempFile);
@@ -176,13 +175,13 @@ void TvnCsv::SaveChanges()
     if (!file.open(QIODevice::WriteOnly))
     {
         TvnUtility::log(QString("write csv file error (%1)").arg(file.errorString()));
-        //TODO handle error and show in ui
+        TvnUtility::setError(root, ERROR_MESSAGE_SAVE_CHANGES);
         return;
     }
     if (!tempFile.open())
     {
         TvnUtility::log(QString("read temp file error (%1)").arg(tempFile.errorString()));
-        //TODO handle error and show in ui
+        TvnUtility::setError(root, ERROR_MESSAGE_SAVE_CHANGES);
         return;
     }
 
@@ -196,6 +195,7 @@ void TvnCsv::SaveChanges()
     file.close();
     tempFile.close();
 
+    QMetaObject::invokeMethod(root, "saveChangesSuccessfully");
 }
 
 void TvnCsv::SaveImageChanges()
@@ -204,6 +204,7 @@ void TvnCsv::SaveImageChanges()
     if (!file.open(QIODevice::ReadOnly))
     {
         TvnUtility::log(QString("SaveImageChanges:: read csv file error (%1)").arg(file.errorString()));
+        TvnUtility::setError(root, ERROR_MESSAGE_SAVE_IMAGE_CHANGES);
         //TODO handle error and show in ui
         return;
     }
@@ -212,7 +213,7 @@ void TvnCsv::SaveImageChanges()
     if (!tempFile.open())
     {
         TvnUtility::log(QString("SaveImageChanges:: write temp file error (%1)").arg(tempFile.errorString()));
-        //TODO handle error and show in ui
+        TvnUtility::setError(root, ERROR_MESSAGE_SAVE_IMAGE_CHANGES);
         return;
     }
     QTextStream out(&tempFile);
@@ -262,13 +263,13 @@ void TvnCsv::SaveImageChanges()
     if (!file.open(QIODevice::WriteOnly))
     {
         TvnUtility::log(QString("SaveImageChanges:: write csv file error (%1)").arg(file.errorString()));
-        //TODO handle error and show in ui
+        TvnUtility::setError(root, ERROR_MESSAGE_SAVE_IMAGE_CHANGES);
         return;
     }
     if (!tempFile.open())
     {
         TvnUtility::log(QString("SaveImageChanges:: read temp file error (%1)").arg(tempFile.errorString()));
-        //TODO handle error and show in ui
+        TvnUtility::setError(root, ERROR_MESSAGE_SAVE_IMAGE_CHANGES);
         return;
     }
 
@@ -281,4 +282,6 @@ void TvnCsv::SaveImageChanges()
     // Close files
     file.close();
     tempFile.close();
+
+    QMetaObject::invokeMethod(root, "saveImageChangesSuccessfully");
 }

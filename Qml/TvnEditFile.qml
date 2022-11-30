@@ -38,7 +38,7 @@ Window
 
         Keys.onEscapePressed:
         {
-            file_list.forceActiveFocus()
+            list_file.forceActiveFocus()
             root.pageMode = constant.tvn_LIST_FILE
         }
 
@@ -92,7 +92,6 @@ Window
                 textWidth: 112
                 onClickButton:
                 {
-                    // TODO update file in list view qml
                     root.saveChanges()
                 }
             }

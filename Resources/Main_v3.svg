@@ -41,14 +41,14 @@
      inkscape:document-units="px"
      showgrid="false"
      inkscape:zoom="1"
-     inkscape:cx="617.5"
-     inkscape:cy="363.5"
+     inkscape:cx="708.5"
+     inkscape:cy="422"
      inkscape:window-width="1920"
-     inkscape:window-height="1016"
-     inkscape:window-x="0"
-     inkscape:window-y="1107"
+     inkscape:window-height="1043"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer9"
+     inkscape:current-layer="g61829"
      inkscape:lockguides="true"
      inkscape:measure-start="715.504,776.315"
      inkscape:measure-end="722.84,776.315"
@@ -132,7 +132,7 @@
        ry="1.3229166"
        transform="scale(-1,1)" />
     <g
-       id="g378590">
+       id="g45348">
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';display:inline;fill:#2f343f;fill-opacity:1;stroke-width:0.264583"
@@ -1130,7 +1130,8 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="Header"
-     style="display:inline">
+     style="display:inline"
+     sodipodi:insensitive="true">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -1257,7 +1258,8 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Search"
-     style="display:inline">
+     style="display:inline"
+     sodipodi:insensitive="true">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#c5c74d;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -2558,7 +2560,8 @@
      inkscape:groupmode="layer"
      id="layer9"
      inkscape:label="Edit"
-     style="display:none;opacity:1">
+     style="display:none;opacity:1"
+     sodipodi:insensitive="true">
     <g
        inkscape:groupmode="layer"
        id="layer10"
@@ -2572,8 +2575,8 @@
          height="118.66242"
          x="47.163574"
          y="51.132328"
-         rx="1.0002351"
-         ry="1.0829582" />
+         rx="1.3229166"
+         ry="1.3229166" />
     </g>
     <rect
        style="display:inline;fill:#c5c9d3;fill-opacity:1;stroke:#21242c;stroke-width:0.264583;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -3911,6 +3914,57 @@
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Bold';fill:#e8e9e3;fill-opacity:1;stroke-width:0.264583"
            x="129.60739"
            y="146.44687"></tspan></text>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer17"
+     inkscape:label="Message">
+    <g
+       id="g61829"
+       transform="translate(-15.874995,-17.197892)">
+      <rect
+         style="fill:#2d2d2d;fill-opacity:1;stroke:#808080;stroke-width:0.79375;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1530"
+         width="78.581253"
+         height="25.664583"
+         x="148.56354"
+         y="110.19894"
+         rx="3.96875"
+         ry="3.96875" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="223.60199"
+         y="128.74377"
+         id="text111169-3"><tspan
+           sodipodi:role="line"
+           id="tspan111167-6"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+           x="223.60199"
+           y="128.74377">آپلود عکس با مشکل مواجه شد</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum)';direction:rtl;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="223.75581"
+         y="120.23986"
+         id="text31142"><tspan
+           sodipodi:role="line"
+           id="tspan31140"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'IRANSansWeb(FaNum)';-inkscape-font-specification:'IRANSansWeb(FaNum) Bold';direction:rtl;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+           x="223.75581"
+           y="120.23986">خطا</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:8.81944px;line-height:1.25;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Heavy';display:inline;fill:#fadf15;fill-opacity:1;stroke-width:0.264583"
+         x="152.72157"
+         y="121.44199"
+         id="text45340"><tspan
+           sodipodi:role="line"
+           id="tspan45338"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.81944px;font-family:'Font Awesome 6 Pro';-inkscape-font-specification:'Font Awesome 6 Pro Bold';fill:#fadf15;fill-opacity:1;stroke-width:0.264583"
+           x="152.72157"
+           y="121.44199"></tspan></text>
     </g>
   </g>
   <g

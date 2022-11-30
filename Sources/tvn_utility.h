@@ -11,6 +11,8 @@ public:
     static void log(QString message);
 
 
+    static void setError(QObject *ui, QString message);
+
 
     static QString getFileCode(QObject *ui);
     static QString getKeepingPlace(QObject *ui);
