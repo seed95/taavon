@@ -6,7 +6,7 @@
         <file>TvnSearch.qml</file>
         <file>TvnFileElement.qml</file>
         <file>TvnLabel.qml</file>
-        <file>TvnFileList.qml</file>
+        <file>TvnListFile.qml</file>
         <file>TvnComboBox.qml</file>
         <file>TvnComboBoxItem.qml</file>
         <file>TvnHeader.qml</file>
@@ -19,5 +19,8 @@
         <file>TvnTableItem.qml</file>
         <file>TvnViewFile.qml</file>
         <file>TvnEditFile.qml</file>
+        <file>TvnImageBtn.qml</file>
+        <file>TvnDetailImage.qml</file>
+        <file>TvnRoundBtn.qml</file>
     </qresource>
 </RCC>

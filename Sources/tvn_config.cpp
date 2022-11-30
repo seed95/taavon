@@ -37,4 +37,5 @@ void TvnConfig::readConfig()
     }
     QJsonObject jsonObj = document.object();
     conf.csvFilePath = jsonObj.value(JSON_KEY_CSV_FILE_PATH).toString();
+    conf.shareFolderPath = jsonObj.value(JSON_KEY_SHARE_FOLDER_PATH).toString();
 }

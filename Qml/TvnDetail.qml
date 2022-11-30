@@ -4,12 +4,12 @@ Item
 {
     id: continer
 
-    property bool readOnly: false
+    property bool readOnly: false // used for view mode
     property bool containBackground: false
     property bool fileCodeEnable: false
 
     width: 887
-    height: 325
+    height: 370
 
     Item
     {
@@ -47,6 +47,7 @@ Item
             contentText: root.fileStatus
             inputWidth: 120
             visible: readOnly
+            onChangeItem: root.fileStatus = text
         }
 
         TvnComboBox
@@ -74,6 +75,7 @@ Item
             contentText: root.keepingPlace
             inputWidth: 120
             visible: readOnly
+            onChangeItem: root.keepingPlace = text
         }
 
         TvnComboBox
@@ -102,6 +104,7 @@ Item
             contentReadOnly: readOnly
             haveBackground: containBackground
             inputWidth: 65
+            onChangeItem: root.ledgerBinder = text
         }
 
         // TODO check input only number
@@ -116,6 +119,7 @@ Item
             contentReadOnly: readOnly
             haveBackground: containBackground
             inputWidth: 35
+            onChangeItem: root.numberOfCover = text
         }
     }
 
@@ -131,7 +135,6 @@ Item
         {
             id: file_name
             width: 370
-
             anchors.right: parent.right
             anchors.top: parent.top
             titleText: "اسم پرونده"
@@ -141,6 +144,7 @@ Item
             haveBackground: containBackground
             contentFontSize: 15
             inputWidth: 285
+            onChangeItem: root.fileName = text
         }
 
         // TODO check input only number
@@ -156,6 +160,7 @@ Item
             contentReadOnly: readOnly
             haveBackground: containBackground
             inputWidth: 50
+            onChangeItem: root.registrationNumber = text
         }
 
         TvnDetailLabel
@@ -170,6 +175,7 @@ Item
             contentReadOnly: readOnly
             haveBackground: containBackground
             inputWidth: 105
+            onChangeItem: root.dateOfRegistration = text
         }
 
         // TODO check input only number
@@ -185,6 +191,7 @@ Item
             contentReadOnly: readOnly
             haveBackground: containBackground
             inputWidth: 112
+            onChangeItem: root.nationalId = text
         }
 
     }
@@ -208,6 +215,7 @@ Item
             contentReadOnly: readOnly
             haveBackground: containBackground
             inputWidth: 115
+            onChangeItem: root.dateOfLastMeeting = text
         }
     }
 
@@ -232,6 +240,7 @@ Item
             contentReadOnly: readOnly
             haveBackground: containBackground
             inputWidth: 35
+            onChangeItem: root.numberOfPrimaryMembers = text
         }
 
         // TODO check input only number
@@ -246,6 +255,7 @@ Item
             contentReadOnly: readOnly
             haveBackground: containBackground
             inputWidth: 35
+            onChangeItem: root.numberOfCurrentMembers = text
         }
 
         // TODO check input only number and show with ,
@@ -261,6 +271,7 @@ Item
             contentReadOnly: readOnly
             haveBackground: containBackground
             inputWidth: 107
+            onChangeItem: root.valuePerShare = text
         }
     }
 
@@ -287,6 +298,7 @@ Item
             haveBackground: containBackground
             alignCenter: false
             inputWidth: 138
+            onChangeItem: root.startingCapital = text
         }
 
         // TODO check input only number and show with ,
@@ -304,6 +316,7 @@ Item
             haveBackground: containBackground
             alignCenter: false
             inputWidth: 181
+            onChangeItem: root.currentCapital = text
         }
     }
 
@@ -328,6 +341,7 @@ Item
             contentReadOnly: readOnly
             haveBackground: containBackground
             inputWidth: 144
+            onChangeItem: root.phoneNumber = text
         }
 
         // TODO check input only number
@@ -342,6 +356,7 @@ Item
             contentReadOnly: readOnly
             haveBackground: containBackground
             inputWidth: 144
+            onChangeItem: root.mobileNumber = text
         }
     }
 
@@ -368,11 +383,13 @@ Item
             contentFontSize: 15
             alignCenter: false
             inputWidth: 521
+            onChangeItem: root.officeAddress = text
         }
     }
 
     TvnTable
     {
+        id: table
         anchors.right: parent.right
         anchors.top: row3.bottom
         anchors.topMargin: 7
@@ -382,4 +399,19 @@ Item
         secretaryName: root.secretaryName
         readOnlyTable: readOnly
     }
+
+    TvnDetailImage
+    {
+        width: parent.width
+        anchors.right: parent.right
+        anchors.top: table.bottom
+        anchors.topMargin: 15
+        objectName: "DetailImage"
+
+        extraordinaryHasImage: root.extraordinaryMeetingHasImage
+        generalHasImage: root.generalMeetingHasImage
+        licenceHasImage: root.licenceHasImage
+        registrationHasImage: root.registrationAdHasImage
+    }
+
 }

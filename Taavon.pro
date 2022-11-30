@@ -13,7 +13,9 @@ CONFIG += c++11
 SOURCES += Sources/main.cpp \
     Sources/tvn_csv.cpp \
     Sources/tvn_utility.cpp \
-    Sources/tvn_config.cpp
+    Sources/tvn_config.cpp \
+    Sources/tvn_chapar.cpp \
+    Sources/tvn_image.cpp
 
 RESOURCES += Qml/ui.qrc \
              Resources/fonts.qrc \
@@ -26,38 +28,28 @@ DISTFILES += \
     Qml/TvnSearch.qml \
     Qml/TvnFileElement.qml \
     Qml/TvnLabel.qml \
-    Qml/TvnFileList.qml \
+    Qml/TvnListFile.qml \
     Qml/TvnComboBox.qml \
     Qml/TvnComboBoxItem.qml \
     Qml/TvnHeader.qml \
     Qml/TvnHeaderLabel.qml \
     Qml/TvnSearchNumberBtn.qml \
     Qml/TvnSearchStringBtn.qml \
-    Qml/TvnDetail.qml \
-    Qml/TvnDetailLabel.qml \
     Qml/TvnTableItem.qml \
     Qml/TvnTable.qml \
     Qml/TvnViewFile.qml \
-    Qml/TvnTableItem.qml \
-    Qml/TvnTable.qml \
-    Qml/TvnSearchStringBtn.qml \
-    Qml/TvnSearchNumberBtn.qml \
-    Qml/TvnSearch.qml \
-    Qml/TvnLabel.qml \
-    Qml/TvnHeaderLabel.qml \
-    Qml/TvnHeader.qml \
-    Qml/TvnFileList.qml \
-    Qml/TvnFileElement.qml \
     Qml/TvnEditFile.qml \
-    Qml/TvnDetailLabel.qml \
-    Qml/TvnDetail.qml \
+    Qml/main.qml \
     Qml/TvnConstants.qml \
-    Qml/TvnComboBoxItem.qml \
-    Qml/TvnComboBox.qml \
-    Qml/TvnButton.qml \
-    Qml/main.qml
+    Qml/TvnDetail.qml \
+    Qml/TvnDetailImage.qml \
+    Qml/TvnDetailLabel.qml \
+    Qml/TvnImageBtn.qml \
+    Qml/TvnRoundBtn.qml \
 
 HEADERS += \
     Sources/tvn_csv.h \
     Sources/tvn_utility.h \
-    Sources/tvn_config.h
+    Sources/tvn_config.h \
+    Sources/tvn_chapar.h \
+    Sources/tvn_image.h

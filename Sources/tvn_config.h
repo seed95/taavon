@@ -6,10 +6,12 @@
 
 #define CONFIG_PATH "tvn.config"
 
-#define JSON_KEY_CSV_FILE_PATH "csv_file_path"
+#define JSON_KEY_CSV_FILE_PATH      "csv_file_path"
+#define JSON_KEY_SHARE_FOLDER_PATH  "share_folder_path"
 
 struct config {
     QString csvFilePath;
+    QString shareFolderPath;
 };
 
 // TODO check extern

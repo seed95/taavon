@@ -58,6 +58,7 @@ ApplicationWindow
             fileCodeEnable: true
             readOnly: true
             containBackground: false
+            objectName: "Detail"
         }
 
     }

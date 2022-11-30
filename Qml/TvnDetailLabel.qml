@@ -16,12 +16,14 @@ Item {
 
     property bool isActive: false
 
+    signal changeItem(string text)
+
     height: 45
 
     Text
     {
         id: title
-        text: parentheses.visible? titleText : titleText + ":"
+        text: parentheses.visible? titleText : titleText
         color: "#c5c74d"
         anchors.right: parent.right
         anchors.verticalCenter: parent.verticalCenter
@@ -33,7 +35,7 @@ Item {
     Text
     {
         id: parentheses
-        text: "(" + parenthesesText + "):"
+        text: "(" + parenthesesText + ")"
         color: "#c5c74d"
         anchors.right: title.left
         anchors.rightMargin: 2
@@ -44,11 +46,24 @@ Item {
         visible: parenthesesText!==""
     }
 
+    Text
+    {
+        id: colon
+        text: ":"
+        color: "#c5c74d"
+        anchors.right: parentheses.visible? parentheses.left : title.left
+        anchors.rightMargin: 2
+        anchors.verticalCenter: parent.verticalCenter
+        font.family: iranSansWebBold.name
+        font.weight: Font.Bold
+        font.pixelSize: 16
+    }
+
     Rectangle
     {
         width: inputWidth
         height: 35
-        anchors.right: parentheses.visible? parentheses.left : title.left
+        anchors.right: colon.left
         anchors.rightMargin: haveBorder? 8:-2
         anchors.verticalCenter: parent.verticalCenter
         radius: 5
@@ -146,8 +161,15 @@ Item {
                 }
 
             }
-            onAccepted: focus = false
-            Keys.onEscapePressed: {focus = false;root.updateFocus()}
+            onAccepted: {focus = false; root.updateFocus()}
+            Keys.onEscapePressed: {focus = false; root.updateFocus()}
+            onFocusChanged:
+            {
+                if (!focus)
+                {
+                    changeItem(text)
+                }
+            }
         }
     }
 

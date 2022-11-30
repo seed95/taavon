@@ -28,6 +28,10 @@ Item
     property string secretaryName: "محسن فرقانی نوش آبادی"
     property string phoneNumber: "03154754744"
     property string address: "آران و بیدگل شهرک صنعتی هلال کارخانه مشهد نگین توس"
+    property bool extraordinaryMeetingHasImage: false
+    property bool generalMeetingHasImage: false
+    property bool licenceHasImage: false
+    property bool registrationAdHasImage: false
 
     property string color_background_1: "#414858"
     property string color_background_2: "#576075"
@@ -77,6 +81,10 @@ Item
             secretaryName: elementSecretaryName
             phoneNumber: elementPhoneNumber
             address: elementAddress
+            extraordinaryMeetingHasImage: elementExtraordinaryMeetingImage
+            generalMeetingHasImage: elementGeneralMeetingImage
+            licenceHasImage: elementLicenceImage
+            registrationAdHasImage: elementRegistrationAdImage
 
             onClickItem:
             {
@@ -163,7 +171,11 @@ Item
                         "elementViceName" : container.chairmanName,
                         "elementSecretaryName" : container.secretaryName,
                         "elementPhoneNumber" : container.phoneNumber,
-                        "elementAddress" : container.address})
+                        "elementAddress" : container.address,
+                        "elementExtraordinaryMeetingImage" : container.extraordinaryMeetingHasImage,
+                        "elementGeneralMeetingImage" : container.generalMeetingHasImage,
+                        "elementLicenceImage" : container.licenceHasImage,
+                        "elementRegistrationAdImage" : container.registrationAdHasImage})
     }
 
     /*** Call this functions from qml ***/
@@ -192,6 +204,10 @@ Item
         root.chairmanName = item.elementChairmanName
         root.viceName = item.elementViceName
         root.secretaryName = item.elementSecretaryName
+        root.extraordinaryMeetingHasImage = item.elementExtraordinaryMeetingImage
+        root.generalMeetingHasImage = item.elementGeneralMeetingImage
+        root.licenceHasImage = item.elementLicenceImage
+        root.registrationAdHasImage = item.elementRegistrationAdImage
     }
 
 }

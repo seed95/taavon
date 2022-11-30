@@ -35,16 +35,17 @@ Window
     property string chairmanName: ""
     property string viceName: ""
     property string secretaryName: ""
+    property bool extraordinaryMeetingHasImage: false
+    property bool generalMeetingHasImage: false
+    property bool licenceHasImage: false
+    property bool registrationAdHasImage: false
 
     // show edit/view/new/list file based on mode
     property int pageMode: constant.tvn_LIST_FILE
 
-
-    signal loginUser(string username, string pass)
-    signal replyButtonClicked()
-    signal archiveButtonClicked()
-    signal scanButtonClicked()
-    signal flagButtonClicked(int id)
+    // cpp signals
+    signal updateImageInCsv()
+    signal saveChanges()
 
     visible: true
     width: 1300
@@ -136,7 +137,7 @@ Window
         y: 82
     }
 
-    TvnFileList
+    TvnListFile
     {
         id: file_list
         anchors.left: parent.left
@@ -145,23 +146,21 @@ Window
         anchors.top: header.bottom
         anchors.bottom: excel_output.top
         focus: true
-        objectName: "FileList"
+        objectName: "ListFile"
     }
 
     TvnViewFile
     {
         id: view
-//        x: 177
-//        y: 192
         visible: root.pageMode === constant.tvn_VIEW_FILE
+        objectName: "ViewFile"
     }
 
     TvnEditFile
     {
         id: edit
-//        x: 177
-//        y: 192
         visible: root.pageMode === constant.tvn_EDIT_FILE
+        objectName: "EditFile"
     }
 
     TvnButton
@@ -190,6 +189,17 @@ Window
 
     //Functions
     /*** Call this functions from cpp ***/
+    function deleteSuccessfully(type)
+    {
+        updateHasImage(type, false)
+        // TODO update csv file, has image for type
+    }
+
+    function uploadSuccessfully(type)
+    {
+        updateHasImage(type, true)
+        // TODO update csv file, has image for type
+    }
 
     /*** Call this functions from qml ***/
 
@@ -208,6 +218,30 @@ Window
         {
             file_list.forceActiveFocus()
         }
+    }
+
+    // updateHasImage update hasImage fields
+    // extraordinaryMeetingHasImage, generalMeetingHasImage, licenceHasImage, registrationAdHasImage
+    function updateHasImage(type, value)
+    {
+        if (type===constant.tvn_IMAGE_EXTRAORDINARY_MEETING)
+        {
+            root.extraordinaryMeetingHasImage = value
+        }
+        else if (type===constant.tvn_IMAGE_GENERAL_MEETING)
+        {
+            root.generalMeetingHasImage = value
+        }
+        else if (type===constant.tvn_IMAGE_LICENCE)
+        {
+            root.licenceHasImage = value
+        }
+        else if (type===constant.tvn_IMAGE_REGISTRATION_AD)
+        {
+            root.registrationAdHasImage = value
+        }
+
+        updateImageInCsv()
     }
 
     //Slice string from 0 with amount len

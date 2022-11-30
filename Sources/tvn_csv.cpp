@@ -6,10 +6,18 @@
 #include <QStringList>
 #include <QDebug>
 #include <QQmlProperty>
+#include <QTemporaryFile>
+#include <QTextStream>
 
 TvnCsv::TvnCsv(QObject *root, QObject *parent) : QObject(parent)
 {
-    list = root->findChild<QObject*>("FileList");
+    this->root = root;
+    list = root->findChild<QObject*>("ListFile");
+
+
+    connect(root, SIGNAL(updateImageInCsv()), this, SLOT(SaveImageChanges()));
+    connect(root, SIGNAL(saveChanges()), this, SLOT(SaveChanges()));
+
 }
 
 void TvnCsv::LoadCsv()
@@ -21,15 +29,16 @@ void TvnCsv::LoadCsv()
         return;
     }
 
-    while (!file.atEnd()) {
-        QByteArray line = file.readLine();
+    while (!file.atEnd())
+    {
+        QByteArray line = file.readLine().trimmed();
         QStringList wordList = QString(line).split(",");
 
-        qDebug() << wordList;
         if (wordList.length()!=HEADER_INDEX_TOTAL_NUMBER)
         {
-            TvnUtility::log(QString("invalid csv header length, acctual: %s - desierd: %s)").
-                            arg(wordList.length(), HEADER_INDEX_TOTAL_NUMBER));
+            QString msg = QString("LoadCsv:: invalid csv header length, acctual: %1 , desierd: %2)").
+                    arg(wordList.length()).arg(HEADER_INDEX_TOTAL_NUMBER);
+            TvnUtility::log(msg);
             continue;
         }
 
@@ -55,6 +64,221 @@ void TvnCsv::LoadCsv()
         QQmlProperty::write(list, "secretaryName", wordList[HEADER_INDEX_SECRETARY_NAME]);
         QQmlProperty::write(list, "phoneNumber", wordList[HEADER_INDEX_PHONE_NUMBER]);
         QQmlProperty::write(list, "address", wordList[HEADER_INDEX_ADDRESS]);
+        QQmlProperty::write(list, "extraordinaryMeetingHasImage", wordList[HEADER_INDEX_IMAGE_EXTRAORDINARY_MEETING]);
+        QQmlProperty::write(list, "generalMeetingHasImage", wordList[HEADER_INDEX_IMAGE_GENERAL_MEETING]);
+        QQmlProperty::write(list, "licenceHasImage", wordList[HEADER_INDEX_IMAGE_LICENCE]);
+        QQmlProperty::write(list, "registrationAdHasImage", wordList[HEADER_INDEX_IMAGE_REGISTRATION_AD]);
+
         QMetaObject::invokeMethod(list, "addToList");
     }
+
+    file.close();
+}
+
+void TvnCsv::SaveChanges()
+{
+    qDebug() << "save changes";
+    QFile file(conf.csvFilePath);
+    if (!file.open(QIODevice::ReadOnly))
+    {
+        TvnUtility::log(QString("SaveChanges:: read csv file error (%1)").arg(file.errorString()));
+        //TODO handle error and show in ui
+        return;
+    }
+
+    QTemporaryFile tempFile;
+    if (!tempFile.open())
+    {
+        TvnUtility::log(QString("SaveChanges:: write temp file error (%1)").arg(tempFile.errorString()));
+        //TODO handle error and show in ui
+        return;
+    }
+    QTextStream out(&tempFile);
+
+    QString fileCode = TvnUtility::getFileCode(root);
+    QString keepingPlace = TvnUtility::getKeepingPlace(root);
+    QString status = TvnUtility::getFileStatus(root);
+    QString ledgerBinder = TvnUtility::getLedgerBinder(root);
+    QString numberOfCover = TvnUtility::getNumberOfCover(root);
+    QString fileName = TvnUtility::getFileName(root);
+    QString registrationNumber = TvnUtility::getRegistrationNumber(root);
+    QString dateOfLastMeeting = TvnUtility::getDateOfRegistration(root);
+    QString nationalId = TvnUtility::getNationalId(root);
+    QString ceoName = TvnUtility::getCeoName(root);
+    QString mobileNumber = TvnUtility::getMobileNumber(root);
+    QString dateOfRegistration = TvnUtility::getDateOfRegistration(root);
+    QString numberOfPrimaryMembers = TvnUtility::getNumberOfPrimaryMembers(root);
+    QString numberOfCurrentMembers = TvnUtility::getNumberOfCurrentMembers(root);
+    QString valuePerShare = TvnUtility::getValuePerShare(root);
+    QString startingCapital = TvnUtility::getStartingCapital(root);
+    QString currentCapital = TvnUtility::getCurrentCapital(root);
+    QString chairmanName = TvnUtility::getChairmanName(root);
+    QString viceName = TvnUtility::getViceName(root);
+    QString secretaryName = TvnUtility::getSecretaryName(root);
+    QString phoneNumber = TvnUtility::getPhoneNumber(root);
+    QString address = TvnUtility::getOfficeAddress(root);
+
+    bool updateChanges = false;
+    while (!file.atEnd())
+    {
+        QByteArray line = file.readLine().trimmed();
+
+        if (!updateChanges)
+        {
+            updateChanges = true;
+            QStringList wordList = QString(line).split(",");
+
+            if (wordList.length()!=HEADER_INDEX_TOTAL_NUMBER)
+            {
+                out << line << endl;
+                QString msg = QString("SaveChanges:: invalid csv header length, acctual: %1 , desierd: %2)").
+                        arg(wordList.length()).arg(HEADER_INDEX_TOTAL_NUMBER);
+                TvnUtility::log(msg);
+                continue;
+            }
+
+            if (fileCode==wordList[HEADER_INDEX_FILE_CODE])
+            {
+                wordList[HEADER_INDEX_KEEPING_PLACE] = keepingPlace;
+                wordList[HEADER_INDEX_STATUS] = status;
+                wordList[HEADER_INDEX_LEDGER_BINDER] = ledgerBinder;
+                wordList[HEADER_INDEX_NUMBER_OF_COVER] = numberOfCover;
+                wordList[HEADER_INDEX_FILE_NAME] = fileName;
+                wordList[HEADER_INDEX_REGISTRATION_NUMBER] = registrationNumber;
+                wordList[HEADER_INDEX_DATE_OF_LAST_MEETING] = dateOfLastMeeting;
+                wordList[HEADER_INDEX_NATIONAL_ID] = nationalId;
+                wordList[HEADER_INDEX_CEO_NAME] = ceoName;
+                wordList[HEADER_INDEX_MOBILE_NUMBER] = mobileNumber;
+                wordList[HEADER_INDEX_DATE_OF_REGISTRATION] = dateOfRegistration;
+                wordList[HEADER_INDEX_NUMBER_OF_PRIMARY_MEMBERS] = numberOfPrimaryMembers;
+                wordList[HEADER_INDEX_NUMBER_OF_CURRENT_MEMBERS] = numberOfCurrentMembers;
+                wordList[HEADER_INDEX_VALUE_PER_SHARE] = valuePerShare;
+                wordList[HEADER_INDEX_STARTING_CAPITAL] = startingCapital;
+                wordList[HEADER_INDEX_CURRENT_CAPITAL] = currentCapital;
+                wordList[HEADER_INDEX_CHAIRMAN_NAME] = chairmanName;
+                wordList[HEADER_INDEX_VICE_NAME] = viceName;
+                wordList[HEADER_INDEX_SECRETARY_NAME] = secretaryName;
+                wordList[HEADER_INDEX_PHONE_NUMBER] = phoneNumber;
+                wordList[HEADER_INDEX_ADDRESS] = address;
+            }
+            out << wordList.join(",") << endl;
+            continue;
+        }
+
+        out << line << endl;
+    }
+
+    // Close files
+    file.close();
+    tempFile.close();
+
+    // Open files
+    if (!file.open(QIODevice::WriteOnly))
+    {
+        TvnUtility::log(QString("write csv file error (%1)").arg(file.errorString()));
+        //TODO handle error and show in ui
+        return;
+    }
+    if (!tempFile.open())
+    {
+        TvnUtility::log(QString("read temp file error (%1)").arg(tempFile.errorString()));
+        //TODO handle error and show in ui
+        return;
+    }
+
+    // Write in orginal file
+    while (!tempFile.atEnd())
+    {
+        file.write(tempFile.readAll());
+    }
+
+    // Close files
+    file.close();
+    tempFile.close();
+
+}
+
+void TvnCsv::SaveImageChanges()
+{
+    QFile file(conf.csvFilePath);
+    if (!file.open(QIODevice::ReadOnly))
+    {
+        TvnUtility::log(QString("SaveImageChanges:: read csv file error (%1)").arg(file.errorString()));
+        //TODO handle error and show in ui
+        return;
+    }
+
+    QTemporaryFile tempFile;
+    if (!tempFile.open())
+    {
+        TvnUtility::log(QString("SaveImageChanges:: write temp file error (%1)").arg(tempFile.errorString()));
+        //TODO handle error and show in ui
+        return;
+    }
+    QTextStream out(&tempFile);
+
+    QString fileCode = TvnUtility::getFileCode(root);
+    QString extraordinary = TvnUtility::getExtraordinaryMeetingHasImage(root);
+    QString general = TvnUtility::getGeneralMeetingHasImage(root);
+    QString licence = TvnUtility::getLicenceHasImage(root);
+    QString registration = TvnUtility::getRegistrationAdHasImage(root);
+
+    bool updateChanges = false;
+    while (!file.atEnd()) {
+        QByteArray line = file.readLine().trimmed();
+
+        if (!updateChanges)
+        {
+            updateChanges = true;
+            QStringList wordList = QString(line).split(",");
+
+            if (wordList.length()!=HEADER_INDEX_TOTAL_NUMBER)
+            {
+                out << line << endl;
+                QString msg = QString("SaveImageChanges:: invalid csv header length, acctual: %1 , desierd: %2)").
+                        arg(wordList.length()).arg(HEADER_INDEX_TOTAL_NUMBER);
+                continue;
+            }
+
+            if (fileCode==wordList[HEADER_INDEX_FILE_CODE])
+            {
+                wordList[HEADER_INDEX_IMAGE_EXTRAORDINARY_MEETING] = extraordinary;
+                wordList[HEADER_INDEX_IMAGE_GENERAL_MEETING] = general;
+                wordList[HEADER_INDEX_IMAGE_LICENCE] = licence;
+                wordList[HEADER_INDEX_IMAGE_REGISTRATION_AD] = registration;
+            }
+            out << wordList.join(",") << endl;
+            continue;
+        }
+
+        out << line << endl;
+    }
+
+    // Close files
+    file.close();
+    tempFile.close();
+
+    // Open files
+    if (!file.open(QIODevice::WriteOnly))
+    {
+        TvnUtility::log(QString("SaveImageChanges:: write csv file error (%1)").arg(file.errorString()));
+        //TODO handle error and show in ui
+        return;
+    }
+    if (!tempFile.open())
+    {
+        TvnUtility::log(QString("SaveImageChanges:: read temp file error (%1)").arg(tempFile.errorString()));
+        //TODO handle error and show in ui
+        return;
+    }
+
+    // Write in orginal file
+    while (!tempFile.atEnd())
+    {
+        file.write(tempFile.readAll());
+    }
+
+    // Close files
+    file.close();
+    tempFile.close();
 }

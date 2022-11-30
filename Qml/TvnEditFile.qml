@@ -7,7 +7,7 @@ Window
     minimumWidth: width
     maximumWidth: width
 
-    height: 415
+    height: 450
     minimumHeight: height
     maximumHeight: height
 
@@ -58,6 +58,7 @@ Window
             fileCodeEnable: false
             readOnly: false
             containBackground: true
+            objectName: "Detail"
         }
 
         Item
@@ -89,7 +90,11 @@ Window
                 btnText: "ذخیره تغییرات"
                 btnIcon: "\uf0c7"
                 textWidth: 112
-                onClickButton: console.log("save file")
+                onClickButton:
+                {
+                    // TODO update file in list view qml
+                    root.saveChanges()
+                }
             }
 
         }

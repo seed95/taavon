@@ -32,6 +32,10 @@ Rectangle
     property string secretaryName: ""
     property string phoneNumber: ""
     property string address: ""
+    property bool extraordinaryMeetingHasImage: false
+    property bool generalMeetingHasImage: false
+    property bool licenceHasImage: false
+    property bool registrationAdHasImage: false
 
     signal clickItem()
     signal editItem()

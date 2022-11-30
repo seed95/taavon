@@ -4,6 +4,7 @@
 
 #include "tvn_csv.h"
 #include "tvn_config.h"
+#include "tvn_image.h"
 
 int main(int argc, char *argv[])
 {
@@ -22,6 +23,8 @@ int main(int argc, char *argv[])
     TvnConfig *config = new TvnConfig();
     TvnCsv *csv = new TvnCsv(mainItem);
     csv->LoadCsv();
+
+    TvnImage *imageHandler = new TvnImage(mainItem);
 
 //    hhm_log("-------------------------Start Document Manager-------------------------");
 //    hhm_setBackendUI(mainItem);

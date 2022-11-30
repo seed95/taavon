@@ -26,8 +26,12 @@
 #define HEADER_INDEX_CHAIRMAN_NAME 19
 #define HEADER_INDEX_VICE_NAME 20
 #define HEADER_INDEX_SECRETARY_NAME 21
+#define HEADER_INDEX_IMAGE_EXTRAORDINARY_MEETING 22
+#define HEADER_INDEX_IMAGE_GENERAL_MEETING 23
+#define HEADER_INDEX_IMAGE_LICENCE 24
+#define HEADER_INDEX_IMAGE_REGISTRATION_AD 25
 
-#define HEADER_INDEX_TOTAL_NUMBER 22
+#define HEADER_INDEX_TOTAL_NUMBER 26
 
 class TvnCsv : public QObject
 {
@@ -39,9 +43,9 @@ public:
 public:
     void LoadCsv();
 
-signals:
-
-public slots:
+private slots:
+    void SaveChanges();
+    void SaveImageChanges();
 
 private:
     QObject *root;
