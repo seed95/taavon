@@ -1,6 +1,8 @@
 #include "tvn_image.h"
 #include "tvn_config.h"
 #include "tvn_utility.h"
+#include "tvn_constant.h"
+#include "tvn_csv.h"
 
 #include <QDebug>
 #include <QFileDialog>
@@ -52,7 +54,8 @@ void TvnImage::downloadImage(int type)
 
     if (!QFile::copy(srcFilename, destFilename))
     {
-        TvnUtility::log("downlaod:: copy failed <dest: " + destFilename + ", src: " + srcFilename + ">");
+        TvnUtility::log("downloadImage:: copy failed <dest: " + destFilename + ", src: " + srcFilename + ">");
+        TvnUtility::setError(root, ERROR_MESSAGE_DOWNLOAD_IMAGE);
         return;
     }
 }
@@ -69,7 +72,9 @@ void TvnImage::deleteImage(int type)
     QDir dir("");
     if (!dir.mkpath(destDir))
     {
-        TvnUtility::log("delete:: make path failed <" + destDir + ">");
+        TvnUtility::log("deleteImage:: make image path failed <" + destDir + ">");
+        TvnUtility::setError(root, ERROR_MESSAGE_DELETE_IMAGE);
+        return;
     }
 
     // Make destination filename
@@ -80,15 +85,28 @@ void TvnImage::deleteImage(int type)
     // Copy
     if (!QFile::copy(srcFilename, destFilename))
     {
-        TvnUtility::log("delete:: copy failed <dest: " + destFilename + ", src: " + srcFilename + ">");
+        TvnUtility::log("deleteImage:: copy failed <dest: " + destFilename + ", src: " + srcFilename + ">");
+        TvnUtility::setError(root, ERROR_MESSAGE_DELETE_IMAGE);
         return;
     }
 
     if (!QFile::remove(srcFilename))
     {
-        TvnUtility::log("delete:: remove failed <" + srcFilename + ">");
+        TvnUtility::log("deleteImage:: remove failed <" + srcFilename + ">");
+        TvnUtility::setError(root, ERROR_MESSAGE_DELETE_IMAGE);
         return;
     }
+
+    // Save hasImage to false for type
+    bool ok = TvnCsv::SaveImageChanges(root, type, false);
+    if (!ok)
+    {
+        TvnUtility::setError(root, ERROR_MESSAGE_DELETE_IMAGE);
+        return;
+        // TODO must be undo remove
+    }
+
+
     QMetaObject::invokeMethod(root, "deleteSuccessfully", Q_ARG(QVariant, type));
 }
 
@@ -108,15 +126,36 @@ void TvnImage::uploadImage(int type)
     QDir dir("");
     if (!dir.mkpath(destDir))
     {
-        TvnUtility::log("upload:: make path failed <" + destDir + ">");
+        TvnUtility::log("uploadImage:: make image path failed <" + destDir + ">");
+        TvnUtility::setError(root, ERROR_MESSAGE_UPLOAD_IMAGE);
+        return;
+    }
+
+    QString destFilename = destDir + "/" + getImageName(type) + ".jpg";
+
+    // Check image exist
+    if(QFileInfo::exists(destFilename))
+    {
+        TvnUtility::log("uploadImage:: image exist <dest: " + destFilename + ">");
+        TvnUtility::setError(root, ERROR_MESSAGE_UPLOAD_IMAGE);
+        return;
     }
 
     // Copy
-    QString destFilename = destDir + "/" + getImageName(type) + ".jpg";
     if (!QFile::copy(srcFilename, destFilename))
     {
-        TvnUtility::log("upload:: copy failed <dest: " + destFilename + ", src: " + srcFilename + ">");
+        TvnUtility::log("uploadImage:: copy image failed <dest: " + destFilename + ", src: " + srcFilename + ">");
+        TvnUtility::setError(root, ERROR_MESSAGE_UPLOAD_IMAGE);
         return;
+    }
+
+    // Save hasImage to true for type
+    bool ok = TvnCsv::SaveImageChanges(root, type, true);
+    if (!ok)
+    {
+        TvnUtility::setError(root, ERROR_MESSAGE_UPLOAD_IMAGE);
+        return;
+        // TODO must be remove
     }
 
     QMetaObject::invokeMethod(root, "uploadSuccessfully", Q_ARG(QVariant, type));

@@ -14,7 +14,6 @@ struct config {
     QString shareFolderPath;
 };
 
-// TODO check extern
 extern config conf;
 
 class TvnConfig : public QObject

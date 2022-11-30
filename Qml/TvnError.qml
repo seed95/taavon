@@ -24,7 +24,7 @@ Window
         }
         else
         {
-            root.pageMode = constant.tvn_LIST_FILE
+            root.updateFocus()
         }
     }
 

@@ -3,11 +3,6 @@
 
 #include <QObject>
 
-#define IMAGE_EXTRAORDINARY_MEETING     1
-#define IMAGE_GENERAL_MEETING           2
-#define IMAGE_LICENCE                   3
-#define IMAGE_REGISTRATION_AD           4
-
 
 #define IMAGE_NAME_EXTRAORDINARY_MEETING    "extraordinary"
 #define IMAGE_NAME_GENERAL_MEETING          "general"

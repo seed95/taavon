@@ -167,7 +167,7 @@ QString TvnUtility::getQmlProperty(QObject *ui, QString key)
     {
         return data.toString();
     }
-    // TODO handle this
+    log(QString("invalid qml property %1").arg(key));
     return "";
 }
 

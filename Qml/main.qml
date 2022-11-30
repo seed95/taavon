@@ -42,10 +42,9 @@ Window
 
     /***** Set this variables in cpp *****/
     //Error properties
-    property string errorMessage: "آپلود عکس با مشکل مواجه شد"
+    property string errorMessage: ""
 
     // cpp signals
-    signal updateImageInCsv()
     signal saveChanges()
 
     visible: true
@@ -194,7 +193,7 @@ Window
         visible: root.errorMessage !== ""
     }
 
-    //Functions
+    // Functions
     /*** Call this functions from cpp ***/
     function deleteSuccessfully(type)
     {
@@ -208,13 +207,8 @@ Window
 
     function saveChangesSuccessfully()
     {
+        list_file.updateFile(root.selectedFileIndex)
         root.pageMode = constant.tvn_LIST_FILE
-        list_file.updateFile()
-    }
-
-    function saveImageChangesSuccessfully()
-    {
-        list_file.updateImageFile()
     }
 
     /*** Call this functions from qml ***/
@@ -257,7 +251,7 @@ Window
             root.registrationAdHasImage = value
         }
 
-        updateImageInCsv()
+        list_file.updateImageFile(root.selectedFileIndex)
     }
 
     //Slice string from 0 with amount len

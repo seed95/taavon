@@ -52,4 +52,5 @@ HEADERS += \
     Sources/tvn_utility.h \
     Sources/tvn_config.h \
     Sources/tvn_chapar.h \
-    Sources/tvn_image.h
+    Sources/tvn_image.h \
+    Sources/tvn_constant.h
