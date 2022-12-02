@@ -3,7 +3,6 @@ import QtQuick.Controls 2.0
 
 Rectangle
 {
-
     property int index: 0
     property bool isHovered: false
     property bool isChecked: false

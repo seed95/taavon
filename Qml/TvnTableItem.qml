@@ -1,8 +1,10 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.5
 
-Item {
+Item
+{
 
+    property bool itemIsActive: false
     property string colorText: "#e8e9e3"
     property string positionText: ""
     property string nameText: ""
@@ -53,6 +55,7 @@ Item {
         font.pixelSize: 14
         selectByMouse: selectable
         readOnly: readOnlyItem
+        enabled: itemIsActive
         clip: true
         background: Rectangle{color: "transparent"}
         color: colorText

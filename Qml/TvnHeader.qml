@@ -1,12 +1,10 @@
 import QtQuick 2.0
 
-Rectangle {
+Item
+{
 
     height: 36
     width: 1250
-    color: "transparent"
-//    color: "#00003b"
-
 
     property int normal_font_size: 16
     property int small_font_size: 14

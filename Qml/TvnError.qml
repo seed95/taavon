@@ -1,11 +1,12 @@
 import QtQuick 2.10
 import QtQuick.Window 2.10
+import QtQuick.Controls 2.5
 
-Window
+ApplicationWindow
 {
-    width: 300
-    minimumWidth: width
-    maximumWidth: width
+    width: container.width
+    minimumWidth: container.width
+    maximumWidth: container.width
 
     height: 100
     minimumHeight: height
@@ -22,25 +23,19 @@ Window
         {
             forceFocus()
         }
-        else
-        {
-            root.updateFocus()
-        }
     }
+
+    onClosing: closeWindow()
 
     Rectangle
     {
         id: container
 
-        width: parent.width
+        width: message.contentWidth>150? message.contentWidth + 150 : 200
         height: parent.height
         color: "#2d2d2d"
 
-        Keys.onEscapePressed:
-        {
-            root.errorMessage = ""
-            root.updateFocus()
-        }
+        Keys.onEscapePressed: closeWindow()
 
         MouseArea
         {
@@ -75,15 +70,20 @@ Window
             color: "#fadf15"
         }
 
-        Text
+        TextField
         {
             id: message
+
             anchors.right: error.right
             anchors.top: error.bottom
             anchors.topMargin: 10
             text: root.errorMessage
-            font.pixelSize: 17
+            horizontalAlignment: TextInput.AlignRight
             font.family: iranSansWeb.name
+            font.pixelSize: 17
+            selectByMouse: true
+            readOnly: true
+            background: Rectangle{color: "transparent"}
             color: "#ffffff"
         }
 
@@ -93,4 +93,10 @@ Window
     {
         container.forceActiveFocus()
     }
+
+    function closeWindow()
+    {
+        root.errorMessage = ""
+    }
+
 }

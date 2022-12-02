@@ -23,11 +23,9 @@ ApplicationWindow
         {
             forceFocus()
         }
-        else
-        {
-            root.pageMode = constant.tvn_LIST_FILE
-        }
     }
+
+    onClosing: closeWindow()
 
     Rectangle
     {
@@ -39,13 +37,16 @@ ApplicationWindow
 
         Keys.onEscapePressed:
         {
-            list_file.forceActiveFocus()
-            root.pageMode = constant.tvn_LIST_FILE
+            if (windowIsActive())
+            {
+                closeWindow()
+            }
         }
 
         MouseArea
         {
             anchors.fill: parent
+            enabled: windowIsActive()
             onClicked: forceActiveFocus()
         }
 
@@ -55,6 +56,7 @@ ApplicationWindow
             anchors.topMargin: 5
             anchors.right: parent.right
             anchors.rightMargin: 40
+            detailIsActive: windowIsActive()
             fileCodeEnable: true
             readOnly: true
             containBackground: false
@@ -63,8 +65,24 @@ ApplicationWindow
 
     }
 
+    function closeWindow()
+    {
+        root.pageMode = constant.tvn_LIST_FILE
+    }
+
     function forceFocus()
     {
         container.forceActiveFocus()
     }
+
+    // It returns true if the program's focus is on this page
+    function windowIsActive()
+    {
+        if (root.pageMode===constant.tvn_VIEW_FILE && root.errorMessage==="")
+        {
+            return true
+        }
+        return false
+    }
+
 }

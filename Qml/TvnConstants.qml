@@ -2,8 +2,6 @@ import QtQuick 2.0
 
 Item
 {
-
-
     property int tvn_LIST_FILE:     0
     property int tvn_NEW_FILE:      1
     property int tvn_EDIT_FILE:     2
@@ -16,4 +14,7 @@ Item
     property int tvn_IMAGE_REGISTRATION_AD:             4
 
 
+    property int tvn_DIALOG_NOPE:                       0
+    property int tvn_DIALOG_SAVE:                       1
+    property int tvn_DIALOG_SURE_DONT_SAVE_CHANGES:     2
 }

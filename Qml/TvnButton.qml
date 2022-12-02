@@ -2,6 +2,7 @@ import QtQuick 2.0
 
 Rectangle
 {
+    property bool isActive: false
     property string btnText: ""
     property string btnIcon: ""
     property int textWidth: 0
@@ -24,7 +25,6 @@ Rectangle
     border.width: 1
     border.color: isHovered? color_border_hovered : color_border_normal
     color: isHovered? color_background_hovered : color_background_normal
-
 
     Item
     {
@@ -59,11 +59,15 @@ Rectangle
     {
         anchors.fill: parent
         hoverEnabled: true
-        cursorShape: Qt.PointingHandCursor
+        cursorShape: isActive? Qt.PointingHandCursor : Qt.ArrowCursor
+        enabled: isActive
 
         onEntered: isHovered = true
         onExited: isHovered = false
-        onClicked: clickButton()
+        onClicked:
+        {
+            clickButton()
+        }
     }
 
 }

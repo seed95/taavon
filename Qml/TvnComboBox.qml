@@ -5,6 +5,7 @@ Item
 {
     id: container
 
+    property bool comboIsActive: false
     property string titleText: ""
     property string headerText: ""
     property int comboWidth: 0
@@ -29,7 +30,7 @@ Item
 
     height: 35
 
-    Component.onCompleted: {addToList()}
+    Component.onCompleted: {addToList()} // TODO fix this
 
     Text
     {
@@ -95,7 +96,8 @@ Item
             {
                 anchors.fill: parent
                 hoverEnabled: true
-                cursorShape: Qt.PointingHandCursor
+                cursorShape: comboIsActive? Qt.PointingHandCursor : Qt.ArrowCursor
+                enabled: comboIsActive
 
                 onEntered: isHovered = true
                 onExited: isHovered = false

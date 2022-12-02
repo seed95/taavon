@@ -9,6 +9,7 @@ Rectangle
     property string viceName: ""
     property string secretaryName: ""
     property bool readOnlyTable: false
+    property bool tableIsActive: false
 
     border.color: "#e8e9e3"
     border.width: 1
@@ -22,6 +23,7 @@ Rectangle
         id: title
         anchors.top: parent.top
         anchors.right: parent.right
+        itemIsActive: tableIsActive
         positionText: "سمت"
         nameText: "نام و نام خانوادگی"
         colorText: "#c5c74d"
@@ -33,6 +35,7 @@ Rectangle
         id: ceo
         anchors.top: title.bottom
         anchors.right: parent.right
+        itemIsActive: tableIsActive
         positionText: "مدیر عامل"
         nameText: ceoName
         readOnlyItem: readOnlyTable
@@ -44,6 +47,7 @@ Rectangle
         id: chairman
         anchors.top: ceo.bottom
         anchors.right: parent.right
+        itemIsActive: tableIsActive
         positionText: "رئیس"
         nameText: chairmanName
         readOnlyItem: readOnlyTable
@@ -55,6 +59,7 @@ Rectangle
         id: vice
         anchors.top: chairman.bottom
         anchors.right: parent.right
+        itemIsActive: tableIsActive
         positionText: "نائب رئیس"
         nameText: viceName
         readOnlyItem: readOnlyTable
@@ -66,6 +71,7 @@ Rectangle
         id: secretary
         anchors.top: vice.bottom
         anchors.right: parent.right
+        itemIsActive: tableIsActive
         positionText: "منشی"
         nameText: secretaryName
         readOnlyItem: readOnlyTable

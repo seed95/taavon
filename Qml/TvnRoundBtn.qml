@@ -13,7 +13,6 @@ Item
     property int fontWeight: Font.Normal
     property int fontSize: 16
 
-
     property color color_background_normal: "#3b4351"
     property color color_background_hovered: "#576075"
     property color color_background_disable: "#3b4351"
@@ -136,7 +135,7 @@ Item
         anchors.fill: parent
         hoverEnabled: true
         cursorShape: clickable? Qt.PointingHandCursor : Qt.ArrowCursor
-        visible: clickable
+        enabled: clickable
 
         onEntered: isHovered = true
         onExited: isHovered = false

@@ -5,6 +5,7 @@ import QtQuick.Controls 2.5
 Item
 {
 
+    property bool isActive: false
     property string titleText: ""
     property int inputWidth: 0
 
@@ -60,6 +61,7 @@ Item
             validator: IntValidator {bottom: 1; top: 1000; locale: "fa"}
             background: Rectangle{color: "transparent"}
             color: focus? color_text_hovered: color_text_normal
+            enabled: isActive
             onFocusChanged:
             {
                 if (focus)

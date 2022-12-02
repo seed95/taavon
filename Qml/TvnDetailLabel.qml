@@ -3,6 +3,8 @@ import QtQuick.Controls 2.5
 
 Item {
 
+    property var labelValidator: RegExpValidator { regExp: /./ }
+    property bool labelIsActive: false
     property string titleText: ""
     property string contentText: ""
     property string parenthesesText: ""
@@ -14,7 +16,9 @@ Item {
     property int inputWidth: 0
     property bool alignCenter: !contentReadOnly
 
-    property bool isActive: false
+
+    property string text_written: ""
+    property bool escape_clicked: false
 
     signal changeItem(string text)
 
@@ -142,6 +146,7 @@ Item {
             font.family: iranSansWeb.name
             font.pixelSize: contentFontSize
             selectByMouse: true
+            validator: labelValidator
             readOnly: contentReadOnly
             clip: true
             background: Rectangle{color: "transparent"}
@@ -161,16 +166,38 @@ Item {
                 }
 
             }
-            onAccepted: {focus = false; root.updateFocus()}
-            Keys.onEscapePressed: {focus = false; root.updateFocus()}
+            onAccepted: focus = false
+            Keys.onEscapePressed:
+            {
+                text = contentText
+                focus = false
+            }
+            enabled: labelIsActive
             onFocusChanged:
             {
                 if (!focus)
                 {
+                    if (text==="")
+                    {
+                        text = contentText
+                    }
+
+                    if (text!==contentText)
+                    {
+                        root.hasChanged = true
+                        contentText = text
+                    }
+
                     changeItem(text)
+                    root.updateFocus()
                 }
             }
         }
+    }
+
+    function updateText(text)
+    {
+        content.text = text
     }
 
 }

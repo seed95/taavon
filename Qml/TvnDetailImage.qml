@@ -2,6 +2,7 @@ import QtQuick 2.0
 
 Item {
 
+    property bool imageIsActive: false
     property bool extraordinaryHasImage: false
     property bool generalHasImage: false
     property bool licenceHasImage: false
@@ -34,6 +35,7 @@ Item {
         anchors.verticalCenter: parent.verticalCenter
         labelText: "آخرین مجمع فوق العاده"
         hasImage: extraordinaryHasImage
+        imageButtonisActive: imageIsActive
         onClickIcon: handleClickImage(constant.tvn_IMAGE_EXTRAORDINARY_MEETING, extraordinaryHasImage)
     }
 
@@ -46,6 +48,7 @@ Item {
         anchors.verticalCenter: parent.verticalCenter
         labelText: "آخرین مجمع سالانه"
         hasImage: generalHasImage
+        imageButtonisActive: imageIsActive
         onClickIcon: handleClickImage(constant.tvn_IMAGE_GENERAL_MEETING, generalHasImage)
     }
 
@@ -58,6 +61,7 @@ Item {
         anchors.verticalCenter: parent.verticalCenter
         labelText: "مجوز"
         hasImage: licenceHasImage
+        imageButtonisActive: imageIsActive
         onClickIcon: handleClickImage(constant.tvn_IMAGE_LICENCE, licenceHasImage)
     }
 
@@ -70,6 +74,7 @@ Item {
         anchors.verticalCenter: parent.verticalCenter
         labelText: "آگهی ثبت"
         hasImage: registrationHasImage
+        imageButtonisActive: imageIsActive
         onClickIcon: handleClickImage(constant.tvn_IMAGE_REGISTRATION_AD, registrationHasImage)
     }
 

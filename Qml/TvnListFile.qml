@@ -3,41 +3,20 @@ import QtQuick.Controls 2.0
 
 Item
 {
-    id: container
-
-    /***** Set this variables in cpp *****/
-    property string fileCode: "127"
-    property string keepingPlace: "بایگانی/دایی"
-    property string status: "غیر فعال"
-    property string ledgerBinder: "زونکن"
-    property string numberOfCover: "3"
-    property string fileName: "پسته کاری گلچهرگان آران"
-    property string registrationNumber: "1059"
-    property string dateOfLastMeeting: "۱۳۹۵/۸/۱۶"
-    property string nationalId: "10260098471"
-    property string ceoName: "محسن اکبری"
-    property string mobileNumber: "09123456789"
-    property string dateOfRegistration: "۱۳۹۵/۸/۱۶"
-    property string numberOfPrimaryMembers: "7"
-    property string numberOfCurrentMembers: "7"
-    property string valuePerShare: "1000000"
-    property string startingCapital: "100000000"
-    property string currentCapital: "90000000"
-    property string chairmanName: "محسن فرقانی نوش آبادی"
-    property string viceName: "محسن فرقانی نوش آبادی"
-    property string secretaryName: "محسن فرقانی نوش آبادی"
-    property string phoneNumber: "03154754744"
-    property string address: "آران و بیدگل شهرک صنعتی هلال کارخانه مشهد نگین توس"
-    property bool extraordinaryMeetingHasImage: false
-    property bool generalMeetingHasImage: false
-    property bool licenceHasImage: false
-    property bool registrationAdHasImage: false
+    id: listFile
 
     property string color_background_1: "#414858"
     property string color_background_2: "#576075"
+    property bool isActive: windowIsActive()
 
 
-    Keys.onEscapePressed: root.pageMode = constant.tvn_LIST_FILE
+//    Keys.onEscapePressed:
+//    {
+//        if (isActive)
+//        {
+//            root.pageMode = constant.tvn_LIST_FILE
+//        }
+//    }
     //Cpp Signals
 
     //Qml Signals
@@ -53,6 +32,7 @@ Item
         anchors.bottom: parent.bottom
         model: ListModel{id: lm_file}
         clip: true
+        interactive: isActive
 
         delegate: TvnFileElement
         {
@@ -88,21 +68,14 @@ Item
 
             onClickItem:
             {
-                if (root.pageMode===constant.tvn_LIST_FILE)
-                {
-                    handleClickItem(index)
-                    root.pageMode = constant.tvn_VIEW_FILE
-                }
-
+                handleClickItem(index)
+                root.pageMode = constant.tvn_VIEW_FILE
             }
 
             onEditItem:
             {
-                if (root.pageMode===constant.tvn_LIST_FILE)
-                {
-                    handleClickItem(index)
-                    root.pageMode = constant.tvn_EDIT_FILE
-                }
+                handleClickItem(index)
+                root.pageMode = constant.tvn_EDIT_FILE
             }
         }
 
@@ -150,37 +123,48 @@ Item
 
         lm_file.append({"elementColorBackground": color_background,
                         "elementIndex" : lm_file.count,
-                        "elementFileCode" : container.fileCode,
-                        "elementKeepingPlace" : container.keepingPlace,
-                        "elementStatus" : container.status,
-                        "elementLedgerBinder" : container.ledgerBinder,
-                        "elementNumberOfCover" : container.numberOfCover,
-                        "elementFileName" : container.fileName,
-                        "elementRegistrationNumber" : container.registrationNumber,
-                        "elementDateOfLastMeeting" : container.dateOfLastMeeting,
-                        "elementNationalId" : container.nationalId,
-                        "elementCeoName" : container.ceoName,
-                        "elementMobileNumber" : container.mobileNumber,
-                        "elementDateOfRegistration" : container.dateOfRegistration,
-                        "elementNumberOfPrimaryMembers" : container.numberOfPrimaryMembers,
-                        "elementNumberOfCurrentMembers" : container.numberOfCurrentMembers,
-                        "elementValuePerShare" : container.valuePerShare,
-                        "elementStartingCapital" : container.startingCapital,
-                        "elementCurrentCapital" : container.currentCapital,
-                        "elementChairmanName" : container.chairmanName,
-                        "elementViceName" : container.chairmanName,
-                        "elementSecretaryName" : container.secretaryName,
-                        "elementPhoneNumber" : container.phoneNumber,
-                        "elementAddress" : container.address,
-                        "elementExtraordinaryMeetingImage" : container.extraordinaryMeetingHasImage,
-                        "elementGeneralMeetingImage" : container.generalMeetingHasImage,
-                        "elementLicenceImage" : container.licenceHasImage,
-                        "elementRegistrationAdImage" : container.registrationAdHasImage})
+                        "elementFileCode" : root.fileCode,
+                        "elementKeepingPlace" : root.keepingPlace,
+                        "elementStatus" : root.fileStatus,
+                        "elementLedgerBinder" : root.ledgerBinder,
+                        "elementNumberOfCover" : root.numberOfCover,
+                        "elementFileName" : root.fileName,
+                        "elementRegistrationNumber" : root.registrationNumber,
+                        "elementDateOfLastMeeting" : root.dateOfLastMeeting,
+                        "elementNationalId" : root.nationalId,
+                        "elementCeoName" : root.ceoName,
+                        "elementMobileNumber" : root.mobileNumber,
+                        "elementDateOfRegistration" : root.dateOfRegistration,
+                        "elementNumberOfPrimaryMembers" : root.numberOfPrimaryMembers,
+                        "elementNumberOfCurrentMembers" : root.numberOfCurrentMembers,
+                        "elementValuePerShare" : root.valuePerShare,
+                        "elementStartingCapital" : root.startingCapital,
+                        "elementCurrentCapital" : root.currentCapital,
+                        "elementChairmanName" : root.chairmanName,
+                        "elementViceName" : root.chairmanName,
+                        "elementSecretaryName" : root.secretaryName,
+                        "elementPhoneNumber" : root.phoneNumber,
+                        "elementAddress" : root.officeAddress,
+                        "elementExtraordinaryMeetingImage" : root.extraordinaryMeetingHasImage,
+                        "elementGeneralMeetingImage" : root.generalMeetingHasImage,
+                        "elementLicenceImage" : root.licenceHasImage,
+                        "elementRegistrationAdImage" : root.registrationAdHasImage})
     }
 
     /*** Call this functions from qml ***/
+    function windowIsActive()
+    {
+        if (root.pageMode===constant.tvn_LIST_FILE && root.errorMessage==="")
+        {
+            return true
+        }
+        return false
+    }
+
     function handleClickItem(index)
     {
+        console.log("1", root.numberOfCover)
+        console.log("1", root.registrationNumber)
         var item = lm_file.get(index)
         root.selectedFileIndex = index
         root.fileCode = item.elementFileCode
@@ -209,6 +193,8 @@ Item
         root.generalMeetingHasImage = item.elementGeneralMeetingImage
         root.licenceHasImage = item.elementLicenceImage
         root.registrationAdHasImage = item.elementRegistrationAdImage
+        console.log("2", root.numberOfCover)
+        console.log("2", root.registrationNumber)
     }
 
     function updateFile(index)
@@ -245,6 +231,11 @@ Item
         item.elementGeneralMeetingImage = root.generalMeetingHasImage
         item.elementLicenceImage = root.licenceHasImage
         item.elementRegistrationAdImage = root.registrationAdHasImage
+    }
+
+    function forceFocus()
+    {
+        listFile.forceActiveFocus()
     }
 
 }

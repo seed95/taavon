@@ -5,6 +5,7 @@ import QtQuick.Controls 2.5
 Item
 {
 
+    property bool isActive: false
     property string titleText: ""
     property int inputWidth: 0
 
@@ -61,6 +62,7 @@ Item
             selectByMouse: true
             background: Rectangle{color: "transparent"}
             color: focus? color_text_hovered: color_text_normal
+            enabled: isActive
             onFocusChanged:
             {
                 if (focus)

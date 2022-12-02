@@ -5,6 +5,7 @@ Item
     property string labelText: ""
     property bool hasImage: true
     property bool disabled: false
+    property bool imageButtonisActive: false
 
     property string icon_text:
     {
@@ -43,7 +44,7 @@ Item
         fontSize: 14
         textButton: icon_text
         disabledButton: !hasImage
-        clickable: true && !(root.pageMode === constant.tvn_VIEW_FILE && !hasImage)
+        clickable: !(root.pageMode === constant.tvn_VIEW_FILE && !hasImage) && imageButtonisActive
         onButtonClicked: clickIcon()
     }
 

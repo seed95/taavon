@@ -132,32 +132,32 @@ void TvnCsv::LoadCsv()
             continue;
         }
 
-        QQmlProperty::write(list, "fileCode", wordList[HEADER_INDEX_FILE_CODE]);
-        QQmlProperty::write(list, "keepingPlace", wordList[HEADER_INDEX_KEEPING_PLACE]);
-        QQmlProperty::write(list, "status", wordList[HEADER_INDEX_STATUS]);
-        QQmlProperty::write(list, "ledgerBinder", wordList[HEADER_INDEX_LEDGER_BINDER]);
-        QQmlProperty::write(list, "numberOfCover", wordList[HEADER_INDEX_NUMBER_OF_COVER]);
-        QQmlProperty::write(list, "fileName", wordList[HEADER_INDEX_FILE_NAME]);
-        QQmlProperty::write(list, "registrationNumber", wordList[HEADER_INDEX_REGISTRATION_NUMBER]);
-        QQmlProperty::write(list, "dateOfLastMeeting", wordList[HEADER_INDEX_DATE_OF_LAST_MEETING]);
-        QQmlProperty::write(list, "nationalId", wordList[HEADER_INDEX_NATIONAL_ID]);
-        QQmlProperty::write(list, "ceoName", wordList[HEADER_INDEX_CEO_NAME]);
-        QQmlProperty::write(list, "mobileNumber", wordList[HEADER_INDEX_MOBILE_NUMBER]);
-        QQmlProperty::write(list, "dateOfRegistration", wordList[HEADER_INDEX_DATE_OF_REGISTRATION]);
-        QQmlProperty::write(list, "numberOfPrimaryMembers", wordList[HEADER_INDEX_NUMBER_OF_PRIMARY_MEMBERS]);
-        QQmlProperty::write(list, "numberOfCurrentMembers", wordList[HEADER_INDEX_NUMBER_OF_CURRENT_MEMBERS]);
-        QQmlProperty::write(list, "valuePerShare", wordList[HEADER_INDEX_VALUE_PER_SHARE]);
-        QQmlProperty::write(list, "startingCapital", wordList[HEADER_INDEX_STARTING_CAPITAL]);
-        QQmlProperty::write(list, "currentCapital", wordList[HEADER_INDEX_CURRENT_CAPITAL]);
-        QQmlProperty::write(list, "chairmanName", wordList[HEADER_INDEX_CHAIRMAN_NAME]);
-        QQmlProperty::write(list, "viceName", wordList[HEADER_INDEX_VICE_NAME]);
-        QQmlProperty::write(list, "secretaryName", wordList[HEADER_INDEX_SECRETARY_NAME]);
-        QQmlProperty::write(list, "phoneNumber", wordList[HEADER_INDEX_PHONE_NUMBER]);
-        QQmlProperty::write(list, "address", wordList[HEADER_INDEX_ADDRESS]);
-        QQmlProperty::write(list, "extraordinaryMeetingHasImage", wordList[HEADER_INDEX_IMAGE_EXTRAORDINARY_MEETING]);
-        QQmlProperty::write(list, "generalMeetingHasImage", wordList[HEADER_INDEX_IMAGE_GENERAL_MEETING]);
-        QQmlProperty::write(list, "licenceHasImage", wordList[HEADER_INDEX_IMAGE_LICENCE]);
-        QQmlProperty::write(list, "registrationAdHasImage", wordList[HEADER_INDEX_IMAGE_REGISTRATION_AD]);
+        TvnUtility::setFileCode(root,  wordList[HEADER_INDEX_FILE_CODE]);
+        TvnUtility::setKeepingPlace(root,  wordList[HEADER_INDEX_KEEPING_PLACE]);
+        TvnUtility::setFileStatus(root,  wordList[HEADER_INDEX_STATUS]);
+        TvnUtility::setLedgerBinder(root,  wordList[HEADER_INDEX_LEDGER_BINDER]);
+        TvnUtility::setNumberOfCover(root,  wordList[HEADER_INDEX_NUMBER_OF_COVER]);
+        TvnUtility::setFileName(root,  wordList[HEADER_INDEX_FILE_NAME]);
+        TvnUtility::setRegistrationNumber(root,  wordList[HEADER_INDEX_REGISTRATION_NUMBER]);
+        TvnUtility::setDateOfRegistration(root,  wordList[HEADER_INDEX_DATE_OF_LAST_MEETING]);
+        TvnUtility::setNationalId(root,  wordList[HEADER_INDEX_NATIONAL_ID]);
+        TvnUtility::setDateOfLastMeeting(root,  wordList[HEADER_INDEX_DATE_OF_LAST_MEETING]);
+        TvnUtility::setNumberOfPrimaryMembers(root,  wordList[HEADER_INDEX_NUMBER_OF_PRIMARY_MEMBERS]);
+        TvnUtility::setNumberOfCurrentMembers(root,  wordList[HEADER_INDEX_NUMBER_OF_CURRENT_MEMBERS]);
+        TvnUtility::setValuePerShare(root,  wordList[HEADER_INDEX_VALUE_PER_SHARE]);
+        TvnUtility::setStartingCapital(root,  wordList[HEADER_INDEX_STARTING_CAPITAL]);
+        TvnUtility::setCurrentCapital(root,  wordList[HEADER_INDEX_CURRENT_CAPITAL]);
+        TvnUtility::setPhoneNumber(root,  wordList[HEADER_INDEX_PHONE_NUMBER]);
+        TvnUtility::setMobileNumber(root,  wordList[HEADER_INDEX_MOBILE_NUMBER]);
+        TvnUtility::setOfficeAddress(root,  wordList[HEADER_INDEX_ADDRESS]);
+        TvnUtility::setCeoName(root,  wordList[HEADER_INDEX_CEO_NAME]);
+        TvnUtility::setChairmanName(root,  wordList[HEADER_INDEX_CHAIRMAN_NAME]);
+        TvnUtility::setViceName(root,  wordList[HEADER_INDEX_VICE_NAME]);
+        TvnUtility::setSecretaryName(root,  wordList[HEADER_INDEX_SECRETARY_NAME]);
+        TvnUtility::setExtraordinaryMeetingHasImage(root,  wordList[HEADER_INDEX_IMAGE_EXTRAORDINARY_MEETING]);
+        TvnUtility::setGeneralMeetingHasImage(root,  wordList[HEADER_INDEX_IMAGE_GENERAL_MEETING]);
+        TvnUtility::setLicenceHasImage(root,  wordList[HEADER_INDEX_IMAGE_LICENCE]);
+        TvnUtility::setRegistrationAdHasImage(root,  wordList[HEADER_INDEX_IMAGE_REGISTRATION_AD]);
 
         QMetaObject::invokeMethod(list, "addToList");
     }

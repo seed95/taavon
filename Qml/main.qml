@@ -7,7 +7,7 @@ Window
 {
     id: root
 
-    /***** Set this variables in qml and read in cpp *****/
+    /***** Used this variables in qml/cpp *****/
     // Variables that show in edit or view page
     property int selectedFileIndex: 0
     property string fileCode: ""
@@ -37,8 +37,13 @@ Window
     property bool licenceHasImage: false
     property bool registrationAdHasImage: false
 
+
+    /***** Used this variables in qml *****/
     // show edit/view/new/list file based on mode
     property int pageMode: constant.tvn_LIST_FILE
+
+    // any variable has changed in the edit page
+    property bool hasChanged: false
 
     /***** Set this variables in cpp *****/
     //Error properties
@@ -57,7 +62,19 @@ Window
     color: "#2f343f"
     title: "مدیریت پرونده های تعاونی"
 
+    onPageModeChanged: root.updateFocus()
+    onErrorMessageChanged:
+    {
+        if (root.errorMessage!=="")
+        {
+            root.updateFocus()
+        }
+    }
+
 //    onFocusObjectChanged: console.log("focus", activeFocusItem)
+
+//    onErrorMessageChanged: console.log("error message", errorMessage)
+//    onHasChangedChanged: console.log('has changed', hasChanged)
 
     //Fonts:
     FontLoader
@@ -110,9 +127,12 @@ Window
     MouseArea
     {
         anchors.fill: parent
+        enabled: list.windowIsActive()
         onClicked:
         {
-            list_file.forceActiveFocus()
+            console.log("onClicked list file")
+            root.updateFocus()
+//            list.forceActiveFocus()
         }
     }
 
@@ -128,6 +148,7 @@ Window
         x: 25
         y: 14
         z: 1
+        searchIsActive: list.windowIsActive()
     }
 
     TvnHeader
@@ -139,7 +160,7 @@ Window
 
     TvnListFile
     {
-        id: list_file
+        id: list
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.rightMargin: 25
@@ -169,6 +190,7 @@ Window
         width: 135
         x: 20
         y: 750
+        isActive: list.windowIsActive()
         btnText: "خروجی اکسل"
         btnIcon: "\uf56e"
         textWidth: 110
@@ -181,6 +203,7 @@ Window
         width: 145
         x: 170
         y: 750
+        isActive: list.windowIsActive()
         btnText: "ثبت پرونده جدید"
         btnIcon: "+"
         textWidth: 128
@@ -207,13 +230,13 @@ Window
 
     function saveChangesSuccessfully()
     {
-        list_file.updateFile(root.selectedFileIndex)
-        root.pageMode = constant.tvn_LIST_FILE
+        list.updateFile(root.selectedFileIndex)
+        root.pageMode = constant.tvn_list
+        root.hasChanged = false
     }
 
-    /*** Call this functions from qml ***/
 
-    /*** Utilities functions ***/
+    /*** Call this functions from qml ***/
     function updateFocus()
     {
         if (root.pageMode === constant.tvn_VIEW_FILE)
@@ -226,7 +249,7 @@ Window
         }
         else
         {
-            list_file.forceActiveFocus()
+            list.forceFocus()
         }
     }
 
@@ -251,8 +274,11 @@ Window
             root.registrationAdHasImage = value
         }
 
-        list_file.updateImageFile(root.selectedFileIndex)
+        list.updateImageFile(root.selectedFileIndex)
     }
+
+
+    /*** Utilities functions ***/
 
     //Slice string from 0 with amount len
     //and add '...' to end text

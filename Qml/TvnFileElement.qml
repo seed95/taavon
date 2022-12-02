@@ -170,18 +170,19 @@ Rectangle
         {
             anchors.fill: parent
             hoverEnabled: true
-            cursorShape: Qt.PointingHandCursor
+            cursorShape: listFile.isActive? Qt.PointingHandCursor: Qt.ArrowCursor
+            enabled: listFile.isActive
             onClicked: editItem()
         }
     }
 
     MouseArea
     {
+        height: parent.height
         anchors.right: parent.right
         anchors.left: edit.right
-        height: parent.height
         anchors.top: parent.top
-        onClicked: list_file.forceActiveFocus()
+        enabled: listFile.isActive
         onDoubleClicked: clickItem()
     }
 

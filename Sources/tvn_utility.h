@@ -12,6 +12,32 @@ public:
 
 
     static void setError(QObject *ui, QString message);
+    static void setFileCode(QObject *ui, QString filecode);
+    static void setKeepingPlace(QObject *ui, QString keepingPlace);
+    static void setFileStatus(QObject *ui, QString fileStatus);
+    static void setLedgerBinder(QObject *ui, QString ledgerBinder);
+    static void setNumberOfCover(QObject *ui, QString numberOfCover);
+    static void setFileName(QObject *ui, QString fileName);
+    static void setRegistrationNumber(QObject *ui, QString registrationNumber);
+    static void setDateOfRegistration(QObject *ui, QString dateOfRegistration);
+    static void setNationalId(QObject *ui, QString nationalId);
+    static void setDateOfLastMeeting(QObject *ui, QString dateOfLastMeeting);
+    static void setNumberOfPrimaryMembers(QObject *ui, QString numberOfPrimaryMembers);
+    static void setNumberOfCurrentMembers(QObject *ui, QString numberOfCurrentMembers);
+    static void setValuePerShare(QObject *ui, QString valuePerShare);
+    static void setStartingCapital(QObject *ui, QString startingCapital);
+    static void setCurrentCapital(QObject *ui, QString currentCapital);
+    static void setPhoneNumber(QObject *ui, QString phoneNumber);
+    static void setMobileNumber(QObject *ui, QString mobileNumber);
+    static void setOfficeAddress(QObject *ui, QString officeAddress);
+    static void setCeoName(QObject *ui, QString ceoName);
+    static void setChairmanName(QObject *ui, QString chairmanName);
+    static void setViceName(QObject *ui, QString viceName);
+    static void setSecretaryName(QObject *ui, QString secretaryName);
+    static void setExtraordinaryMeetingHasImage(QObject *ui, QString extraordinaryMeetingHasImage);
+    static void setGeneralMeetingHasImage(QObject *ui, QString generalMeetingHasImage);
+    static void setLicenceHasImage(QObject *ui, QString licenceHasImage);
+    static void setRegistrationAdHasImage(QObject *ui, QString registrationAdHasImage);
 
 
     static QString getFileCode(QObject *ui);
