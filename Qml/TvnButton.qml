@@ -5,7 +5,6 @@ Rectangle
     property bool isActive: false
     property string btnText: ""
     property string btnIcon: ""
-    property int textWidth: 0
 
     property color color_background_normal:     "#c5c9d3"
     property color color_background_hovered:    "#e2e4e9"
@@ -28,7 +27,18 @@ Rectangle
 
     Item
     {
-        width: textWidth
+        width:
+        {
+            if ( btn_icon.visible )
+            {
+                btn_icon.contentWidth + btn_text.contentWidth + btn_text.anchors.rightMargin
+            }
+            else
+            {
+                btn_text.contentWidth
+            }
+        }
+        height: parent.height
         anchors.centerIn: parent
 
         Text
@@ -40,13 +50,15 @@ Rectangle
             font.pixelSize: 16
             font.family: fontAwesomeSolid.name
             color: isHovered? color_text_hovered : color_text_normal
+            visible: btnIcon!==""
         }
 
         Text
         {
+            id: btn_text
             text: btnText
-            anchors.right: btn_icon.left
-            anchors.rightMargin: 5
+            anchors.right: btn_icon.visible? btn_icon.left : parent.right
+            anchors.rightMargin: btn_icon.visible? 5:0
             anchors.verticalCenter: parent.verticalCenter
             font.pixelSize: 16
             font.family: iranSansWeb.name
@@ -64,10 +76,7 @@ Rectangle
 
         onEntered: isHovered = true
         onExited: isHovered = false
-        onClicked:
-        {
-            clickButton()
-        }
+        onClicked: clickButton()
     }
 
 }

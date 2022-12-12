@@ -36,6 +36,7 @@ void TvnConfig::readConfig()
         throw QString("read config file error (invalid json object)");
     }
     QJsonObject jsonObj = document.object();
-    conf.csvFilePath = jsonObj.value(JSON_KEY_CSV_FILE_PATH).toString();
-    conf.shareFolderPath = jsonObj.value(JSON_KEY_SHARE_FOLDER_PATH).toString();
+    conf.imageShareFolderPath = jsonObj.value(JSON_KEY_IMAGE_SHARE_FOLDER_PATH).toString();
+    conf.shareCsvFile = jsonObj.value(JSON_KEY_SHARE_CSV_FILE).toString();
+    conf.localCsvFile = jsonObj.value(JSON_KEY_LOCAL_CSV_FILE).toString();
 }

@@ -2,101 +2,74 @@ import QtQuick 2.10
 import QtQuick.Window 2.10
 import QtQuick.Controls 2.5
 
-ApplicationWindow
+Rectangle
 {
-    width: container.width
-    minimumWidth: container.width
-    maximumWidth: container.width
+    id: container
 
-    height: 100
-    minimumHeight: height
-    maximumHeight: height
+    property string messageText: ""
 
-    x: Screen.width / 2 - width / 2
-    y: Screen.height / 2 - height / 2
-    flags: Qt.WindowCloseButtonHint | Qt.CustomizeWindowHint | Qt.Dialog | Qt.WindowTitleHint
-    title: "خطا"
+    width: message.contentWidth>150? message.contentWidth + 150 : 200
+    height: 150
+    color: "#2d2d2d"
+    border.color: "#808080"
+    border.width: 3
+    radius: 15
 
-    onVisibleChanged:
+    signal clickOk()
+
+    Text
     {
-        if (visible)
-        {
-            forceFocus()
-        }
+        id: error
+        anchors.right: parent.right
+        anchors.rightMargin: 15
+        anchors.topMargin: 15
+        anchors.top: parent.top
+        text: "خطا"
+        font.pixelSize: 23
+        font.family: iranSansWebBold.name
+        font.weight: Font.Bold
+        color: "#ffffff"
     }
 
-    onClosing: closeWindow()
-
-    Rectangle
+    Text
     {
-        id: container
-
-        width: message.contentWidth>150? message.contentWidth + 150 : 200
-        height: parent.height
-        color: "#2d2d2d"
-
-        Keys.onEscapePressed: closeWindow()
-
-        MouseArea
-        {
-            anchors.fill: parent
-            onClicked: container.forceActiveFocus()
-        }
-
-        Text
-        {
-            id: error
-            anchors.right: parent.right
-            anchors.rightMargin: 15
-            anchors.topMargin: 15
-            anchors.top: parent.top
-            text: "خطا"
-            font.pixelSize: 23
-            font.family: iranSansWebBold.name
-            font.weight: Font.Bold
-            color: "#ffffff"
-        }
-
-        Text
-        {
-            id: icon
-            anchors.left: parent.left
-            anchors.top: error.top
-            anchors.leftMargin: 15
-            text: "\uf071"
-            font.pixelSize: 25
-            font.family: fontAwesomeSolid.name
-            font.weight: Font.Bold
-            color: "#fadf15"
-        }
-
-        TextField
-        {
-            id: message
-
-            anchors.right: error.right
-            anchors.top: error.bottom
-            anchors.topMargin: 10
-            text: root.errorMessage
-            horizontalAlignment: TextInput.AlignRight
-            font.family: iranSansWeb.name
-            font.pixelSize: 17
-            selectByMouse: true
-            readOnly: true
-            background: Rectangle{color: "transparent"}
-            color: "#ffffff"
-        }
-
+        id: icon
+        anchors.left: parent.left
+        anchors.top: error.top
+        anchors.leftMargin: 15
+        text: "\uf071"
+        font.pixelSize: 25
+        font.family: fontAwesomeSolid.name
+        font.weight: Font.Bold
+        color: "#fadf15"
     }
 
-    function forceFocus()
+    TextField
     {
-        container.forceActiveFocus()
+        id: message
+
+        anchors.right: error.right
+        anchors.top: error.bottom
+        anchors.topMargin: 2
+        text: container.messageText
+        horizontalAlignment: TextInput.AlignRight
+        font.family: iranSansWeb.name
+        font.pixelSize: 17
+        selectByMouse: true
+        readOnly: true
+        background: Rectangle{color: "transparent"}
+        color: "#ffffff"
     }
 
-    function closeWindow()
+    TvnButton
     {
-        root.errorMessage = ""
+        width: 80
+        anchors.left: icon.left
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 10
+        btnText: "ok"
+        isActive: true
+        onClickButton: clickOk()
     }
 
 }

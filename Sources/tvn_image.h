@@ -2,6 +2,10 @@
 #define TVN_IMAGE_H
 
 #include <QObject>
+#include <QProcess>
+#include <QVector>
+
+#include "tvn_sharing.h"
 
 
 #define IMAGE_NAME_EXTRAORDINARY_MEETING    "extraordinary"
@@ -18,26 +22,55 @@ class TvnImage : public QObject
 {
     Q_OBJECT
 public:
-    explicit TvnImage(QObject *root, QObject *parent = nullptr);
+    explicit TvnImage(QObject *root, TvnSharing *sharing, QObject *parent = nullptr);
 
 signals:
 
 
 private slots:
-    void downloadImage(int type);
-    void deleteImage(int type);
-    void uploadImage(int type);
+    // Detail image slots
+    void downloadImage();
+    void deleteImage();
+    void uploadImage();
+
+    void chooseImage();
+    void deleteImages();
+    void uploadImages();
+
+    // Process slots
+    void finishProcess();
+    void errorProcess();
+
+    // View slots
+    void cancelDownload();
+
+    // Edit slots
+    void cancelUpload();
+    void cancelDelete();
 
 private:
-    QString getImageName(int type);
-    QString getImageNameFa(int type);
+    QString getImageName(QString type);
+    QString getImageNameFa(QString type);
+    QString getImagePath(QString type);
+
+    void deleteOneImage();
+    void uploadOneImage();
 
 private:
     QObject *root;
+    QObject *view;
+    QObject *edit;
     QObject *viewImage;
     QObject *editImage;
 
+    TvnSharing *sharing;
 
+    // if successfully download image, open directory
+    QString dstDownloadDir;
+
+    QVector<QString> typeDeletedImages;
+    QVector<QString> typeUploadImages;
+    QString imageMode;
 };
 
 #endif // TVN_IMAGE_H

@@ -3,6 +3,8 @@
 
 #include <QObject>
 
+#include "tvn_sharing.h"
+
 
 #define HEADER_INDEX_FILE_CODE 0
 #define HEADER_INDEX_KEEPING_PLACE 1
@@ -38,19 +40,28 @@ class TvnCsv : public QObject
 {
     Q_OBJECT
 public:
-    explicit TvnCsv(QObject *root, QObject *parent = nullptr);
+    explicit TvnCsv(QObject *root, TvnSharing *sharing, QObject *parent = nullptr);
 
-    static bool SaveImageChanges(QObject *ui, int type, bool upload);
+    static bool SaveImageChanges(QObject *ui, bool upload);
 
 public:
     void LoadCsv();
 
 private slots:
+    // Edit slots
     void SaveChanges();
+    void CancelSaveChanges();
+
+    // Sharing slots
+    void finishProcess();
+    void errorProcess();
 
 private:
     QObject *root;
     QObject *list;
+    QObject *edit;
+
+    TvnSharing *sharing;
 };
 
 #endif // TVN_CSV_H

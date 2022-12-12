@@ -163,8 +163,6 @@ Item
 
     function handleClickItem(index)
     {
-        console.log("1", root.numberOfCover)
-        console.log("1", root.registrationNumber)
         var item = lm_file.get(index)
         root.selectedFileIndex = index
         root.fileCode = item.elementFileCode
@@ -193,13 +191,13 @@ Item
         root.generalMeetingHasImage = item.elementGeneralMeetingImage
         root.licenceHasImage = item.elementLicenceImage
         root.registrationAdHasImage = item.elementRegistrationAdImage
-        console.log("2", root.numberOfCover)
-        console.log("2", root.registrationNumber)
     }
 
-    function updateFile(index)
+    // update selected file in EditFile from root variables
+    // when edit selected file and save successfully in csv.
+    function updateFile()
     {
-        var item = lm_file.get(index)
+        var item = lm_file.get(root.selectedFileIndex)
         item.elementFileCode = root.fileCode
         item.elementStatus = root.fileStatus
         item.elementKeepingPlace = root.keepingPlace
@@ -222,11 +220,6 @@ Item
         item.elementChairmanName = root.chairmanName
         item.elementViceName = root.viceName
         item.elementSecretaryName = root.secretaryName
-    }
-
-    function updateImageFile(index)
-    {
-        var item = lm_file.get(index)
         item.elementExtraordinaryMeetingImage = root.extraordinaryMeetingHasImage
         item.elementGeneralMeetingImage = root.generalMeetingHasImage
         item.elementLicenceImage = root.licenceHasImage
@@ -238,4 +231,28 @@ Item
         listFile.forceActiveFocus()
     }
 
+    // Based on the selected image type,
+    // it returns whether there is a image in the share folder or not.
+    // call this function when delete button click in EditFile, to check
+    // selected file has image for selected type.
+    function getHasImage()
+    {
+        var item = lm_file.get(root.selectedFileIndex)
+        if (root.imageType===constant.tvn_IMAGE_EXTRAORDINARY_MEETING)
+        {
+            return item.elementExtraordinaryMeetingImage
+        }
+        else if (root.imageType===constant.tvn_IMAGE_GENERAL_MEETING)
+        {
+            return item.elementGeneralMeetingImage
+        }
+        else if (root.imageType===constant.tvn_IMAGE_LICENCE)
+        {
+            return item.elementLicenceImage
+        }
+        else if (root.imageType===constant.tvn_IMAGE_REGISTRATION_AD)
+        {
+            return item.elementRegistrationAdImage
+        }
+    }
 }

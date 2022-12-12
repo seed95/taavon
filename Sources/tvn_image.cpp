@@ -10,158 +10,285 @@
 #include <QFileInfo>
 #include <QDir>
 #include <QDateTime>
+#include <QUrl>
+#include <QDesktopServices>
 
-TvnImage::TvnImage(QObject *root, QObject *parent) : QObject(parent)
+
+TvnImage::TvnImage(QObject *root, TvnSharing *sharing, QObject *parent) : QObject(parent)
 {
     this->root = root;
 
-    QObject *view = root->findChild<QObject*>("ViewFile");
+    // View UI
+    view = root->findChild<QObject*>("ViewFile");
     QObject *viewDetail = view->findChild<QObject*>("Detail");
     viewImage = viewDetail->findChild<QObject*>("DetailImage");
 
-    QObject *edit = root->findChild<QObject*>("EditFile");
+    // View signals
+    connect(view, SIGNAL(cancelDownload()), this, SLOT(cancelDownload()));
+    connect(viewImage, SIGNAL(downloadImage()), this, SLOT(downloadImage()));
+
+    // Edit UI
+    edit = root->findChild<QObject*>("EditFile");
     QObject *editDetail = edit->findChild<QObject*>("Detail");
     editImage = editDetail->findChild<QObject*>("DetailImage");
 
-    connect(viewImage, SIGNAL(downloadImage(int)), this, SLOT(downloadImage(int)));
+    // edit signals
+//    connect(edit, SIGNAL(cancelUpload()), this, SLOT(cancelUpload()));
+//    connect(editImage, SIGNAL(uploadImage()), this, SLOT(uploadImage()));
+//    connect(edit, SIGNAL(cancelDelete()), this, SLOT(cancelDelete()));
+//    connect(editImage, SIGNAL(deleteImage()), this, SLOT(deleteImage()));
+    connect(editImage, SIGNAL(chooseImage()), this, SLOT(chooseImage()));
+    connect(edit, SIGNAL(deleteImages()), this, SLOT(deleteImages()));
+    connect(edit, SIGNAL(uploadImages()), this, SLOT(uploadImages()));
 
-    connect(editImage, SIGNAL(deleteImage(int)), this, SLOT(deleteImage(int)));
-    connect(editImage, SIGNAL(uploadImage(int)), this, SLOT(uploadImage(int)));
+
+    // Sharing
+    connect(sharing, SIGNAL(finish()), this, SLOT(finishProcess()));
+    connect(sharing, SIGNAL(error()), this, SLOT(errorProcess()));
+    this->sharing = sharing;
+
+
+//    uploadImage(IMAGE_LICENCE);
+//    deleteImage(IMAGE_LICENCE);
+//    downloadImage(IMAGE_REGISTRATION_AD);
+//    sharing->downlaod("page3.xlsx", "داداشی", "sajad.txt", "/home/sajad/taavon");
+//    share->upload("Taavon.pro", "/home/sajad/taavon", "sajad.txt", "داداشی");
 }
 
-void TvnImage::downloadImage(int type)
+void TvnImage::downloadImage()
 {
+    QString imageType = TvnUtility::getImageType(root);
     // Get image filename
-    QString caption = "ذخیره عکس " + getImageNameFa(type);
-    QString destDir = QFileDialog::getExistingDirectory(NULL, caption, "", QFileDialog::ShowDirsOnly);
-    if (destDir=="")
+    QString caption = "ذخیره عکس " + getImageNameFa(imageType);
+    dstDownloadDir = QFileDialog::getExistingDirectory(NULL, caption, "", QFileDialog::ShowDirsOnly);
+    if (dstDownloadDir.isEmpty())
     {
         return;
     }
 
-    // Make source filename
-    QString srcFilename = conf.shareFolderPath + "/" +
-            TvnUtility::getFileCode(root) + "/" +
-            getImageName(type) + ".jpg";
+    // Show download dialog
+    QMetaObject::invokeMethod(view, "showDownloadDialog");
+
+    // Make src filename and directory
+    QString srcFilename = getImageName(imageType) + ".jpg";
+    QString srcDir = conf.imageShareFolderPath + "/" + TvnUtility::getFileCode(root) + "/";
 
     // Make destination filename
-    QString destFilename = destDir + "/" + getImageNameFa(type) + " - ";
-    if (type==IMAGE_EXTRAORDINARY_MEETING || type==IMAGE_GENERAL_MEETING)
+    QString destFilename = getImageNameFa(imageType) + " - ";
+    if (imageType==IMAGE_EXTRAORDINARY_MEETING || imageType==IMAGE_GENERAL_MEETING)
     {
         destFilename = destFilename + TvnUtility::getDateOfLastMeeting(root).replace("/", "") + " - ";
     }
     destFilename = destFilename + TvnUtility::getFileName(root) + ".jpg";
 
-    if (!QFile::copy(srcFilename, destFilename))
-    {
-        TvnUtility::log("downloadImage:: copy failed <dest: " + destFilename + ", src: " + srcFilename + ">");
-        TvnUtility::setError(root, ERROR_MESSAGE_DOWNLOAD_IMAGE);
-        return;
-    }
+    // Download from share folder
+    sharing->downlaod(srcFilename, srcDir, destFilename, dstDownloadDir);
 }
 
-void TvnImage::deleteImage(int type)
+void TvnImage::deleteImage()
 {
-    QString filePath = conf.shareFolderPath + "/" + TvnUtility::getFileCode(root);
+    // Show delete dialog
+    QMetaObject::invokeMethod(edit, "showDeleteDialog");
 
-    // Make source filename
-    QString srcFilename = filePath + "/" + getImageName(type) + ".jpg";
+    QString imageType = TvnUtility::getImageType(root);
+    // Make src directory and filename
+    QString srcDir = conf.imageShareFolderPath + "/" + TvnUtility::getFileCode(root);
+    QString srcFilename = getImageName(imageType) + ".jpg";
 
-    // Make destination path
-    QString destDir = filePath + "/delete/";
-    QDir dir("");
-    if (!dir.mkpath(destDir))
-    {
-        TvnUtility::log("deleteImage:: make image path failed <" + destDir + ">");
-        TvnUtility::setError(root, ERROR_MESSAGE_DELETE_IMAGE);
-        return;
-    }
-
-    // Make destination filename
-    QLocale en_localce(QLocale::English);
-    QString date = en_localce.toString(QDateTime::currentDateTime(), "--yyyy-MM-dd--hh-mm-ss");
-    QString destFilename = destDir + getImageName(type) + date + ".jpg";
-
-    // Copy
-    if (!QFile::copy(srcFilename, destFilename))
-    {
-        TvnUtility::log("deleteImage:: copy failed <dest: " + destFilename + ", src: " + srcFilename + ">");
-        TvnUtility::setError(root, ERROR_MESSAGE_DELETE_IMAGE);
-        return;
-    }
-
-    if (!QFile::remove(srcFilename))
-    {
-        TvnUtility::log("deleteImage:: remove failed <" + srcFilename + ">");
-        TvnUtility::setError(root, ERROR_MESSAGE_DELETE_IMAGE);
-        return;
-    }
-
-    // Save hasImage to false for type
-    bool ok = TvnCsv::SaveImageChanges(root, type, false);
-    if (!ok)
-    {
-        TvnUtility::setError(root, ERROR_MESSAGE_DELETE_IMAGE);
-        return;
-        // TODO must be undo remove
-    }
-
-
-    QMetaObject::invokeMethod(root, "deleteSuccessfully", Q_ARG(QVariant, type));
+    sharing->remove(srcFilename, srcDir);
 }
 
-void TvnImage::uploadImage(int type)
+void TvnImage::uploadImage()
 {
+    QString imageType = TvnUtility::getImageType(root);
     // Get image filename
-    QString caption = "انتخاب عکس " + getImageNameFa(type);
+    QString caption = "انتخاب عکس " + getImageNameFa(imageType);
     QString filter = "Images (*.jpg *.jpeg)";
     QString srcFilename = QFileDialog::getOpenFileName(NULL, caption, "", filter);
-    if (srcFilename=="")
+    if (srcFilename.isEmpty())
     {
         return;
     }
+    QFileInfo srcInfo(srcFilename);
 
-    // Make destination path
-    QString destDir = conf.shareFolderPath + "/" + TvnUtility::getFileCode(root);
-    QDir dir("");
-    if (!dir.mkpath(destDir))
-    {
-        TvnUtility::log("uploadImage:: make image path failed <" + destDir + ">");
-        TvnUtility::setError(root, ERROR_MESSAGE_UPLOAD_IMAGE);
-        return;
-    }
+    // Show upload dialog
+    QMetaObject::invokeMethod(edit, "showUploadDialog");
 
-    QString destFilename = destDir + "/" + getImageName(type) + ".jpg";
+    // Make dest directory and filename
+    QString destDir = conf.imageShareFolderPath + "/" + TvnUtility::getFileCode(root);
+    QString destFilename = getImageName(imageType) + ".jpg";
 
-    // Check image exist
-    if(QFileInfo::exists(destFilename))
-    {
-        TvnUtility::log("uploadImage:: image exist <dest: " + destFilename + ">");
-        TvnUtility::setError(root, ERROR_MESSAGE_UPLOAD_IMAGE);
-        return;
-    }
-
-    // Copy
-    if (!QFile::copy(srcFilename, destFilename))
-    {
-        TvnUtility::log("uploadImage:: copy image failed <dest: " + destFilename + ", src: " + srcFilename + ">");
-        TvnUtility::setError(root, ERROR_MESSAGE_UPLOAD_IMAGE);
-        return;
-    }
-
-    // Save hasImage to true for type
-    bool ok = TvnCsv::SaveImageChanges(root, type, true);
-    if (!ok)
-    {
-        TvnUtility::setError(root, ERROR_MESSAGE_UPLOAD_IMAGE);
-        return;
-        // TODO must be remove
-    }
-
-    QMetaObject::invokeMethod(root, "uploadSuccessfully", Q_ARG(QVariant, type));
+    sharing->upload(srcInfo.fileName(), srcInfo.absolutePath(), destFilename, destDir);
 }
 
-QString TvnImage::getImageName(int type)
+void TvnImage::chooseImage()
+{
+    QString imageType = TvnUtility::getImageType(root);
+    // Get image filename
+    QString caption = "انتخاب عکس " + getImageNameFa(imageType);
+    QString filter = "Images (*.jpg *.jpeg)";
+    QString srcFilename = QFileDialog::getOpenFileName(NULL, caption, "", filter);
+//    if (srcFilename.isEmpty())
+//    {
+//        return;
+//    }
+    QMetaObject::invokeMethod(root, "saveImagePath", Q_ARG(QString, srcFilename));
+}
+
+void TvnImage::deleteImages()
+{
+    typeDeletedImages.clear();
+    QString extraordinaryDeleted = TvnUtility::getExtraordinaryDeleted(root);
+    if (extraordinaryDeleted=="true")
+    {
+        typeDeletedImages.append(IMAGE_EXTRAORDINARY_MEETING);
+    }
+
+    QString generalDeleted = TvnUtility::getGeneralDeleted(root);
+    if (generalDeleted=="true")
+    {
+        typeDeletedImages.append(IMAGE_GENERAL_MEETING);
+    }
+
+    QString licenceDeleted = TvnUtility::getLicenceDeleted(root);
+    if (licenceDeleted=="true")
+    {
+        typeDeletedImages.append(IMAGE_LICENCE);
+    }
+
+    QString registrationDeleted = TvnUtility::getRegistrationDeleted(root);
+    if (registrationDeleted=="true")
+    {
+        typeDeletedImages.append(IMAGE_REGISTRATION_AD);
+    }
+
+    deleteOneImage();
+}
+
+void TvnImage::uploadImages()
+{
+    typeUploadImages.clear();
+    QString extraordinaryPath = TvnUtility::getExtraordinaryPath(root);
+    if (!extraordinaryPath.isEmpty())
+    {
+        typeUploadImages.append(IMAGE_EXTRAORDINARY_MEETING);
+    }
+
+    QString generalPath = TvnUtility::getGeneralPath(root);
+    if (!generalPath.isEmpty())
+    {
+        typeUploadImages.append(IMAGE_GENERAL_MEETING);
+    }
+
+    QString licencePath = TvnUtility::getLicencePath(root);
+    if (!generalPath.isEmpty())
+    {
+        typeUploadImages.append(IMAGE_LICENCE);
+    }
+
+    QString registrationPath = TvnUtility::getRegistrationPath(root);
+    if (!generalPath.isEmpty())
+    {
+        typeUploadImages.append(IMAGE_REGISTRATION_AD);
+    }
+}
+
+
+void TvnImage::deleteOneImage()
+{
+    if (typeDeletedImages.isEmpty())
+    {
+        QMetaObject::invokeMethod(root, "deleteImagesSuccessfully");
+        return;
+    }
+    imageMode = typeDeletedImages.takeFirst();
+    // Make src directory and filename
+    QString srcDir = conf.imageShareFolderPath + "/" + TvnUtility::getFileCode(root);
+    QString srcFilename = getImageName(imageMode) + ".jpg";
+
+    sharing->remove(srcFilename, srcDir);
+}
+
+void TvnImage::uploadOneImage()
+{
+    if (typeUploadImages.isEmpty())
+    {
+        QMetaObject::invokeMethod(root, "deleteImagesSuccessfully");
+        return;
+    }
+    imageMode = typeUploadImages.takeFirst();
+
+    QFileInfo srcInfo(getImagePath(imageMode));
+
+    // Make dest directory and filename
+    QString destDir = conf.imageShareFolderPath + "/" + TvnUtility::getFileCode(root);
+    QString destFilename = getImageName(imageMode) + ".jpg";
+
+    sharing->upload(srcInfo.fileName(), srcInfo.absolutePath(), destFilename, destDir);
+}
+
+void TvnImage::finishProcess()
+{
+    QString processType = TvnUtility::getProcessType(root);
+    if (processType==PROCESS_IMAGE_DOWNLOAD)
+    {
+        QMetaObject::invokeMethod(view, "hideDialog");
+        // Open image folder
+        QDesktopServices::openUrl(QUrl::fromLocalFile(dstDownloadDir));
+    }
+    else if (processType==PROCESS_IMAGE_UPLOAD)
+    {
+        uploadOneImage();
+//        QMetaObject::invokeMethod(edit, "hideDialog");
+//        QMetaObject::invokeMethod(root, "uploadSuccessfully");
+    }
+    else if (processType==PROCESS_IMAGE_REMOVE)
+    {
+        deleteOneImage();
+//        QMetaObject::invokeMethod(edit, "hideDialog");
+//        QMetaObject::invokeMethod(root, "deleteSuccessfully");
+    }
+}
+
+void TvnImage::errorProcess()
+{
+    QString processType = TvnUtility::getProcessType(root);
+    if (processType==PROCESS_IMAGE_DOWNLOAD)
+    {
+        QMetaObject::invokeMethod(view, "hideDialog");
+        TvnUtility::setError(view, ERROR_MESSAGE_DOWNLOAD_IMAGE);
+    }
+    else if (processType==PROCESS_IMAGE_UPLOAD)
+    {
+        QMetaObject::invokeMethod(edit, "hideDialog");
+        TvnUtility::setError(edit, ERROR_MESSAGE_UPLOAD_CSV);
+    }
+    else if (processType==PROCESS_IMAGE_REMOVE)
+    {
+        QMetaObject::invokeMethod(edit, "hideDialog");
+        TvnUtility::setError(edit, ERROR_MESSAGE_UPLOAD_CSV);
+    }
+}
+
+void TvnImage::cancelDownload()
+{
+    sharing->cancelProcess();
+    QMetaObject::invokeMethod(view, "hideDialog");
+}
+
+void TvnImage::cancelUpload()
+{
+    sharing->cancelProcess();
+    QMetaObject::invokeMethod(edit, "hideDialog");
+}
+
+void TvnImage::cancelDelete()
+{
+    sharing->cancelProcess();
+    QMetaObject::invokeMethod(edit, "hideDialog");
+}
+
+QString TvnImage::getImageName(QString type)
 {
     if ( type == IMAGE_EXTRAORDINARY_MEETING )
     {
@@ -181,7 +308,7 @@ QString TvnImage::getImageName(int type)
     }
 }
 
-QString TvnImage::getImageNameFa(int type)
+QString TvnImage::getImageNameFa(QString type)
 {
     if ( type == IMAGE_EXTRAORDINARY_MEETING )
     {
@@ -198,5 +325,25 @@ QString TvnImage::getImageNameFa(int type)
     else // type == IMAGE_REGISTRATION_AD
     {
         return IMAGE_NAME_FA_REGISTRATION_AD;
+    }
+}
+
+QString TvnImage::getImagePath(QString type)
+{
+    if (type==IMAGE_EXTRAORDINARY_MEETING)
+    {
+        return TvnUtility::getExtraordinaryPath(root);
+    }
+    else if (type==IMAGE_GENERAL_MEETING)
+    {
+        return TvnUtility::getGeneralPath(root);
+    }
+    else if (type==IMAGE_LICENCE)
+    {
+        return TvnUtility::getLicencePath(root);
+    }
+    else // type == IMAGE_REGISTRATION_AD
+    {
+        return TvnUtility::getRegistrationPath(root);
     }
 }

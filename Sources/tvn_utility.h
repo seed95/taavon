@@ -67,6 +67,19 @@ public:
     static QString getLicenceHasImage(QObject *ui);
     static QString getRegistrationAdHasImage(QObject *ui);
 
+    static QString getProcessType(QObject *ui);
+    static QString getImageType(QObject *ui);
+
+    static QString getExtraordinaryPath(QObject *ui);
+    static QString getGeneralPath(QObject *ui);
+    static QString getLicencePath(QObject *ui);
+    static QString getRegistrationPath(QObject *ui);
+
+    static QString getExtraordinaryDeleted(QObject *ui);
+    static QString getGeneralDeleted(QObject *ui);
+    static QString getLicenceDeleted(QObject *ui);
+    static QString getRegistrationDeleted(QObject *ui);
+
     static QString getQmlProperty(QObject *ui, QString key);
 };
 

@@ -8,6 +8,8 @@ Window
     id: root
 
     /***** Used this variables in qml/cpp *****/
+    property string processType: constant.tvn_PROCESS_NOPE
+    property string imageType: constant.tvn_IMAGE_NOPE
     // Variables that show in edit or view page
     property int selectedFileIndex: 0
     property string fileCode: ""
@@ -37,6 +39,18 @@ Window
     property bool licenceHasImage: false
     property bool registrationAdHasImage: false
 
+    // Variables used to handle images during editing (delete-upload)
+    // To save the path of the selected images in the local for upload
+    property string extraordinaryPath: ""
+    property string generalPath: ""
+    property string licencePath: ""
+    property string registrationPath: ""
+    // To know which iamges have been deleted in the share folder
+    property bool extraordinaryDeleted: false
+    property bool generalDeleted: false
+    property bool licenceDeleted: false
+    property bool registrationDeleted: false
+
 
     /***** Used this variables in qml *****/
     // show edit/view/new/list file based on mode
@@ -49,8 +63,6 @@ Window
     //Error properties
     property string errorMessage: ""
 
-    // cpp signals
-    signal saveChanges()
 
     visible: true
     width: 1300
@@ -193,7 +205,6 @@ Window
         isActive: list.windowIsActive()
         btnText: "خروجی اکسل"
         btnIcon: "\uf56e"
-        textWidth: 110
         onClickButton: console.log("excel output")
     }
 
@@ -206,7 +217,6 @@ Window
         isActive: list.windowIsActive()
         btnText: "ثبت پرونده جدید"
         btnIcon: "+"
-        textWidth: 128
         onClickButton: console.log("new file")
     }
 
@@ -216,25 +226,56 @@ Window
         visible: root.errorMessage !== ""
     }
 
+
+//    MouseArea
+//    {
+//        anchors.fill: parent
+////        enabled: list.windowIsActive()
+//        enabled: pageMode === constant.tvn_VIEW_FILE
+//        visible: pageMode === constant.tvn_VIEW_FILE
+//        cursorShape: Qt.WaitCursor
+//        onClicked:
+//        {
+//            console.log("onClicked list file")
+//            root.updateFocus()
+////            list.forceActiveFocus()
+//        }
+//    }
+
     // Functions
     /*** Call this functions from cpp ***/
-    function deleteSuccessfully(type)
-    {
-        updateHasImage(type, false)
-    }
+//    function deleteSuccessfully()
+//    {
+//        root.hasChanged = true
+//        updateHasImage(false)
+//    }
 
-    function uploadSuccessfully(type)
-    {
-        updateHasImage(type, true)
-    }
+//    function uploadSuccessfully()
+//    {
+//        root.hasChanged = true
+//        updateHasImage(true)
+//    }
 
-    function saveChangesSuccessfully()
+    function saveImagePath(path)
     {
-        list.updateFile(root.selectedFileIndex)
-        root.pageMode = constant.tvn_list
-        root.hasChanged = false
+        root.hasChanged = true
+        if (root.imageType===constant.tvn_IMAGE_EXTRAORDINARY_MEETING)
+        {
+            root.extraordinaryPath = path
+        }
+        else if (root.imageType===constant.tvn_IMAGE_GENERAL_MEETING)
+        {
+            root.generalPath = path
+        }
+        else if (root.imageType===constant.tvn_IMAGE_LICENCE)
+        {
+            root.licencePath = path
+        }
+        else if (root.imageType===constant.tvn_IMAGE_REGISTRATION_AD)
+        {
+            root.registrationPath = path
+        }
     }
-
 
     /*** Call this functions from qml ***/
     function updateFocus()
@@ -255,27 +296,27 @@ Window
 
     // updateHasImage update hasImage fields
     // extraordinaryMeetingHasImage, generalMeetingHasImage, licenceHasImage, registrationAdHasImage
-    function updateHasImage(type, value)
-    {
-        if (type===constant.tvn_IMAGE_EXTRAORDINARY_MEETING)
-        {
-            root.extraordinaryMeetingHasImage = value
-        }
-        else if (type===constant.tvn_IMAGE_GENERAL_MEETING)
-        {
-            root.generalMeetingHasImage = value
-        }
-        else if (type===constant.tvn_IMAGE_LICENCE)
-        {
-            root.licenceHasImage = value
-        }
-        else if (type===constant.tvn_IMAGE_REGISTRATION_AD)
-        {
-            root.registrationAdHasImage = value
-        }
+//    function updateHasImage(value)
+//    {
+//        if (root.imageType===constant.tvn_IMAGE_EXTRAORDINARY_MEETING)
+//        {
+//            root.extraordinaryMeetingHasImage = value
+//        }
+//        else if (root.imageType===constant.tvn_IMAGE_GENERAL_MEETING)
+//        {
+//            root.generalMeetingHasImage = value
+//        }
+//        else if (root.imageType===constant.tvn_IMAGE_LICENCE)
+//        {
+//            root.licenceHasImage = value
+//        }
+//        else if (root.imageType===constant.tvn_IMAGE_REGISTRATION_AD)
+//        {
+//            root.registrationAdHasImage = value
+//        }
 
-        list.updateImageFile(root.selectedFileIndex)
-    }
+////        list.updateImageFile(root.selectedFileIndex)
+//    }
 
 
     /*** Utilities functions ***/

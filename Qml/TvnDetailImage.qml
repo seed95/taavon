@@ -1,6 +1,7 @@
 import QtQuick 2.0
 
-Item {
+Item
+{
 
     property bool imageIsActive: false
     property bool extraordinaryHasImage: false
@@ -8,9 +9,10 @@ Item {
     property bool licenceHasImage: false
     property bool registrationHasImage: false
 
-    signal downloadImage(int type)
-    signal deleteImage(int type)
-    signal uploadImage(int type)
+    signal downloadImage()
+//    signal deleteImage()
+    signal uploadImage()
+    signal chooseImage()
 
     height: 45
 
@@ -81,20 +83,52 @@ Item {
 
     function handleClickImage(type, hasImage)
     {
+        root.imageType = type
         if (root.pageMode===constant.tvn_VIEW_FILE)
         {
-            downloadImage(type)
+            root.processType = constant.tvn_PROCESS_IMAGE_DOWNLOAD
+            downloadImage()
         }
         else if (root.pageMode===constant.tvn_EDIT_FILE)
         {
             if (hasImage)
             {
-                deleteImage(type)
+                handleDeleteImage()
+//                root.processType = constant.tvn_PROCESS_IMAGE_REMOVE
+//                deleteImage()
             }
             else
             {
-                uploadImage(type)
+//                root.processType = constant.tvn_PROCESS_IMAGE_UPLOAD
+//                uploadImage()
+                chooseImage()
             }
+        }
+    }
+
+    function handleDeleteImage()
+    {
+        root.hasChanged = true
+        var hasImage = list.getHasImage()
+        if (root.imageType===constant.tvn_IMAGE_EXTRAORDINARY_MEETING)
+        {
+            root.extraordinaryDeleted = hasImage
+            root.extraordinaryMeetingHasImage = false
+        }
+        else if (root.imageType===constant.tvn_IMAGE_GENERAL_MEETING)
+        {
+            root.generalDeleted = hasImage
+            root.generalMeetingHasImage = false
+        }
+        else if (root.imageType===constant.tvn_IMAGE_LICENCE)
+        {
+            root.licenceDeleted = hasImage
+            root.licenceHasImage = false
+        }
+        else if (root.imageType===constant.tvn_IMAGE_REGISTRATION_AD)
+        {
+            root.registrationDeleted = hasImage
+            root.registrationAdHasImage = false
         }
     }
 

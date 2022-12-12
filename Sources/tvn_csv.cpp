@@ -9,18 +9,27 @@
 #include <QQmlProperty>
 #include <QTemporaryFile>
 #include <QTextStream>
+#include <QSaveFile>
 
-TvnCsv::TvnCsv(QObject *root, QObject *parent) : QObject(parent)
+TvnCsv::TvnCsv(QObject *root, TvnSharing *sharing, QObject *parent) : QObject(parent)
 {
     this->root = root;
     list = root->findChild<QObject*>("ListFile");
+    edit = root->findChild<QObject*>("EditFile");
 
-    connect(root, SIGNAL(saveChanges()), this, SLOT(SaveChanges()));
+    connect(edit, SIGNAL(saveChanges()), this, SLOT(SaveChanges()));
+    connect(edit, SIGNAL(cancelSaveChanges()), this, SLOT(CancelSaveChanges()));
+
+    // Sharing
+    connect(sharing, SIGNAL(finish()), this, SLOT(finishProcess()));
+    connect(sharing, SIGNAL(error()), this, SLOT(errorProcess()));
+    this->sharing = sharing;
 }
 
-bool TvnCsv::SaveImageChanges(QObject *root, int type, bool upload)
+bool TvnCsv::SaveImageChanges(QObject *root, bool upload)
 {
-    QFile file(conf.csvFilePath);
+    QString imageType = TvnUtility::getImageType(root);
+    QFile file(conf.localCsvFile);
     if (!file.open(QIODevice::ReadOnly))
     {
         TvnUtility::log(QString("SaveImageChanges:: read csv file error (%1)").arg(file.errorString()));
@@ -57,19 +66,19 @@ bool TvnCsv::SaveImageChanges(QObject *root, int type, bool upload)
 
             if (fileCode==wordList[HEADER_INDEX_FILE_CODE])
             {
-                if (type==IMAGE_EXTRAORDINARY_MEETING)
+                if (imageType==IMAGE_EXTRAORDINARY_MEETING)
                 {
                     wordList[HEADER_INDEX_IMAGE_EXTRAORDINARY_MEETING] = hasImage;
                 }
-                else if (type==IMAGE_GENERAL_MEETING)
+                else if (imageType==IMAGE_GENERAL_MEETING)
                 {
                     wordList[HEADER_INDEX_IMAGE_GENERAL_MEETING] = hasImage;
                 }
-                else if (type==IMAGE_LICENCE)
+                else if (imageType==IMAGE_LICENCE)
                 {
                     wordList[HEADER_INDEX_IMAGE_LICENCE] = hasImage;
                 }
-                else if (type==IMAGE_REGISTRATION_AD)
+                else if (imageType==IMAGE_REGISTRATION_AD)
                 {
                     wordList[HEADER_INDEX_IMAGE_REGISTRATION_AD] = hasImage;
                 }
@@ -112,7 +121,7 @@ bool TvnCsv::SaveImageChanges(QObject *root, int type, bool upload)
 
 void TvnCsv::LoadCsv()
 {
-    QFile file(conf.csvFilePath);
+    QFile file(conf.localCsvFile);
     if (!file.open(QIODevice::ReadOnly)) {
         TvnUtility::log(QString("load csv file error (%1)").arg(file.errorString()));
         TvnUtility::setError(root, "امکان باز کردن فایل csv وجود ندارد.");
@@ -167,13 +176,11 @@ void TvnCsv::LoadCsv()
 
 void TvnCsv::SaveChanges()
 {
-    TvnUtility::setError(root, ERROR_MESSAGE_SAVE_CHANGES);
-    return;
-    QFile file(conf.csvFilePath);
+    QFile file(conf.localCsvFile);
     if (!file.open(QIODevice::ReadOnly))
     {
         TvnUtility::log(QString("SaveChanges:: read csv file error (%1)").arg(file.errorString()));
-        TvnUtility::setError(root, ERROR_MESSAGE_SAVE_CHANGES);
+        TvnUtility::setError(edit, ERROR_MESSAGE_SAVE_CHANGES);
         return;
     }
 
@@ -181,7 +188,7 @@ void TvnCsv::SaveChanges()
     if (!tempFile.open())
     {
         TvnUtility::log(QString("SaveChanges:: write temp file error (%1)").arg(tempFile.errorString()));
-        TvnUtility::setError(root, ERROR_MESSAGE_SAVE_CHANGES);
+        TvnUtility::setError(edit, ERROR_MESSAGE_SAVE_CHANGES);
         return;
     }
     QTextStream out(&tempFile);
@@ -191,7 +198,7 @@ void TvnCsv::SaveChanges()
     QString status = TvnUtility::getFileStatus(root);
     QString ledgerBinder = TvnUtility::getLedgerBinder(root);
     QString numberOfCover = TvnUtility::getNumberOfCover(root);
-    QString fileName = TvnUtility::getFileName(root);
+    QString fileName = TvnUtility::getFileName(root).replace(",", " "); // TODO check , in text input
     QString registrationNumber = TvnUtility::getRegistrationNumber(root);
     QString dateOfLastMeeting = TvnUtility::getDateOfRegistration(root);
     QString nationalId = TvnUtility::getNationalId(root);
@@ -208,7 +215,12 @@ void TvnCsv::SaveChanges()
     QString secretaryName = TvnUtility::getSecretaryName(root);
     QString phoneNumber = TvnUtility::getPhoneNumber(root);
     QString address = TvnUtility::getOfficeAddress(root);
+    QString extraordinaryHasImage = TvnUtility::getExtraordinaryMeetingHasImage(root);
+    QString generalHasImage = TvnUtility::getGeneralMeetingHasImage(root);
+    QString licenceHasImage = TvnUtility::getLicenceHasImage(root);
+    QString registrationHasImage = TvnUtility::getRegistrationAdHasImage(root);
 
+    // Write changes to temp file
     bool updateChanges = false;
     while (!file.atEnd())
     {
@@ -251,6 +263,10 @@ void TvnCsv::SaveChanges()
                 wordList[HEADER_INDEX_SECRETARY_NAME] = secretaryName;
                 wordList[HEADER_INDEX_PHONE_NUMBER] = phoneNumber;
                 wordList[HEADER_INDEX_ADDRESS] = address;
+                wordList[HEADER_INDEX_IMAGE_EXTRAORDINARY_MEETING] = extraordinaryHasImage;
+                wordList[HEADER_INDEX_IMAGE_GENERAL_MEETING] = generalHasImage;
+                wordList[HEADER_INDEX_IMAGE_LICENCE] = licenceHasImage;
+                wordList[HEADER_INDEX_IMAGE_REGISTRATION_AD] = registrationHasImage;
             }
             out << wordList.join(",") << endl;
             continue;
@@ -263,17 +279,20 @@ void TvnCsv::SaveChanges()
     file.close();
     tempFile.close();
 
+
+    // Copy temp file to original file
+
     // Open files
     if (!file.open(QIODevice::WriteOnly))
     {
         TvnUtility::log(QString("SaveChanges:: write csv file error (%1)").arg(file.errorString()));
-        TvnUtility::setError(root, ERROR_MESSAGE_SAVE_CHANGES);
+        TvnUtility::setError(edit, ERROR_MESSAGE_SAVE_CHANGES);
         return;
     }
     if (!tempFile.open())
     {
         TvnUtility::log(QString("SaveChanges:: read temp file error (%1)").arg(tempFile.errorString()));
-        TvnUtility::setError(root, ERROR_MESSAGE_SAVE_CHANGES);
+        TvnUtility::setError(edit, ERROR_MESSAGE_SAVE_CHANGES);
         return;
     }
 
@@ -287,6 +306,31 @@ void TvnCsv::SaveChanges()
     file.close();
     tempFile.close();
 
-    QMetaObject::invokeMethod(root, "saveChangesSuccessfully");
+    sharing->uploadCsvFile(conf.localCsvFile, conf.shareCsvFile);
+}
+
+void TvnCsv::CancelSaveChanges()
+{
+    sharing->cancelProcess();
+    QMetaObject::invokeMethod(edit, "hideDialog");
+}
+
+void TvnCsv::finishProcess()
+{
+    QString processType = TvnUtility::getProcessType(root);
+    if (processType==PROCESS_UPLOAD_CSV)
+    {
+        QMetaObject::invokeMethod(edit, "saveChangesSuccessfully");
+    }
+}
+
+void TvnCsv::errorProcess()
+{
+    QString processType = TvnUtility::getProcessType(root);
+    if (processType==PROCESS_UPLOAD_CSV)
+    {
+        QMetaObject::invokeMethod(edit, "hideDialog");
+        TvnUtility::setError(edit, ERROR_MESSAGE_UPLOAD_CSV);
+    }
 }
 

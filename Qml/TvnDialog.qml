@@ -6,8 +6,11 @@ Rectangle
 
     property bool dialogIsActive: false
     property string textLabel: ""
-    property string positiveText: "بله"
-    property string negativeText: "خیر"
+    property string positiveText: ""
+    property int positiveWidth: 0
+    property string negativeText: ""
+    property int negativeWidth: 0
+
 
     signal clickNegative()
     signal clickPositive()
@@ -53,12 +56,11 @@ Rectangle
         TvnButton
         {
             id: negative
-            width: 80
+            width: negativeWidth
             height: 30
             anchors.left: parent.left
             anchors.verticalCenter: parent.verticalCenter
             btnText: negativeText
-            textWidth: 28
             isActive: dialogIsActive
 
             onClickButton: clickNegative()
@@ -66,13 +68,12 @@ Rectangle
 
         TvnButton
         {
-            width: 80
+            width: positiveWidth
             height: 30
             anchors.left: negative.right
             anchors.leftMargin: 15
             anchors.verticalCenter: parent.verticalCenter
             btnText: positiveText
-            textWidth: 28
             isActive: dialogIsActive
 
             onClickButton: clickPositive()

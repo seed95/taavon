@@ -4,6 +4,11 @@ import QtQuick.Controls 2.12
 
 ApplicationWindow
 {
+    property int dialogType: constant.tvn_DIALOG_NOPE
+    property string errorMessage: ""
+
+    signal cancelDownload()
+
     width: 945
     minimumWidth: width
     maximumWidth: width
@@ -63,6 +68,27 @@ ApplicationWindow
             objectName: "Detail"
         }
 
+        TvnDialog
+        {
+            id: download_dialog
+            anchors.centerIn: parent
+            textLabel: "در حال دانلود عکس"
+            negativeText: "انصراف"
+            negativeWidth: 80
+            visible: dialogType === constant.tvn_DIALOG_DOWNLOAD
+            dialogIsActive: visible
+
+            onClickNegative: cancelDownload()
+        }
+
+        TvnError
+        {
+            anchors.centerIn: parent
+            messageText: errorMessage
+            visible: errorMessage !== ""
+            onClickOk: errorMessage = ""
+        }
+
     }
 
     function closeWindow()
@@ -78,11 +104,23 @@ ApplicationWindow
     // It returns true if the program's focus is on this page
     function windowIsActive()
     {
-        if (root.pageMode===constant.tvn_VIEW_FILE && root.errorMessage==="")
+        if (dialogType===constant.tvn_DIALOG_NOPE &&
+            root.pageMode===constant.tvn_VIEW_FILE)
         {
             return true
         }
         return false
+    }
+
+    function showDownloadDialog()
+    {
+        dialogType = constant.tvn_DIALOG_DOWNLOAD
+    }
+
+    function hideDialog()
+    {
+        dialogType = constant.tvn_DIALOG_NOPE
+        root.processType = constant.tvn_PROCESS_NOPE
     }
 
 }

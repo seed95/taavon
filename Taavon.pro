@@ -15,7 +15,8 @@ SOURCES += Sources/main.cpp \
     Sources/tvn_utility.cpp \
     Sources/tvn_config.cpp \
     Sources/tvn_chapar.cpp \
-    Sources/tvn_image.cpp
+    Sources/tvn_image.cpp \
+    Sources/tvn_sharing.cpp
 
 RESOURCES += Qml/ui.qrc \
              Resources/fonts.qrc \
@@ -53,4 +54,5 @@ HEADERS += \
     Sources/tvn_config.h \
     Sources/tvn_chapar.h \
     Sources/tvn_image.h \
-    Sources/tvn_constant.h
+    Sources/tvn_constant.h \
+    Sources/tvn_sharing.h

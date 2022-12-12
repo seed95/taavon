@@ -291,6 +291,59 @@ QString TvnUtility::getRegistrationAdHasImage(QObject *ui)
 }
 
 
+QString TvnUtility::getProcessType(QObject *ui)
+{
+    return getQmlProperty(ui, "processType");
+}
+
+QString TvnUtility::getImageType(QObject *ui)
+{
+    return getQmlProperty(ui, "imageType");
+}
+
+
+QString TvnUtility::getExtraordinaryPath(QObject *ui)
+{
+    return getQmlProperty(ui, "extraordinaryPath");
+}
+
+QString TvnUtility::getGeneralPath(QObject *ui)
+{
+    return getQmlProperty(ui, "generalPath");
+}
+
+QString TvnUtility::getLicencePath(QObject *ui)
+{
+    return getQmlProperty(ui, "licencePath");
+}
+
+QString TvnUtility::getRegistrationPath(QObject *ui)
+{
+    return getQmlProperty(ui, "registrationPath");
+}
+
+
+QString TvnUtility::getExtraordinaryDeleted(QObject *ui)
+{
+    return getQmlProperty(ui, "extraordinaryDeleted");
+}
+
+QString TvnUtility::getGeneralDeleted(QObject *ui)
+{
+    return getQmlProperty(ui, "generalDeleted");
+}
+
+QString TvnUtility::getLicenceDeleted(QObject *ui)
+{
+    return getQmlProperty(ui, "licenceDeleted");
+}
+
+QString TvnUtility::getRegistrationDeleted(QObject *ui)
+{
+    return getQmlProperty(ui, "registrationDeleted");
+}
+
+
 QString TvnUtility::getQmlProperty(QObject *ui, QString key)
 {
     QVariant data = QQmlProperty::read(ui, key);

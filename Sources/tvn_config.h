@@ -6,12 +6,14 @@
 
 #define CONFIG_PATH "tvn.config"
 
-#define JSON_KEY_CSV_FILE_PATH      "csv_file_path"
-#define JSON_KEY_SHARE_FOLDER_PATH  "share_folder_path"
+#define JSON_KEY_IMAGE_SHARE_FOLDER_PATH        "image_share_folder_path"
+#define JSON_KEY_SHARE_CSV_FILE                 "share_csv_file"
+#define JSON_KEY_LOCAL_CSV_FILE                 "local_csv_file"
 
 struct config {
-    QString csvFilePath;
-    QString shareFolderPath;
+    QString imageShareFolderPath;
+    QString shareCsvFile;
+    QString localCsvFile;
 };
 
 extern config conf;
