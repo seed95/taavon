@@ -18,7 +18,6 @@ TvnCsv::TvnCsv(QObject *root, TvnSharing *sharing, QObject *parent) : QObject(pa
     edit = root->findChild<QObject*>("EditFile");
 
     connect(edit, SIGNAL(saveChanges()), this, SLOT(SaveChanges()));
-    connect(edit, SIGNAL(cancelSaveChanges()), this, SLOT(CancelSaveChanges()));
 
     // Sharing
     connect(sharing, SIGNAL(finish()), this, SLOT(finishProcess()));
@@ -307,12 +306,6 @@ void TvnCsv::SaveChanges()
     tempFile.close();
 
     sharing->uploadCsvFile(conf.localCsvFile, conf.shareCsvFile);
-}
-
-void TvnCsv::CancelSaveChanges()
-{
-    sharing->cancelProcess();
-    QMetaObject::invokeMethod(edit, "hideDialog");
 }
 
 void TvnCsv::finishProcess()

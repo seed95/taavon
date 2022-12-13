@@ -44,10 +44,6 @@ private slots:
     // View slots
     void cancelDownload();
 
-    // Edit slots
-    void cancelUpload();
-    void cancelDelete();
-
 private:
     QString getImageName(QString type);
     QString getImageNameFa(QString type);

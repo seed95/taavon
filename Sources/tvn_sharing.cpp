@@ -16,8 +16,8 @@ TvnSharing::TvnSharing(QObject *root, QObject *parent) : QObject(parent)
                      this, SLOT(errorProcess(QProcess::ProcessError)));
 
     // Save smbclient log
-    p->setStandardOutputFile("smb.log");
-    p->setStandardErrorFile("smb.log");
+    p->setStandardOutputFile("smb.log", QProcess::Append);
+    p->setStandardErrorFile("smb.log", QProcess::Append);
 }
 
 //TODO check for windows
@@ -57,8 +57,8 @@ void TvnSharing::upload(QString srcFilename, QString srcDir, QString dstFilename
     }
 
     // Save destination and source for log message
-    dst = dstDir + dstFilename;
-    src = srcDir + srcFilename;
+    dst = dstDir + "/" + dstFilename;
+    src = srcDir + "/" + srcFilename;
 
     // TODO check image exist is needed?
 
@@ -86,11 +86,11 @@ void TvnSharing::remove(QString srcFilename, QString srcDir)
     // Make destination path
     QString dstDir = srcDir + "/delete";
     QLocale en_localce(QLocale::English);
-    QString date = en_localce.toString(QDateTime::currentDateTime(), "yyyy-MM-dd--hh-mm-ss--");
+    QString date = en_localce.toString(QDateTime::currentDateTime(), "yyyyMMdd-hhmmss-");
     QString dstFilename = "delete/" + date + srcFilename;
 
-    dst = dstDir + dstFilename;
-    src = srcDir + srcFilename;
+    dst = srcDir + "/" + dstFilename;
+    src = srcDir + "/" + srcFilename;
 
     QString smbCommand = "mkdir " + dstDir + "; cd " + srcDir +
             "; scopy " + srcFilename + " " + dstFilename + "; rm " + srcFilename + ";";

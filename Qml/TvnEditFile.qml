@@ -9,11 +9,8 @@ ApplicationWindow
 
     // cpp signals
     signal saveChanges()
-    signal cancelSaveChanges()
     signal deleteImages()
     signal uploadImages()
-//    signal cancelUpload()
-//    signal cancelDelete()
 
     width: 945
     minimumWidth: width
@@ -34,6 +31,17 @@ ApplicationWindow
         if (visible)
         {
             root.hasChanged = false
+
+            root.extraordinaryPath = ""
+            root.generalPath = ""
+            root.licencePath = ""
+            root.registrationPath = ""
+
+            root.extraordinaryDeleted = false
+            root.generalDeleted = false
+            root.licenceDeleted = false
+            root.registrationDeleted = false
+
             forceFocus()
             detail.updateTexts()
         }
@@ -162,43 +170,12 @@ ApplicationWindow
             textLabel: "در حال ذخیره تغییرات"
             width: 300
             height: 100
-//            negativeText: "انصراف"
-//            negativeWidth: 80
             visible: dialogType === constant.tvn_DIALOG_SAVE_CHANGES
-//            dialogIsActive: visible
-
-//            onClickNegative: cancelSaveChanges()
         }
-
-//        TvnDialog
-//        {
-//            id: upload_dialog
-//            anchors.centerIn: parent
-//            textLabel: "در حال آپلود عکس"
-//            negativeText: "انصراف"
-//            negativeWidth: 80
-//            visible: dialogType === constant.tvn_DIALOG_UPLOAD
-//            dialogIsActive: visible
-
-//            onClickNegative: cancelUpload()
-//        }
-
-//        TvnDialog
-//        {
-//            id: delete_dialog
-//            anchors.centerIn: parent
-//            textLabel: "در حال حذف عکس"
-//            negativeText: "انصراف"
-//            negativeWidth: 80
-//            visible: dialogType === constant.tvn_DIALOG_DELETE
-//            dialogIsActive: visible
-
-//            onClickNegative: cancelDelete()
-//        }
-
 
         TvnError
         {
+            id: error
             anchors.centerIn: parent
             messageText: errorMessage
             visible: errorMessage !== ""
@@ -211,7 +188,7 @@ ApplicationWindow
     function closeWindow()
     {
         // do nothing if another dialog is open
-        if (dialogType!==constant.tvn_DIALOG_NOPE)
+        if (dialogType!==constant.tvn_DIALOG_NOPE || error.visible)
         {
             return
         }
@@ -234,12 +211,13 @@ ApplicationWindow
         }
     }
 
-    // It returns true if the dialog is not open and the program's focus is on this page
+    // It returns true if the dialog is not open and
+    // the program's focus is on this page
     function windowIsActive()
     {
         if (dialogType===constant.tvn_DIALOG_NOPE &&
             root.pageMode===constant.tvn_EDIT_FILE &&
-            root.errorMessage==="")
+            errorMessage==="")
         {
             return true
         }
@@ -255,16 +233,6 @@ ApplicationWindow
 
 
     /*** Call this functions from cpp ***/
-//    function showUploadDialog()
-//    {
-//        dialogType = constant.tvn_DIALOG_UPLOAD
-//    }
-
-//    function showDeleteDialog()
-//    {
-//        dialogType = constant.tvn_DIALOG_DELETE
-//    }
-
     function deleteImagesSuccessfully()
     {
         root.processType = constant.tvn_PROCESS_IMAGE_UPLOAD

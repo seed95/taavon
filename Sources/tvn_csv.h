@@ -50,7 +50,6 @@ public:
 private slots:
     // Edit slots
     void SaveChanges();
-    void CancelSaveChanges();
 
     // Sharing slots
     void finishProcess();

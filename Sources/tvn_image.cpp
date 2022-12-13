@@ -32,11 +32,7 @@ TvnImage::TvnImage(QObject *root, TvnSharing *sharing, QObject *parent) : QObjec
     QObject *editDetail = edit->findChild<QObject*>("Detail");
     editImage = editDetail->findChild<QObject*>("DetailImage");
 
-    // edit signals
-//    connect(edit, SIGNAL(cancelUpload()), this, SLOT(cancelUpload()));
-//    connect(editImage, SIGNAL(uploadImage()), this, SLOT(uploadImage()));
-//    connect(edit, SIGNAL(cancelDelete()), this, SLOT(cancelDelete()));
-//    connect(editImage, SIGNAL(deleteImage()), this, SLOT(deleteImage()));
+    // Edit signals
     connect(editImage, SIGNAL(chooseImage()), this, SLOT(chooseImage()));
     connect(edit, SIGNAL(deleteImages()), this, SLOT(deleteImages()));
     connect(edit, SIGNAL(uploadImages()), this, SLOT(uploadImages()));
@@ -46,13 +42,6 @@ TvnImage::TvnImage(QObject *root, TvnSharing *sharing, QObject *parent) : QObjec
     connect(sharing, SIGNAL(finish()), this, SLOT(finishProcess()));
     connect(sharing, SIGNAL(error()), this, SLOT(errorProcess()));
     this->sharing = sharing;
-
-
-//    uploadImage(IMAGE_LICENCE);
-//    deleteImage(IMAGE_LICENCE);
-//    downloadImage(IMAGE_REGISTRATION_AD);
-//    sharing->downlaod("page3.xlsx", "داداشی", "sajad.txt", "/home/sajad/taavon");
-//    share->upload("Taavon.pro", "/home/sajad/taavon", "sajad.txt", "داداشی");
 }
 
 void TvnImage::downloadImage()
@@ -128,11 +117,11 @@ void TvnImage::chooseImage()
     QString caption = "انتخاب عکس " + getImageNameFa(imageType);
     QString filter = "Images (*.jpg *.jpeg)";
     QString srcFilename = QFileDialog::getOpenFileName(NULL, caption, "", filter);
-//    if (srcFilename.isEmpty())
-//    {
-//        return;
-//    }
-    QMetaObject::invokeMethod(root, "saveImagePath", Q_ARG(QString, srcFilename));
+    if (srcFilename.isEmpty())
+    {
+        return;
+    }
+    QMetaObject::invokeMethod(root, "saveImagePath", Q_ARG(QVariant, srcFilename));
 }
 
 void TvnImage::deleteImages()
@@ -181,16 +170,18 @@ void TvnImage::uploadImages()
     }
 
     QString licencePath = TvnUtility::getLicencePath(root);
-    if (!generalPath.isEmpty())
+    if (!licencePath.isEmpty())
     {
         typeUploadImages.append(IMAGE_LICENCE);
     }
 
     QString registrationPath = TvnUtility::getRegistrationPath(root);
-    if (!generalPath.isEmpty())
+    if (!registrationPath.isEmpty())
     {
         typeUploadImages.append(IMAGE_REGISTRATION_AD);
     }
+
+    uploadOneImage();
 }
 
 
@@ -198,7 +189,7 @@ void TvnImage::deleteOneImage()
 {
     if (typeDeletedImages.isEmpty())
     {
-        QMetaObject::invokeMethod(root, "deleteImagesSuccessfully");
+        QMetaObject::invokeMethod(edit, "deleteImagesSuccessfully");
         return;
     }
     imageMode = typeDeletedImages.takeFirst();
@@ -213,7 +204,7 @@ void TvnImage::uploadOneImage()
 {
     if (typeUploadImages.isEmpty())
     {
-        QMetaObject::invokeMethod(root, "deleteImagesSuccessfully");
+        QMetaObject::invokeMethod(edit, "uploadImagesSuccessfully");
         return;
     }
     imageMode = typeUploadImages.takeFirst();
@@ -274,18 +265,6 @@ void TvnImage::cancelDownload()
 {
     sharing->cancelProcess();
     QMetaObject::invokeMethod(view, "hideDialog");
-}
-
-void TvnImage::cancelUpload()
-{
-    sharing->cancelProcess();
-    QMetaObject::invokeMethod(edit, "hideDialog");
-}
-
-void TvnImage::cancelDelete()
-{
-    sharing->cancelProcess();
-    QMetaObject::invokeMethod(edit, "hideDialog");
 }
 
 QString TvnImage::getImageName(QString type)

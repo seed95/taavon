@@ -227,52 +227,29 @@ Window
     }
 
 
-//    MouseArea
-//    {
-//        anchors.fill: parent
-////        enabled: list.windowIsActive()
-//        enabled: pageMode === constant.tvn_VIEW_FILE
-//        visible: pageMode === constant.tvn_VIEW_FILE
-//        cursorShape: Qt.WaitCursor
-//        onClicked:
-//        {
-//            console.log("onClicked list file")
-//            root.updateFocus()
-////            list.forceActiveFocus()
-//        }
-//    }
-
     // Functions
     /*** Call this functions from cpp ***/
-//    function deleteSuccessfully()
-//    {
-//        root.hasChanged = true
-//        updateHasImage(false)
-//    }
-
-//    function uploadSuccessfully()
-//    {
-//        root.hasChanged = true
-//        updateHasImage(true)
-//    }
-
     function saveImagePath(path)
     {
         root.hasChanged = true
         if (root.imageType===constant.tvn_IMAGE_EXTRAORDINARY_MEETING)
         {
+            root.extraordinaryMeetingHasImage = true
             root.extraordinaryPath = path
         }
         else if (root.imageType===constant.tvn_IMAGE_GENERAL_MEETING)
         {
+            root.generalMeetingHasImage = true
             root.generalPath = path
         }
         else if (root.imageType===constant.tvn_IMAGE_LICENCE)
         {
+            root.licenceHasImage = true
             root.licencePath = path
         }
         else if (root.imageType===constant.tvn_IMAGE_REGISTRATION_AD)
         {
+            root.registrationAdHasImage = true
             root.registrationPath = path
         }
     }
