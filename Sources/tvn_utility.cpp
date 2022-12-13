@@ -8,7 +8,6 @@
 void TvnUtility::log(QString message)
 {
     qDebug() << "log" << message;
-    // TODO handle large log fie into multi file whe volume is too large
     QLocale en_localce(QLocale::English);
     QString date = en_localce.toString(QDateTime::currentDateTime(), "MM/dd hh:mm:ss ---> ");
     QFile log_file(LOG_PATH);
@@ -158,6 +157,13 @@ void TvnUtility::setRegistrationAdHasImage(QObject *ui, QString data)
 {
     QQmlProperty::write(ui, "registrationAdHasImage", data);
 }
+
+
+void TvnUtility::setIsEditbale(QObject *ui, bool isEditable)
+{
+    QQmlProperty::write(ui, "isEditable", isEditable);
+}
+
 
 
 QString TvnUtility::getFileCode(QObject *ui)

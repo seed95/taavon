@@ -5,6 +5,7 @@
 #include "tvn_csv.h"
 #include "tvn_config.h"
 #include "tvn_image.h"
+#include "tvn_utility.h"
 
 int main(int argc, char *argv[])
 {
@@ -23,6 +24,7 @@ int main(int argc, char *argv[])
     TvnSharing *sharing = new TvnSharing(mainItem);
 
     TvnConfig *config = new TvnConfig();
+    TvnUtility::setIsEditbale(mainItem, conf.editable);
     TvnCsv *csv = new TvnCsv(mainItem, sharing);
     csv->LoadCsv();
 

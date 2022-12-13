@@ -12,8 +12,6 @@ Item
     width: 887
     height: 370
 
-    onVisibleChanged: console.log("visible")
-
     Item
     {
         id: row1
@@ -21,7 +19,7 @@ Item
         width: parent.width
         anchors.right: parent.right
         anchors.top: parent.top
-        z: 1 // TO show combo box
+        z: 1 // to show combo box upper all rows
 
         TvnDetailLabel
         {
@@ -51,7 +49,6 @@ Item
             contentText: root.fileStatus
             inputWidth: 120
             visible: readOnly
-            onChangeItem: root.fileStatus = text
         }
 
         TvnComboBox
@@ -62,12 +59,16 @@ Item
             anchors.verticalCenter: parent.verticalCenter
             comboIsActive: detailIsActive
             titleText: "وضعیت"
-            headerText: root.fileStatus
             comboWidth: 120
-            textItems: ["منحل", "غیر فعال","فعال","در دست اجرا"]
+            textItems: root.statusItems
             singleChoice: true
+//            selectedItems: [root.getStatusIndex(root.fileStatus)]
             visible: !readOnly
-            onChangeSelected: root.fileStatus = selectedItemText
+            onClickItem:
+            {
+                root.hasChanged = true
+                root.fileStatus = text
+            }
         }
 
         TvnDetailLabel
@@ -81,7 +82,6 @@ Item
             contentText: root.keepingPlace
             inputWidth: 120
             visible: readOnly
-            onChangeItem: root.keepingPlace = text
         }
 
         TvnComboBox
@@ -92,12 +92,15 @@ Item
             anchors.verticalCenter: parent.verticalCenter
             comboIsActive: detailIsActive
             titleText: "محل نگهداری"
-            headerText: root.keepingPlace
             comboWidth: 145
-            textItems: ["بایگانی/دایی", "نیست","دایی","بایگانی"]
+            textItems: root.keepingPlaceItems
             singleChoice: true
             visible: !readOnly
-            onChangeSelected: root.fileStatus = selectedItemText
+            onClickItem:
+            {
+                root.hasChanged = true
+                root.keepingPlace = text
+            }
         }
 
         TvnDetailLabel
@@ -277,7 +280,6 @@ Item
             labelValidator: IntValidator {bottom: 1; top: 100; locale: "fa"}
         }
 
-        // TODO show with ,
         TvnDetailLabel
         {
             id: value_per_share
@@ -293,6 +295,7 @@ Item
             inputWidth: 107
             onChangeItem: root.valuePerShare = text
             labelValidator: RegExpValidator { regExp: /^\d*$/ }
+            isCurrency: true
         }
     }
 
@@ -304,7 +307,6 @@ Item
         anchors.right: parent.right
         anchors.top: row4.bottom
 
-        // TODO show with ,
         TvnDetailLabel
         {
             id: starting_capital
@@ -322,9 +324,9 @@ Item
             inputWidth: 138
             onChangeItem: root.startingCapital = text
             labelValidator: RegExpValidator { regExp: /^\d*$/ }
+            isCurrency: true
         }
 
-        // TODO show with ,
         TvnDetailLabel
         {
             id: current_capital
@@ -342,6 +344,7 @@ Item
             inputWidth: 181
             onChangeItem: root.currentCapital = text
             labelValidator: RegExpValidator { regExp: /^\d*$/ }
+            isCurrency: true
         }
     }
 
@@ -448,7 +451,9 @@ Item
     {
         file_code.updateText(root.fileCode)
         status.updateText(root.fileStatus)
+        combo_status.selectedItems = [root.getStatusIndex(root.fileStatus)]
         keeping_place.updateText(root.keepingPlace)
+        combo_keeping_place.selectedItems = [root.getKeepingPlaceIndex(root.keepingPlace)]
         ledger_binder.updateText(root.ledgerBinder)
         number_of_cover.updateText(root.numberOfCover)
         file_name.updateText(root.fileName)

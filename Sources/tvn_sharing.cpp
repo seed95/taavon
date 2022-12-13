@@ -1,6 +1,7 @@
 #include "tvn_sharing.h"
 #include "tvn_utility.h"
 #include "tvn_constant.h"
+#include "tvn_config.h"
 
 #include <QDebug>
 #include <QDateTime>
@@ -16,8 +17,8 @@ TvnSharing::TvnSharing(QObject *root, QObject *parent) : QObject(parent)
                      this, SLOT(errorProcess(QProcess::ProcessError)));
 
     // Save smbclient log
-    p->setStandardOutputFile("smb.log", QProcess::Append);
-    p->setStandardErrorFile("smb.log", QProcess::Append);
+    p->setStandardOutputFile(".smb.log", QProcess::Append);
+    p->setStandardErrorFile(".smb.log", QProcess::Append);
 }
 
 //TODO check for windows
@@ -36,12 +37,8 @@ void TvnSharing::downlaod(QString srcFilename, QString srcDir, QString dstFilena
     src = srcDir + srcFilename;
 
     QString smbCommand = "lcd \"" + dstDir + "\"; cd " + srcDir + "; get " + srcFilename + " \"" + dstFilename + "\";";
-    // TODO get share ip from config
-    // TODO get user and password from config and define
-//    QString processCommand = "smbclient //192.168.1.100/Share_Folder -c \'" + smbCommand + "\' -U=seed%ever";
-//    QString processCommand = "smbclient";
     QStringList args;
-    args <<  "//192.168.1.100/Share_Folder" << "-c" << smbCommand << "-U=seed%ever";
+    args <<  conf.shareFolder << "-c" << smbCommand << "-U=seed%ever";
     p->start("smbclient", args);
 }
 
@@ -64,11 +61,8 @@ void TvnSharing::upload(QString srcFilename, QString srcDir, QString dstFilename
 
     QString smbCommand = "lcd \"" + srcDir + "\"; mkdir " + dstDir + "; cd " + dstDir +
             "; put \"" + srcFilename + "\" " + dstFilename + ";";
-    // TODO get share ip from config
-    // TODO get user and password from config and define
-//    QString processCommand = "smbclient //192.168.1.100/Share_Folder -c " + smbCommand + " -U=seed%ever";
     QStringList args;
-    args << "//192.168.1.100/Share_Folder" << "-c" << smbCommand << "-U=seed%ever";
+    args << conf.shareFolder << "-c" << smbCommand << "-U=seed%ever";
     p->start("smbclient", args);
 }
 
@@ -94,12 +88,8 @@ void TvnSharing::remove(QString srcFilename, QString srcDir)
 
     QString smbCommand = "mkdir " + dstDir + "; cd " + srcDir +
             "; scopy " + srcFilename + " " + dstFilename + "; rm " + srcFilename + ";";
-    // TODO get share ip from config
-    // TODO get user and password from config and define
-//    QString processCommand = "smbclient //192.168.1.100/Share_Folder -c \'" + smbCommand + "\' -U=seed%ever";
-//    QString processCommand = "smbclient";
     QStringList args;
-    args <<  "//192.168.1.100/Share_Folder" << "-c" << smbCommand << "-U=seed%ever";
+    args <<  conf.shareFolder << "-c" << smbCommand << "-U=seed%ever";
     p->start("smbclient", args);
 
 }
@@ -120,10 +110,8 @@ void TvnSharing::uploadCsvFile(QString scrFile, QString dstFile)
     src = scrFile;
 
     QString smbCommand = "put \"" + scrFile + "\" " + dstFile + ";";
-    // TODO get share ip from config
-    // TODO get user and password from config and define
     QStringList args;
-    args << "//192.168.1.100/Share_Folder" << "-c" << smbCommand << "-U=seed%ever";
+    args << conf.shareFolder << "-c" << smbCommand << "-U=seed%ever";
     p->start("smbclient", args);
 }
 

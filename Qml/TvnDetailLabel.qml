@@ -1,9 +1,10 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.5
 
-Item {
+Item
+{
 
-    property var labelValidator: RegExpValidator { regExp: /./ }
+    property var labelValidator: RegExpValidator { regExp: /^[^,]*$/ }
     property bool labelIsActive: false
     property string titleText: ""
     property string contentText: ""
@@ -15,14 +16,13 @@ Item {
     property bool haveBorder: !contentReadOnly
     property int inputWidth: 0
     property bool alignCenter: !contentReadOnly
-
-
-    property string text_written: ""
-    property bool escape_clicked: false
+    property bool isCurrency: false
 
     signal changeItem(string text)
 
     height: 45
+
+//    Component.onCompleted: console.log(Number("12090450").toLocaleString(Qt.locale("fa-IR"),'f',0))
 
     Text
     {
@@ -124,7 +124,17 @@ Item {
             width: parent.width
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
-            text: contentText
+            text:
+            {
+                if (isCurrency)
+                {
+                    Number(contentText).toLocaleString(Qt.locale("en-US"), 'f', 0)
+                }
+                else
+                {
+                    contentText
+                }
+            }
             horizontalAlignment:
             {
                 if (alignCenter)
@@ -167,6 +177,7 @@ Item {
 
             }
             onAccepted: focus = false
+            Keys.onEnterPressed: focus = false
             Keys.onEscapePressed:
             {
                 text = contentText
@@ -182,6 +193,9 @@ Item {
                         text = contentText
                     }
 
+                    // convert persian number to english
+                    text = root.fa2en(text)
+
                     if (text!==contentText)
                     {
                         root.hasChanged = true
@@ -189,7 +203,16 @@ Item {
                     }
 
                     changeItem(text)
+                    if (isCurrency)
+                    {
+                        // show currency with comma
+                        text = Number(text).toLocaleString(Qt.locale("en-US"), 'f', 0)
+                    }
                     root.updateFocus()
+                }
+                else
+                {
+                    text = contentText
                 }
             }
         }

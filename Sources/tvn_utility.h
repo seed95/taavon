@@ -39,6 +39,7 @@ public:
     static void setLicenceHasImage(QObject *ui, QString licenceHasImage);
     static void setRegistrationAdHasImage(QObject *ui, QString registrationAdHasImage);
 
+    static void setIsEditbale(QObject *ui, bool isEditable);
 
     static QString getFileCode(QObject *ui);
     static QString getKeepingPlace(QObject *ui);

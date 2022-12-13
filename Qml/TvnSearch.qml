@@ -4,6 +4,7 @@ Item
 {
     property bool searchIsActive: false
 
+
     width: 1250
     height: 45
 
@@ -40,6 +41,7 @@ Item
         inputWidth: 70
     }
 
+    // TODO use setting for selected items
     TvnComboBox
     {
         id: status
@@ -50,13 +52,13 @@ Item
         comboIsActive: searchIsActive
         titleText: "وضعیت"
         comboWidth: 130
-        textItems: ["منحل", "غیر فعال","فعال","در دست اجرا"]
-        onChangeSelected: headerText = selectedItemText
+        textItems: root.statusItems
     }
 
+    // TODO use setting for selected items
     TvnComboBox
     {
-        id: ledger_binder
+        id: keeping_palce
         width: 247
         anchors.right: status.left
         anchors.rightMargin: 30
@@ -64,8 +66,7 @@ Item
         comboIsActive: searchIsActive
         titleText: "محل نگهداری"
         comboWidth: 160
-        textItems: ["بایگانی/دایی", "نیست","دایی","بایگانی"]
-        onChangeSelected: headerText = selectedItemText
+        textItems: root.keepingPlaceItems
     }
 
 

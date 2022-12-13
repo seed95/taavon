@@ -5,6 +5,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QString>
+#include <QDebug>
 
 
 config conf;
@@ -36,7 +37,9 @@ void TvnConfig::readConfig()
         throw QString("read config file error (invalid json object)");
     }
     QJsonObject jsonObj = document.object();
+    conf.shareFolder = jsonObj.value(JSON_KEY_SHARE_FOLDER).toString();
     conf.imageShareFolderPath = jsonObj.value(JSON_KEY_IMAGE_SHARE_FOLDER_PATH).toString();
     conf.shareCsvFile = jsonObj.value(JSON_KEY_SHARE_CSV_FILE).toString();
     conf.localCsvFile = jsonObj.value(JSON_KEY_LOCAL_CSV_FILE).toString();
+    conf.editable = jsonObj.value(JSON_KEY_EDITABLE).toBool();
 }

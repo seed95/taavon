@@ -197,7 +197,7 @@ void TvnCsv::SaveChanges()
     QString status = TvnUtility::getFileStatus(root);
     QString ledgerBinder = TvnUtility::getLedgerBinder(root);
     QString numberOfCover = TvnUtility::getNumberOfCover(root);
-    QString fileName = TvnUtility::getFileName(root).replace(",", " "); // TODO check , in text input
+    QString fileName = TvnUtility::getFileName(root);
     QString registrationNumber = TvnUtility::getRegistrationNumber(root);
     QString dateOfLastMeeting = TvnUtility::getDateOfRegistration(root);
     QString nationalId = TvnUtility::getNationalId(root);

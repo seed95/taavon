@@ -165,6 +165,7 @@ Rectangle
         labelFontWeight: Font.Medium
         labelFontSize: 15
         labelColor: "#0e0b0b"
+        visible: root.isEditable
 
         MouseArea
         {

@@ -7,10 +7,10 @@ Item
 
     property bool comboIsActive: false
     property string titleText: ""
-    property string headerText: ""
     property int comboWidth: 0
     property var textItems: []
     property bool singleChoice: false
+    property var selectedItems: [] // only set in outter qml object to select items
 
     property color color_background_normal: "#3b4351"
     property color color_background_hovered: "#576075"
@@ -22,15 +22,21 @@ Item
     property color color_border_hovered: color_text_hovered
 
     property bool isHovered: false
-    property bool showList: false
     property int highlighedItemIndex: 0
-    property var selectedItem: []
+    property string headerText: ""
 
-    signal changeSelected(string selectedItemText)
+    signal clickItem(string text)
 
     height: 35
 
-    Component.onCompleted: {addToList()} // TODO fix this
+    onTextItemsChanged: addToList()
+
+    onSelectedItemsChanged:
+    {
+        deselectAllItem()
+        selectSelectedItems()
+        headerText = getSelectedItemText()
+    }
 
     Text
     {
@@ -129,14 +135,6 @@ Item
             clip: true
             interactive: false
             visible: container.focus
-            onVisibleChanged:
-            {
-                if (visible)
-                {
-                    selectHeaderItem()
-                }
-            }
-
             delegate: TvnComboBoxItem
             {
                 displayText: itemText
@@ -159,57 +157,38 @@ Item
     function handleClickItem(index)
     {
         var item = lm_combo.get(index)
-        if ( container.singleChoice )
+        if (container.singleChoice)
         {
-            if ( item.isSelected )
+            if (item.isSelected)
             {
                 return
             }
             deselectAllItem()
             item.isSelected = true
-            selectedItem = []
-            selectedItem.push(index)
+            clickItem(item.itemText)
         }
         else
         {
             item.isSelected = !item.isSelected
-            if (item.isSelected)
-            {
-                selectedItem.push(index)
-            }
-            else
-            {
-                removeIndex(index)
-            }
         }
-
-        changeSelected(getSelectedItemText())
-    }
-
-    function removeIndex(index)
-    {
-        for (var i=0; i<selectedItem.length; i++)
-        {
-            if (selectedItem[i] === index)
-            {
-                selectedItem.splice(i, 1)
-                return
-            }
-        }
+        headerText = getSelectedItemText()
     }
 
     function getSelectedItemText()
     {
         var txt = ""
-        for (var i=0; i<selectedItem.length; i++)
+        for (var i=0; i<lm_combo.count; i++)
         {
-            if ( i==0 )
+            if (lm_combo.get(i).isSelected)
             {
-                txt = lm_combo.get(selectedItem[i]).itemText
-            }
-            else
-            {
-                txt += " - " + lm_combo.get(selectedItem[i]).itemText
+                if (txt==="")
+                {
+                    txt = lm_combo.get(i).itemText
+                }
+                else
+                {
+                    txt += " - " + lm_combo.get(i).itemText
+                }
             }
         }
         return txt
@@ -223,26 +202,17 @@ Item
         }
     }
 
-    function selectHeaderItem()
+    function selectSelectedItems()
     {
-        for (var i=0; i<lm_combo.count; i++)
+        for (var i=0; i<selectedItems.length; i++)
         {
-            if (lm_combo.get(i).itemText === headerText)
-            {
-                lm_combo.get(i).isSelected = true
-                // TODO fix this segment
-                selectedItem = []
-                selectedItem.push(i)
-            }
-            else
-            {
-                lm_combo.get(i).isSelected = false
-            }
+            lm_combo.get(selectedItems[i]).isSelected = true
         }
     }
 
     function addToList()
     {
+        lm_combo.clear()
         for (var i=0; i<textItems.length; i++)
         {
             lm_combo.append({"itemText": textItems[i],

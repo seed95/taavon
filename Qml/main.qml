@@ -51,7 +51,6 @@ Window
     property bool licenceDeleted: false
     property bool registrationDeleted: false
 
-
     /***** Used this variables in qml *****/
     // show edit/view/new/list file based on mode
     property int pageMode: constant.tvn_LIST_FILE
@@ -59,9 +58,14 @@ Window
     // any variable has changed in the edit page
     property bool hasChanged: false
 
+    property var statusItems: ["منحل", "غیر فعال","فعال","در دست اجرا"]
+    property var keepingPlaceItems: ["بایگانی/دایی","دایی","بایگانی"]
+
     /***** Set this variables in cpp *****/
     //Error properties
     property string errorMessage: ""
+
+    property bool isEditable: false
 
 
     visible: true
@@ -133,7 +137,8 @@ Window
 
 //    Settings
 //    {
-//        property alias mode: root.hhm_mode
+//        property alias selectedStatus: search.selectedStatus
+//        property alias selectedKeepingPlace: search.selectedKeepingPlace
 //    }
 
     MouseArea
@@ -271,30 +276,6 @@ Window
         }
     }
 
-    // updateHasImage update hasImage fields
-    // extraordinaryMeetingHasImage, generalMeetingHasImage, licenceHasImage, registrationAdHasImage
-//    function updateHasImage(value)
-//    {
-//        if (root.imageType===constant.tvn_IMAGE_EXTRAORDINARY_MEETING)
-//        {
-//            root.extraordinaryMeetingHasImage = value
-//        }
-//        else if (root.imageType===constant.tvn_IMAGE_GENERAL_MEETING)
-//        {
-//            root.generalMeetingHasImage = value
-//        }
-//        else if (root.imageType===constant.tvn_IMAGE_LICENCE)
-//        {
-//            root.licenceHasImage = value
-//        }
-//        else if (root.imageType===constant.tvn_IMAGE_REGISTRATION_AD)
-//        {
-//            root.registrationAdHasImage = value
-//        }
-
-////        list.updateImageFile(root.selectedFileIndex)
-//    }
-
 
     /*** Utilities functions ***/
 
@@ -323,17 +304,41 @@ Window
         return number
     }
 
-    //Convert arabic number to english number
-    function ar2en(number)
+    //Convert persian/arabic number to english number
+    function fa2en(number)
     {
         number = number.toString()
-        var w_numbers = [/۰/g, /۱/g, /۲/g, /۳/g, /۴/g, /۵/g, /۶/g, /۷/g, /۸/g, /۹/g]
+        var persian_numbers = [/۰/g, /۱/g, /۲/g, /۳/g, /۴/g, /۵/g, /۶/g, /۷/g, /۸/g, /۹/g]
         var arabic_numbers  = [/٠/g, /١/g, /٢/g, /٣/g, /٤/g, /٥/g, /٦/g, /٧/g, /٨/g, /٩/g]
         var en_number
         for(var i=0; i<10; i++)
         {
-            number = number.replace(w_numbers[i], i).replace(arabic_numbers[i], i)
+            number = number.replace(persian_numbers[i], i).replace(arabic_numbers[i], i)
         }
         return number
     }
+
+
+    function getStatusIndex(status)
+    {
+        for (var i=0; i<root.statusItems.length; i++)
+        {
+            if (status===root.statusItems[i])
+            {
+                return i
+            }
+        }
+    }
+
+    function getKeepingPlaceIndex(keepingPlace)
+    {
+        for (var i=0; i<root.keepingPlaceItems.length; i++)
+        {
+            if (keepingPlace===root.keepingPlaceItems[i])
+            {
+                return i
+            }
+        }
+    }
+
 }
