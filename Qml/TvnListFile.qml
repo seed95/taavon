@@ -22,6 +22,7 @@ Item
     //Qml Signals
 
 
+    // only save files
     ListView
     {
         id: lv_file
@@ -81,6 +82,68 @@ Item
 
         ScrollBar.vertical: scrollbar
     }
+
+    ListView
+    {
+        id: lv_search
+
+        width: parent.width
+        anchors.right: parent.right
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
+        model: ListModel{id: lm_search}
+        clip: true
+        interactive: isActive
+        visible: !lv_file.visible
+
+        delegate: TvnFileElement
+        {
+            anchors.right: parent.right
+            colorBackground: elementColorBackground
+            index: elementIndex
+            fileCode: elementFileCode
+            keepingPlace: elementKeepingPlace
+            status: elementStatus
+            ledgerBinder: elementLedgerBinder
+            numberOfCover: elementNumberOfCover
+            fileName: elementFileName
+            registrationNumber: elementRegistrationNumber
+            dateOfLastMeeting: elementDateOfLastMeeting
+            nationalId: elementNationalId
+            ceoName: elementCeoName
+            mobileNumber: elementMobileNumber
+            dateOfRegistration: elementDateOfRegistration
+            numberOfPrimaryMembers: elementNumberOfPrimaryMembers
+            numberOfCurrentMembers: elementNumberOfCurrentMembers
+            valuePerShare: elementValuePerShare
+            startingCapital: elementStartingCapital
+            currentCapital: elementCurrentCapital
+            chairmanName: elementChairmanName
+            viceName: elementViceName
+            secretaryName: elementSecretaryName
+            phoneNumber: elementPhoneNumber
+            address: elementAddress
+            extraordinaryMeetingHasImage: elementExtraordinaryMeetingImage
+            generalMeetingHasImage: elementGeneralMeetingImage
+            licenceHasImage: elementLicenceImage
+            registrationAdHasImage: elementRegistrationAdImage
+
+            onClickItem:
+            {
+                handleClickItem(index)
+                root.pageMode = constant.tvn_VIEW_FILE
+            }
+
+            onEditItem:
+            {
+                handleClickItem(index)
+                root.pageMode = constant.tvn_EDIT_FILE
+            }
+        }
+
+        ScrollBar.vertical: scrollbar
+    }
+
 
     ScrollBar
     {
@@ -255,4 +318,83 @@ Item
             return item.elementRegistrationAdImage
         }
     }
+
+
+    // Based on the search type, it checks the desired value (searchText)
+    // among all files and also checks status and keepingplace if these are selected.
+    function searchFile(type, searchText, status, keepingPlace)
+    {
+        // check search is empty or not
+        if (searchText==="" && status.length===0 && keepingPlace.length===0)
+        {
+            lv_file.visible = true
+            return
+        }
+
+        lv_file.visible = false
+        lm_search.clear()
+        for (var i=0; i<lm_file.count; i++)
+        {
+            var item = lm_file.get(i)
+            var itemValue = ""
+            if (type===constant.tvn_SEARCH_FILE_CODE)
+            {
+                itemValue = item.elementFileCode
+            }
+            else if (type===constant.tvn_SEARCH_FILE_NAME)
+            {
+                itemValue = item.elementFileName
+            }
+            else if (type===constant.tvn_SEARCH_REGISTRATION_NUMBER)
+            {
+                itemValue = item.elementRegistrationNumber
+            }
+
+            if (itemValue.includes(searchText))
+            {
+                if (searchItemCheckStatusAndKeepingPlace(item, status, keepingPlace))
+                {
+                    lm_search.append(lm_file.get(i))
+                }
+
+            }
+        }
+    }
+
+    // check status and keepingPlace for item if these are selected
+    // If the status or keepingplace of the item includes selected `status, keepingPlace`, returns true.
+    // Also if no status or keeping place is selected, returns true.
+    function searchItemCheckStatusAndKeepingPlace(item, status, keepingPlace)
+    {
+        if (keepingPlace.length===0 && status.length===0)
+        {
+            return true
+        }
+
+        if (keepingPlace.length===0 && status.length!==0)
+        {
+            if (status.includes(item.elementStatus))
+            {
+                return true
+            }
+        }
+        else if (keepingPlace.length!==0 && status.length===0)
+        {
+            if (keepingPlace.includes(item.elementKeepingPlace))
+            {
+                return true
+            }
+        }
+        else if (keepingPlace.length!==0 && status.length!==0)
+        {
+            if (keepingPlace.includes(item.elementKeepingPlace) &&
+                status.includes(item.elementStatus))
+            {
+                return true
+            }
+        }
+
+        return false
+    }
+
 }

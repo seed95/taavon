@@ -58,9 +58,6 @@ Window
     // any variable has changed in the edit page
     property bool hasChanged: false
 
-    property var statusItems: ["منحل", "غیر فعال","فعال","در دست اجرا"]
-    property var keepingPlaceItems: ["بایگانی/دایی","دایی","بایگانی"]
-
     /***** Set this variables in cpp *****/
     //Error properties
     property string errorMessage: ""
@@ -321,9 +318,9 @@ Window
 
     function getStatusIndex(status)
     {
-        for (var i=0; i<root.statusItems.length; i++)
+        for (var i=0; i<constant.tvn_COMBO_STATUS_ITEMS.length; i++)
         {
-            if (status===root.statusItems[i])
+            if (status===constant.tvn_COMBO_STATUS_ITEMS[i])
             {
                 return i
             }
@@ -332,9 +329,9 @@ Window
 
     function getKeepingPlaceIndex(keepingPlace)
     {
-        for (var i=0; i<root.keepingPlaceItems.length; i++)
+        for (var i=0; i<constant.tvn_COMBO_KEEPING_PLACE_ITEMS.length; i++)
         {
-            if (keepingPlace===root.keepingPlaceItems[i])
+            if (keepingPlace===constant.tvn_COMBO_KEEPING_PLACE_ITEMS[i])
             {
                 return i
             }

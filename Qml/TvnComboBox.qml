@@ -26,6 +26,7 @@ Item
     property string headerText: ""
 
     signal clickItem(string text)
+    signal changeSelectedItems()
 
     height: 35
 
@@ -36,6 +37,14 @@ Item
         deselectAllItem()
         selectSelectedItems()
         headerText = getSelectedItemText()
+    }
+
+    onFocusChanged:
+    {
+        if (!focus)
+        {
+            changeSelectedItems()
+        }
     }
 
     Text
@@ -172,6 +181,7 @@ Item
             item.isSelected = !item.isSelected
         }
         headerText = getSelectedItemText()
+//        changeSelectedItems()
     }
 
     function getSelectedItemText()
@@ -221,5 +231,17 @@ Item
         }
     }
 
+    function getSelectedItems()
+    {
+        var selected = []
+        for (var i=0; i<lm_combo.count; i++)
+        {
+            if (lm_combo.get(i).isSelected)
+            {
+                selected.push(lm_combo.get(i).itemText)
+            }
+        }
+        return selected
+    }
 }
 

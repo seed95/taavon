@@ -21,19 +21,17 @@ int main(int argc, char *argv[])
     engine.load(url);
     QObject *mainItem = engine.rootObjects().first();
 
-    TvnSharing *sharing = new TvnSharing(mainItem);
-
     TvnConfig *config = new TvnConfig();
     TvnUtility::setIsEditbale(mainItem, conf.editable);
+
+    TvnSharing *sharing = new TvnSharing(mainItem);
+
     TvnCsv *csv = new TvnCsv(mainItem, sharing);
     csv->LoadCsv();
 
     TvnImage *imageHandler = new TvnImage(mainItem, sharing);
 
 //    hhm_log("-------------------------Start Document Manager-------------------------");
-//    hhm_setBackendUI(mainItem);
-
-//    HhmChapar *chapar = new HhmChapar(mainItem);
 
     return app.exec();
 }

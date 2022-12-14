@@ -34,8 +34,7 @@ DISTFILES += \
     Qml/TvnComboBoxItem.qml \
     Qml/TvnHeader.qml \
     Qml/TvnHeaderLabel.qml \
-    Qml/TvnSearchNumberBtn.qml \
-    Qml/TvnSearchStringBtn.qml \
+    Qml/TvnSearchBtn.qml \
     Qml/TvnTableItem.qml \
     Qml/TvnTable.qml \
     Qml/TvnViewFile.qml \
@@ -47,6 +46,7 @@ DISTFILES += \
     Qml/TvnDetailLabel.qml \
     Qml/TvnImageBtn.qml \
     Qml/TvnRoundBtn.qml \
+    Qml/TvnSearchTextInput.qml
 
 HEADERS += \
     Sources/tvn_csv.h \

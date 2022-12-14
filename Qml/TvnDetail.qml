@@ -60,7 +60,7 @@ Item
             comboIsActive: detailIsActive
             titleText: "وضعیت"
             comboWidth: 120
-            textItems: root.statusItems
+            textItems: constant.tvn_COMBO_STATUS_ITEMS
             singleChoice: true
 //            selectedItems: [root.getStatusIndex(root.fileStatus)]
             visible: !readOnly
@@ -93,7 +93,7 @@ Item
             comboIsActive: detailIsActive
             titleText: "محل نگهداری"
             comboWidth: 145
-            textItems: root.keepingPlaceItems
+            textItems: constant.tvn_COMBO_KEEPING_PLACE_ITEMS
             singleChoice: true
             visible: !readOnly
             onClickItem:

@@ -29,4 +29,15 @@ Item
     property int tvn_DIALOG_UPLOAD:                     4
     property int tvn_DIALOG_DELETE:                     5
     property int tvn_DIALOG_SAVE_CHANGES:               6
+
+    property int tvn_SEARCH_FILE_CODE:                  1
+    property int tvn_SEARCH_FILE_NAME:                  2
+    property int tvn_SEARCH_REGISTRATION_NUMBER:        3
+
+
+    // Combo box items
+    property var tvn_COMBO_STATUS_ITEMS:            ["منحل", "غیر فعال","فعال","در دست اجرا"]
+    property var tvn_COMBO_KEEPING_PLACE_ITEMS:     ["بایگانی/دایی","دایی","بایگانی"]
+
+    property var tvn_REGEX_ALL_CHARACTERS_EXCEPT_COMMA: RegExpValidator { regExp: /^[^,]*$/ }
 }

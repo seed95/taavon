@@ -8,7 +8,7 @@ Item
     width: 1250
     height: 45
 
-    TvnSearchNumberBtn
+    TvnSearchBtn
     {
         id: file_code
         anchors.right: parent.right
@@ -17,9 +17,11 @@ Item
         isActive: searchIsActive
         titleText: "کد پرونده"
         inputWidth: 60
+        labelValidator: IntValidator {bottom: 1; top: 1000; locale: "fa"}
+        onTextChange: handleFileCode(text)
     }
 
-    TvnSearchStringBtn
+    TvnSearchBtn
     {
         id: file_name
         anchors.right: file_code.left
@@ -28,9 +30,10 @@ Item
         isActive: searchIsActive
         titleText: "اسم پرونده"
         inputWidth: 280
+        onTextChange: handleFileName(text)
     }
 
-    TvnSearchNumberBtn
+    TvnSearchBtn
     {
         id: registration_number
         anchors.right: file_name.left
@@ -39,6 +42,8 @@ Item
         isActive: searchIsActive
         titleText: "شماره ثبت"
         inputWidth: 70
+        labelValidator: IntValidator {bottom: 1; top: 1000; locale: "fa"}
+        onTextChange: handleRegistrationNumber(text)
     }
 
     // TODO use setting for selected items
@@ -52,7 +57,8 @@ Item
         comboIsActive: searchIsActive
         titleText: "وضعیت"
         comboWidth: 130
-        textItems: root.statusItems
+        textItems: constant.tvn_COMBO_STATUS_ITEMS
+        onChangeSelectedItems: handleCombo()
     }
 
     // TODO use setting for selected items
@@ -66,8 +72,50 @@ Item
         comboIsActive: searchIsActive
         titleText: "محل نگهداری"
         comboWidth: 160
-        textItems: root.keepingPlaceItems
+        textItems: constant.tvn_COMBO_KEEPING_PLACE_ITEMS
+        onChangeSelectedItems: handleCombo()
     }
 
+
+    function handleFileCode(text)
+    {
+        file_name.clearInput()
+        registration_number.clearInput()
+        list.searchFile(constant.tvn_SEARCH_FILE_CODE, text, status.getSelectedItems(), keeping_palce.getSelectedItems())
+    }
+
+    function handleFileName(text)
+    {
+        file_code.clearInput()
+        registration_number.clearInput()
+        list.searchFile(constant.tvn_SEARCH_FILE_NAME, text, status.getSelectedItems(), keeping_palce.getSelectedItems())
+    }
+
+    function handleRegistrationNumber(text)
+    {
+        file_code.clearInput()
+        file_name.clearInput()
+        list.searchFile(constant.tvn_SEARCH_REGISTRATION_NUMBER, text, status.getSelectedItems(), keeping_palce.getSelectedItems())
+    }
+
+    function handleCombo()
+    {
+        var name = file_name.getInput()
+        if (name!=="")
+        {
+            handleFileName(name)
+            return
+        }
+
+        var registration = registration_number.getInput()
+        if (registration!=="")
+        {
+            handleRegistrationNumber(registration)
+            return
+        }
+
+        var code = file_code.getInput()
+        handleFileCode(code)
+    }
 
 }

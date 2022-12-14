@@ -11,8 +11,7 @@
         <file>TvnComboBoxItem.qml</file>
         <file>TvnHeader.qml</file>
         <file>TvnHeaderLabel.qml</file>
-        <file>TvnSearchNumberBtn.qml</file>
-        <file>TvnSearchStringBtn.qml</file>
+        <file>TvnSearchBtn.qml</file>
         <file>TvnDetail.qml</file>
         <file>TvnDetailLabel.qml</file>
         <file>TvnTable.qml</file>
@@ -24,5 +23,6 @@
         <file>TvnRoundBtn.qml</file>
         <file>TvnError.qml</file>
         <file>TvnDialog.qml</file>
+        <file>TvnSearchTextInput.qml</file>
     </qresource>
 </RCC>
