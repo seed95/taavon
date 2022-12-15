@@ -319,7 +319,6 @@ Item
         }
     }
 
-
     // Based on the search type, it checks the desired value (searchText)
     // among all files and also checks status and keepingplace if these are selected.
     function searchFile(type, searchText, status, keepingPlace)
@@ -327,7 +326,7 @@ Item
         // check search is empty or not
         if (searchText==="" && status.length===0 && keepingPlace.length===0)
         {
-            lv_file.visible = true
+            showListAndUpdateBackground()
             return
         }
 
@@ -354,7 +353,13 @@ Item
             {
                 if (searchItemCheckStatusAndKeepingPlace(item, status, keepingPlace))
                 {
-                    lm_search.append(lm_file.get(i))
+                    var color_background = color_background_1
+                    if (lm_search.count%2 === 0)
+                    {
+                        color_background = color_background_2
+                    }
+                    item.elementColorBackground = color_background
+                    lm_search.append(item)
                 }
 
             }
@@ -397,4 +402,18 @@ Item
         return false
     }
 
+    function showListAndUpdateBackground()
+    {
+        for (var i=0; i<lm_file.count; i++)
+        {
+            var item = lm_file.get(i)
+            var color_background = color_background_1
+            if (i%2 === 0)
+            {
+                color_background = color_background_2
+            }
+            item.elementColorBackground = color_background
+        }
+        lv_file.visible = true
+    }
 }

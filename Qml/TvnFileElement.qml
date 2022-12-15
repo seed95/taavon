@@ -183,8 +183,10 @@ Rectangle
         anchors.right: parent.right
         anchors.left: edit.right
         anchors.top: parent.top
+        propagateComposedEvents: true
         enabled: listFile.isActive
         onDoubleClicked: clickItem()
+        onClicked: mouse.accepted = false
     }
 
 }

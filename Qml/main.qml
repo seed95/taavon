@@ -144,9 +144,7 @@ Window
         enabled: list.windowIsActive()
         onClicked:
         {
-            console.log("onClicked list file")
             root.updateFocus()
-//            list.forceActiveFocus()
         }
     }
 

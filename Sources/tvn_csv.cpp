@@ -127,6 +127,7 @@ void TvnCsv::LoadCsv()
         return;
     }
 
+    bool headerNotRead = true;
     while (!file.atEnd())
     {
         QByteArray line = file.readLine().trimmed();
@@ -137,6 +138,11 @@ void TvnCsv::LoadCsv()
             QString msg = QString("LoadCsv:: invalid csv header length, acctual: %1 , desierd: %2)").
                     arg(wordList.length()).arg(HEADER_INDEX_TOTAL_NUMBER);
             TvnUtility::log(msg);
+            continue;
+        }
+        if (headerNotRead)
+        {
+            headerNotRead = false;
             continue;
         }
 

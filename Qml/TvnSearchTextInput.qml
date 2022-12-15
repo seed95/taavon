@@ -50,18 +50,20 @@ Rectangle
             }
             else
             {
+                handleTextChange()
                 root.updateFocus()
             }
         }
 
-        onTextEdited:
-        {
-            // convert persian number to english
-            text = root.fa2en(text)
-            inputChange(text)
-        }
+        onTextEdited: handleTextChange()
     }
 
+    function handleTextChange()
+    {
+        // convert persian number to english
+        text_input.text = root.fa2en(text_input.text)
+        inputChange(text_input.text)
+    }
 
     /*** Call this functions from qml ***/
     function clearInput()
