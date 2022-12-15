@@ -23,5 +23,8 @@
 
 #define ERROR_MESSAGE_SAVE_CHANGES          "امکان ذخیره تغییرات وجود ندارد"
 #define ERROR_MESSAGE_SAVE_IMAGE_CHANGES    "امکان ذخیره عکس وجود ندارد"
+#define ERROR_MESSAGE_LOAD_CSV              "امکان نمایش اطلاعات شرکت ها وجود ندارد"
+
+#define ERROR_MESSAGE_LOAD_CONFIG           "تنظیمات برنامه وجود ندارد"
 
 #endif // TVNCONSTANT_H

@@ -1,5 +1,6 @@
 #include "tvn_config.h"
 #include "tvn_utility.h"
+#include "tvn_constant.h"
 
 #include <QFile>
 #include <QJsonDocument>
@@ -10,8 +11,9 @@
 
 config conf;
 
-TvnConfig::TvnConfig(QObject *parent) : QObject(parent)
+TvnConfig::TvnConfig(QObject *root, QObject *parent) : QObject(parent)
 {
+    this->root = root;
     readConfig();
 }
 
@@ -20,7 +22,11 @@ void TvnConfig::readConfig()
     QFile file(CONFIG_PATH);
     if (!file.open(QIODevice::ReadOnly))
     {
-        throw QString("read config file error (%1)").arg(file.errorString());
+        TvnUtility::log(QString("readConfig:: load config file error (%1), path (%2)")
+                        .arg(file.errorString())
+                        .arg(CONFIG_PATH));
+        TvnUtility::setError(root, ERROR_MESSAGE_LOAD_CONFIG);
+        return;
     }
 
     QByteArray bytes = file.readAll();

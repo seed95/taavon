@@ -122,8 +122,10 @@ void TvnCsv::LoadCsv()
 {
     QFile file(conf.localCsvFile);
     if (!file.open(QIODevice::ReadOnly)) {
-        TvnUtility::log(QString("load csv file error (%1)").arg(file.errorString()));
-        TvnUtility::setError(root, "امکان باز کردن فایل csv وجود ندارد.");
+        TvnUtility::log(QString("load csv file error (%1), path (%2)")
+                        .arg(file.errorString())
+                        .arg(conf.localCsvFile));
+        TvnUtility::setError(root, ERROR_MESSAGE_LOAD_CSV);
         return;
     }
 
