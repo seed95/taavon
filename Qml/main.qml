@@ -76,13 +76,13 @@ Window
     title: "مدیریت پرونده های تعاونی"
 
     onPageModeChanged: root.updateFocus()
-    onErrorMessageChanged:
-    {
-        if (root.errorMessage!=="")
-        {
-            root.updateFocus()
-        }
-    }
+//    onErrorMessageChanged:
+//    {
+//        if (root.errorMessage!=="")
+//        {
+//            root.updateFocus()
+//        }
+//    }
 
 //    onFocusObjectChanged: console.log("focus", activeFocusItem)
 
@@ -223,7 +223,10 @@ Window
     TvnError
     {
         id: error
+        anchors.centerIn: parent
+        messageText: root.errorMessage
         visible: root.errorMessage !== ""
+        onClickOk: root.errorMessage = ""
     }
 
 

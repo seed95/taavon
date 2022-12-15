@@ -19,8 +19,7 @@ SOURCES += Sources/main.cpp \
     Sources/tvn_sharing.cpp
 
 RESOURCES += Qml/ui.qrc \
-             Resources/fonts.qrc \
-    Qml/ui.qrc
+             Resources/fonts.qrc
 
 OTHER_FILES += Qml/*.qml
 

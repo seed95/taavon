@@ -7,6 +7,8 @@
 #include "tvn_image.h"
 #include "tvn_utility.h"
 
+// .\windeployqt --qmldir C:\Users\seed\Desktop\taavon\Qml C:\Users\seed\Desktop\taavon\release
+
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -21,7 +23,7 @@ int main(int argc, char *argv[])
     engine.load(url);
     QObject *mainItem = engine.rootObjects().first();
 
-    TvnConfig *config = new TvnConfig();
+    TvnConfig *config = new TvnConfig(mainItem);
     TvnUtility::setIsEditbale(mainItem, conf.editable);
 
     TvnSharing *sharing = new TvnSharing(mainItem);

@@ -26,10 +26,13 @@ class TvnConfig : public QObject
 {
     Q_OBJECT
 public:
-    explicit TvnConfig(QObject *parent = nullptr);
+    explicit TvnConfig(QObject *root, QObject *parent = nullptr);
 
 private:
     void readConfig();
+
+private:
+    QObject *root;
 };
 
 

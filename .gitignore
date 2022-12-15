@@ -5,6 +5,7 @@ Makefile.Release
 Build
 debug
 release
+Setup
 Taavon
 *.log
 *.csv
