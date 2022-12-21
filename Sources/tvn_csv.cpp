@@ -257,7 +257,8 @@ void TvnCsv::errorProcess()
     else if (processType==PROCESS_CSV_DOWNLOAD)
     {
         QMetaObject::invokeMethod(root, "hideDialog");
-        TvnUtility::setError(edit, ERROR_MESSAGE_DOWNLOAD_CSV);
+        TvnUtility::setError(root, ERROR_MESSAGE_DOWNLOAD_CSV);
+        LoadCsv();
     }
 }
 
