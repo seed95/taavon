@@ -21,7 +21,7 @@
 #define ERROR_MESSAGE_DELETE_IMAGE          "حذف عکس با خطا مواجه شد"
 #define ERROR_MESSAGE_UPLOAD_IMAGE          "ذخیره عکس با خطا مواجه شد"
 #define ERROR_MESSAGE_UPLOAD_CSV            "ذخیره تغییرات با خطا مواجه شد"
-#define ERROR_MESSAGE_DOWNLOAD_CSV          "دریافت اطلاعات شرکت ها با خطا مواجه شد. ممکن است اطلاعات نمایش داده شده به روز نباشند "
+#define ERROR_MESSAGE_DOWNLOAD_CSV          "دریافت اطلاعات شرکت ها با خطا مواجه شد و ممکن است اطلاعات نمایش داده شده به روز نباشند "
 
 #define ERROR_MESSAGE_SAVE_CHANGES          "امکان ذخیره تغییرات وجود ندارد"
 #define ERROR_MESSAGE_SAVE_IMAGE_CHANGES    "امکان ذخیره عکس وجود ندارد"

@@ -27,6 +27,7 @@ TvnCsv::TvnCsv(QObject *root, TvnSharing *sharing, QObject *parent) : QObject(pa
 
 void TvnCsv::DownloadCsv()
 {
+//    LoadCsv();
     sharing->downloadCsvFile(conf.shareCsvFile, conf.localCsvFile);
 }
 
@@ -142,17 +143,20 @@ void TvnCsv::SaveChanges()
     QString licenceHasImage = TvnUtility::getLicenceHasImage(root);
     QString registrationHasImage = TvnUtility::getRegistrationAdHasImage(root);
 
-    qDebug() << keepingPlace;
-
-    // Write changes to temp file
     bool updateChanges = false;
+    bool headerRead = false;
     while (!file.atEnd())
     {
         QByteArray line = file.readLine().trimmed();
+        if (!headerRead)
+        {
+            out << line << endl;
+            headerRead = true;
+            continue;
+        }
 
         if (!updateChanges)
         {
-            updateChanges = true;
             QStringList wordList = QString(line).split(",");
 
             if (wordList.length()!=HEADER_INDEX_TOTAL_NUMBER)
@@ -166,6 +170,7 @@ void TvnCsv::SaveChanges()
 
             if (fileCode==wordList[HEADER_INDEX_FILE_CODE])
             {
+                updateChanges = true;
                 wordList[HEADER_INDEX_KEEPING_PLACE] = keepingPlace;
                 wordList[HEADER_INDEX_STATUS] = status;
                 wordList[HEADER_INDEX_LEDGER_BINDER] = ledgerBinder;
@@ -192,6 +197,7 @@ void TvnCsv::SaveChanges()
                 wordList[HEADER_INDEX_IMAGE_LICENCE] = licenceHasImage;
                 wordList[HEADER_INDEX_IMAGE_REGISTRATION_AD] = registrationHasImage;
             }
+
             out << wordList.join(",") << endl;
             continue;
         }
@@ -203,8 +209,7 @@ void TvnCsv::SaveChanges()
     file.close();
     tempFile.close();
 
-
-    // Copy temp file to original file
+    /*** Copy temp file to original file ***/
 
     // Open files
     if (!file.open(QIODevice::WriteOnly))

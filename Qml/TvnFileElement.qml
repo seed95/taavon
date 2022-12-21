@@ -91,7 +91,7 @@ Rectangle
         anchors.right: ledger_binder.left
         anchors.top: parent.top
         labelText: numberOfCover
-        labelFontSize: 24
+        labelFontSize: 17
     }
 
     TvnLabel
