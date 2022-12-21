@@ -13,13 +13,15 @@
 #define PROCESS_IMAGE_DOWNLOAD      "image_download"
 #define PROCESS_IMAGE_UPLOAD        "image_upload"
 #define PROCESS_IMAGE_REMOVE        "image_remove"
-#define PROCESS_UPLOAD_CSV          "upload_csv"
+#define PROCESS_CSV_UPLOAD          "csv_upload"
+#define PROCESS_CSV_DOWNLOAD        "csv_download"
 
 // Error Messages
 #define ERROR_MESSAGE_DOWNLOAD_IMAGE        "دانلود عکس با خطا مواجه شد"
 #define ERROR_MESSAGE_DELETE_IMAGE          "حذف عکس با خطا مواجه شد"
 #define ERROR_MESSAGE_UPLOAD_IMAGE          "ذخیره عکس با خطا مواجه شد"
 #define ERROR_MESSAGE_UPLOAD_CSV            "ذخیره تغییرات با خطا مواجه شد"
+#define ERROR_MESSAGE_DOWNLOAD_CSV          "دریافت اطلاعات شرکت ها با خطا مواجه شد"
 
 #define ERROR_MESSAGE_SAVE_CHANGES          "امکان ذخیره تغییرات وجود ندارد"
 #define ERROR_MESSAGE_SAVE_IMAGE_CHANGES    "امکان ذخیره عکس وجود ندارد"

@@ -58,6 +58,8 @@ Window
     // any variable has changed in the edit page
     property bool hasChanged: false
 
+    property int dialogType: constant.tvn_DIALOG_NOPE
+
     /***** Set this variables in cpp *****/
     //Error properties
     property string errorMessage: ""
@@ -88,6 +90,12 @@ Window
 
 //    onErrorMessageChanged: console.log("error message", errorMessage)
 //    onHasChangedChanged: console.log('has changed', hasChanged)
+
+    Component.onCompleted:
+    {
+        dialogType = constant.tvn_DIALOG_DOWNLOAD_CSV
+        processType = constant.tvn_PROCESS_CSV_DOWNLOAD
+    }
 
     //Fonts:
     FontLoader
@@ -178,6 +186,7 @@ Window
         anchors.rightMargin: 25
         anchors.top: header.bottom
         anchors.bottom: excel_output.top
+        anchors.bottomMargin: 5
         focus: true
         objectName: "ListFile"
     }
@@ -220,6 +229,15 @@ Window
         onClickButton: console.log("new file")
     }
 
+    TvnDialog
+    {
+        id: download_csv_dialog
+        anchors.centerIn: parent
+        textLabel: "در حال دریافت و پردازش اطلاعات شرکت ها"
+        visible: dialogType === constant.tvn_DIALOG_DOWNLOAD_CSV
+        dialogIsActive: visible
+    }
+
     TvnError
     {
         id: error
@@ -255,6 +273,11 @@ Window
             root.registrationAdHasImage = true
             root.registrationPath = path
         }
+    }
+
+    function hideDialog()
+    {
+        dialogType = constant.tvn_DIALOG_NOPE
     }
 
     /*** Call this functions from qml ***/

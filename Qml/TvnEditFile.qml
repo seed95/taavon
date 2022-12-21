@@ -241,7 +241,7 @@ ApplicationWindow
 
     function uploadImagesSuccessfully()
     {
-        root.processType = constant.tvn_PROCESS_UPLOAD_CSV
+        root.processType = constant.tvn_PROCESS_CSV_UPLOAD
         saveChanges()
     }
 

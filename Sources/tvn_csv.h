@@ -69,9 +69,7 @@ class TvnCsv : public QObject
 public:
     explicit TvnCsv(QObject *root, TvnSharing *sharing, QObject *parent = nullptr);
 
-    static bool SaveImageChanges(QObject *ui, bool upload);
-
-public:
+    void DownloadCsv();
     void LoadCsv();
 
 private slots:

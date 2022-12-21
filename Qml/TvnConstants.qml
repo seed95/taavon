@@ -12,7 +12,8 @@ Item
     property string tvn_PROCESS_IMAGE_DOWNLOAD:            "image_download"
     property string tvn_PROCESS_IMAGE_UPLOAD:              "image_upload"
     property string tvn_PROCESS_IMAGE_REMOVE:              "image_remove"
-    property string tvn_PROCESS_UPLOAD_CSV:                "upload_csv"
+    property string tvn_PROCESS_CSV_UPLOAD:                "csv_upload"
+    property string tvn_PROCESS_CSV_DOWNLOAD:              "csv_download"
 
     // The following values are equal to the values in tvn_constant.h
     property string tvn_IMAGE_NOPE:                        "nope"
@@ -29,6 +30,7 @@ Item
     property int tvn_DIALOG_UPLOAD:                     4
     property int tvn_DIALOG_DELETE:                     5
     property int tvn_DIALOG_SAVE_CHANGES:               6
+    property int tvn_DIALOG_DOWNLOAD_CSV:               7
 
     property int tvn_SEARCH_FILE_CODE:                  1
     property int tvn_SEARCH_FILE_NAME:                  2

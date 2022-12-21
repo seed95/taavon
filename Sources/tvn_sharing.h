@@ -22,6 +22,8 @@ public:
 
     // Upload src csv (local) file to dst csv (share)
     void uploadCsvFile(QString scrFile, QString dstFile);
+    // Download src csv (share) file to dst csv (local)
+    void downloadCsvFile(QString srcFile, QString dstFile);
 
 private slots:
     void finishProcess(int code, QProcess::ExitStatus status);
@@ -34,13 +36,10 @@ signals:
 private:
     void logErrorMessage();
 
-public slots:
-
 private:
     QObject *root;
     QProcess *p;
 
-//    int processType;
     QString dst; // contain directory and filename. used for log message
     QString src; // contain directory and filename. used for log message
 };

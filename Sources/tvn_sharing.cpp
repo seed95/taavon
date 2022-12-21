@@ -7,6 +7,8 @@
 #include <QDateTime>
 
 
+#define LINUX_USER_PASS "seed%ever"
+
 TvnSharing::TvnSharing(QObject *root, QObject *parent) : QObject(parent)
 {
     this->root = root;
@@ -24,43 +26,27 @@ TvnSharing::TvnSharing(QObject *root, QObject *parent) : QObject(parent)
 //TODO check for windows
 void TvnSharing::downlaod(QString srcFilename, QString srcDir, QString dstFilename, QString dstDir)
 {
-    // Check another process is runnig
-    QString processType = TvnUtility::getProcessType(root);
-    if (processType!=PROCESS_IMAGE_DOWNLOAD)
-    {
-        emit error();
-        return;
-    }
-
     // Save destination and source for log message
     dst = dstDir + dstFilename;
     src = srcDir + srcFilename;
 
-    QString smbCommand = "lcd \"" + dstDir + "\"; cd " + srcDir + "; get " + srcFilename + " \"" + dstFilename + "\";";
+    QString smbCommand = "lcd \"" + dstDir + "\"; cd \"" + srcDir + "\"; get \"" + srcFilename + "\" \"" + dstFilename + "\";";
     QStringList args;
-    args <<  conf.shareFolder << "-c" << smbCommand << "-U=seed%ever";
+    args <<  conf.shareFolder << "-c" << smbCommand << QString("-U=%1").arg(LINUX_USER_PASS);
     p->start("smbclient", args);
 }
 
 //TODO check for windows
 void TvnSharing::upload(QString srcFilename, QString srcDir, QString dstFilename, QString dstDir)
 {
-    // Check another process is runnig
-    QString processType = TvnUtility::getProcessType(root);
-    if (processType!=PROCESS_IMAGE_UPLOAD)
-    {
-        emit error();
-        return;
-    }
-
     // Save destination and source for log message
     dst = dstDir + "/" + dstFilename;
     src = srcDir + "/" + srcFilename;
 
     // TODO check image exist is needed?
 
-    QString smbCommand = "lcd \"" + srcDir + "\"; mkdir " + dstDir + "; cd " + dstDir +
-            "; put \"" + srcFilename + "\" " + dstFilename + ";";
+    QString smbCommand = "lcd \"" + srcDir + "\"; mkdir \"" + dstDir + "\"; cd \"" + dstDir +
+            "\"; put \"" + srcFilename + "\" \"" + dstFilename + "\";";
     QStringList args;
     args << conf.shareFolder << "-c" << smbCommand << "-U=seed%ever";
     p->start("smbclient", args);
@@ -69,25 +55,18 @@ void TvnSharing::upload(QString srcFilename, QString srcDir, QString dstFilename
 //TODO check for windows
 void TvnSharing::remove(QString srcFilename, QString srcDir)
 {
-    // Check another process is runnig
-    QString processType = TvnUtility::getProcessType(root);
-    if (processType!=PROCESS_IMAGE_REMOVE)
-    {
-        emit error();
-        return;
-    }
-
     // Make destination path
     QString dstDir = srcDir + "/delete";
     QLocale en_localce(QLocale::English);
     QString date = en_localce.toString(QDateTime::currentDateTime(), "yyyyMMdd-hhmmss-");
     QString dstFilename = "delete/" + date + srcFilename;
 
+    // Save destination and source for log message
     dst = srcDir + "/" + dstFilename;
     src = srcDir + "/" + srcFilename;
 
-    QString smbCommand = "mkdir " + dstDir + "; cd " + srcDir +
-            "; scopy " + srcFilename + " " + dstFilename + "; rm " + srcFilename + ";";
+    QString smbCommand = "mkdir \"" + dstDir + "\"; cd \"" + srcDir +
+            "\"; scopy \"" + srcFilename + "\" \"" + dstFilename + "\"; rm \"" + srcFilename + "\";";
     QStringList args;
     args <<  conf.shareFolder << "-c" << smbCommand << "-U=seed%ever";
     p->start("smbclient", args);
@@ -97,21 +76,26 @@ void TvnSharing::remove(QString srcFilename, QString srcDir)
 //TODO check for windows
 void TvnSharing::uploadCsvFile(QString scrFile, QString dstFile)
 {
-    // Check another process is runnig
-    QString processType = TvnUtility::getProcessType(root);
-    if (processType!=PROCESS_UPLOAD_CSV)
-    {
-        emit error();
-        return;
-    }
-
     // Save destination and source for log message
     dst = dstFile;
     src = scrFile;
 
-    QString smbCommand = "put \"" + scrFile + "\" " + dstFile + ";";
+    QString smbCommand = "put \"" + scrFile + "\" \"" + dstFile + "\";";
     QStringList args;
     args << conf.shareFolder << "-c" << smbCommand << "-U=seed%ever";
+    p->start("smbclient", args);
+}
+
+//TODO check for windows
+void TvnSharing::downloadCsvFile(QString scrFile, QString dstFile)
+{
+    // Save destination and source for log message
+    dst = dstFile;
+    src = scrFile;
+
+    QString smbCommand = "get \"" + scrFile + "\" \"" + dstFile + "\";";
+    QStringList args;
+    args <<  conf.shareFolder << "-c" << smbCommand << QString("-U=%1").arg(LINUX_USER_PASS);
     p->start("smbclient", args);
 }
 
@@ -167,9 +151,13 @@ void TvnSharing::logErrorMessage()
     {
         msg = QString("remove failed <share dest: %1, share src: %2>").arg(dst).arg(src);
     }
-    else if (processType==PROCESS_UPLOAD_CSV)
+    else if (processType==PROCESS_CSV_UPLOAD)
     {
         msg = QString("upload csv failed <share dest: %1, local src: %2>").arg(dst).arg(src);
+    }
+    else if (processType==PROCESS_CSV_DOWNLOAD)
+    {
+        msg = QString("download csv failed <share src: %1, local dest: %2>").arg(src).arg(dst);
     }
 
     TvnUtility::log("errorProcess:: " + processType + " failed, message: " + msg);

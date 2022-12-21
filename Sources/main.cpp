@@ -27,10 +27,8 @@ int main(int argc, char *argv[])
     TvnUtility::setIsEditbale(mainItem, conf.editable);
 
     TvnSharing *sharing = new TvnSharing(mainItem);
-
     TvnCsv *csv = new TvnCsv(mainItem, sharing);
-    csv->LoadCsv();
-
+    csv->DownloadCsv();
     TvnImage *imageHandler = new TvnImage(mainItem, sharing);
 
 //    hhm_log("-------------------------Start Document Manager-------------------------");

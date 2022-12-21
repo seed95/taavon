@@ -10,13 +10,6 @@ Item
     property bool isActive: windowIsActive()
 
 
-//    Keys.onEscapePressed:
-//    {
-//        if (isActive)
-//        {
-//            root.pageMode = constant.tvn_LIST_FILE
-//        }
-//    }
     //Cpp Signals
 
     //Qml Signals
@@ -144,7 +137,6 @@ Item
         ScrollBar.vertical: scrollbar
     }
 
-
     ScrollBar
     {
         id: scrollbar
@@ -152,7 +144,7 @@ Item
         anchors.leftMargin: 10
         anchors.top: parent.top
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: 100
+        anchors.bottomMargin: 10
         policy: ScrollBar.AsNeeded
 
         background: Rectangle
@@ -161,6 +153,7 @@ Item
             anchors.left: parent.left
             anchors.top: parent.top
             color: "#b4b4b4"
+            radius: 3
         }
 
         contentItem: Rectangle
@@ -168,7 +161,6 @@ Item
             anchors.left: parent.left
             radius: 3
             implicitWidth: 6
-            implicitHeight: 400
             color: "#646464"
         }
     }
