@@ -169,6 +169,7 @@ Window
         y: 14
         z: 1
         searchIsActive: list.windowIsActive()
+        visible: false
     }
 
     TvnHeader
@@ -194,14 +195,16 @@ Window
     TvnViewFile
     {
         id: view
-        visible: root.pageMode === constant.tvn_VIEW_FILE
+//        visible: root.pageMode === constant.tvn_VIEW_FILE
+        visible: false
         objectName: "ViewFile"
     }
 
     TvnEditFile
     {
         id: edit
-        visible: root.pageMode === constant.tvn_EDIT_FILE
+//        visible: root.pageMode === constant.tvn_EDIT_FILE
+        visible: false
         objectName: "EditFile"
     }
 
