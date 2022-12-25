@@ -469,7 +469,6 @@ Item
         phone_number.updateText(root.phoneNumber)
         mobile_number.updateText(root.mobileNumber)
         address.updateText(root.officeAddress)
-        address.updateText(root.officeAddress)
         //TODO update table
     }
 

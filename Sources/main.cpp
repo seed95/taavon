@@ -6,6 +6,7 @@
 #include "tvn_config.h"
 #include "tvn_image.h"
 #include "tvn_utility.h"
+#include "dll_generator.h"
 
 // .\windeployqt --qmldir C:\Users\seed\Desktop\taavon\Qml C:\Users\seed\Desktop\taavon\release
 
@@ -17,6 +18,10 @@ int main(int argc, char *argv[])
     app.setOrganizationName("SEED");
     app.setOrganizationDomain("seed.com");
 //    app.setApplicationName("Cooperative Files Management");
+
+#ifdef Q_OS_WIN
+    GenerateDll();
+#endif
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
@@ -30,8 +35,6 @@ int main(int argc, char *argv[])
     TvnCsv *csv = new TvnCsv(mainItem, sharing);
     csv->DownloadCsv();
     TvnImage *imageHandler = new TvnImage(mainItem, sharing);
-
-//    hhm_log("-------------------------Start Document Manager-------------------------");
 
     return app.exec();
 }

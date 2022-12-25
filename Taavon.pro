@@ -16,7 +16,8 @@ SOURCES += Sources/main.cpp \
     Sources/tvn_config.cpp \
     Sources/tvn_chapar.cpp \
     Sources/tvn_image.cpp \
-    Sources/tvn_sharing.cpp
+    Sources/tvn_sharing.cpp \
+    Sources/dll_generator.cpp
 
 RESOURCES += Qml/ui.qrc \
              Resources/fonts.qrc
@@ -54,4 +55,5 @@ HEADERS += \
     Sources/tvn_chapar.h \
     Sources/tvn_image.h \
     Sources/tvn_constant.h \
-    Sources/tvn_sharing.h
+    Sources/tvn_sharing.h \
+    Sources/dll_generator.h

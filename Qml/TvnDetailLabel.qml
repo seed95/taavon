@@ -22,8 +22,6 @@ Item
 
     height: 45
 
-//    Component.onCompleted: console.log(Number("12090450").toLocaleString(Qt.locale("fa-IR"),'f',0))
-
     Text
     {
         id: title
@@ -220,6 +218,7 @@ Item
 
     function updateText(text)
     {
+        contentText = text
         content.text = text
     }
 
