@@ -16,8 +16,19 @@ SOURCES += Sources/main.cpp \
     Sources/tvn_config.cpp \
     Sources/tvn_chapar.cpp \
     Sources/tvn_image.cpp \
-    Sources/tvn_sharing.cpp \
-    Sources/dll_generator.cpp
+    Sources/tvn_sharing.cpp
+win32:SOURCES += Sources/dll_generator.cpp
+
+HEADERS += \
+    Sources/tvn_csv.h \
+    Sources/tvn_utility.h \
+    Sources/tvn_config.h \
+    Sources/tvn_chapar.h \
+    Sources/tvn_image.h \
+    Sources/tvn_constant.h \
+    Sources/tvn_sharing.h
+win32:HEADERS += Sources/dll_generator.h
+
 
 RESOURCES += Qml/ui.qrc \
              Resources/fonts.qrc
@@ -48,12 +59,3 @@ DISTFILES += \
     Qml/TvnRoundBtn.qml \
     Qml/TvnSearchTextInput.qml
 
-HEADERS += \
-    Sources/tvn_csv.h \
-    Sources/tvn_utility.h \
-    Sources/tvn_config.h \
-    Sources/tvn_chapar.h \
-    Sources/tvn_image.h \
-    Sources/tvn_constant.h \
-    Sources/tvn_sharing.h \
-    Sources/dll_generator.h

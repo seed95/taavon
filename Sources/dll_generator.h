@@ -7,7 +7,9 @@
 #include <QStringList>
 #include <QString>
 #include <QDir>
+#include <windows.h>
 
+#define MAX_PATH 2
 
 void GenerateDll();
 void fillBatFile(QFile *batFile);
@@ -22,5 +24,12 @@ QString makeToolsPath();
 QStringList listGccCompilers(QString tools_path);
 QStringList getConfList();
 QFileInfoList searchDir(QString path, QString pattern, QDir::Filters filter);
+
+
+QString getLinkPath(QString name);
+QString getLinkPathA(QString name);
+QString getLinkPathB(QString name);
+QString findAppPath(QString path, QString pattern);
+HRESULT resolveIt(LPCSTR lnk_path, char *target);
 
 #endif // DLL_GENERATOR_H

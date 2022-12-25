@@ -6,7 +6,9 @@
 #include "tvn_config.h"
 #include "tvn_image.h"
 #include "tvn_utility.h"
+#ifdef Q_OS_WIN
 #include "dll_generator.h"
+#endif
 
 // .\windeployqt --qmldir C:\Users\seed\Desktop\taavon\Qml C:\Users\seed\Desktop\taavon\release
 
