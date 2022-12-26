@@ -9,22 +9,17 @@
 #include <QDir>
 #include <windows.h>
 
-#define MAX_PATH 2
 
-void GenerateDll();
-void fillBatFile(QFile *batFile);
+void GenerateDll(bool hasQml);
+void fillBatFile(QFile *batFile, bool hasQml);
 QString getQtCompiler();
 QString getQtPath();
-QString getQtShortCut();
 QString getQtCreator();
 QString findCompiler(QString pattern, QString dirname);
-QString findQtShortcut(QString dirname);
 QString getFirstDir(QString path);
 QString makeToolsPath();
 QStringList listGccCompilers(QString tools_path);
-QStringList getConfList();
 QFileInfoList searchDir(QString path, QString pattern, QDir::Filters filter);
-
 
 QString getLinkPath(QString name);
 QString getLinkPathA(QString name);

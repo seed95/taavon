@@ -10,6 +10,16 @@ QMLCACHE_DIR = Build/
 
 CONFIG += c++11
 
+win32:LIBS += \
+              -lKernel32 \
+              -lUser32 \
+              -lole32 \
+              -luuid \
+              -loleaut32 \
+              -lDwmapi \
+              -loleacc \
+              -lPsapi
+
 SOURCES += Sources/main.cpp \
     Sources/tvn_csv.cpp \
     Sources/tvn_utility.cpp \

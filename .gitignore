@@ -11,6 +11,7 @@ Taavon
 *.csv
 data
 backup
+*.bat
 
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
