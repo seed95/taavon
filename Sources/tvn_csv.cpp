@@ -27,7 +27,8 @@ TvnCsv::TvnCsv(QObject *root, TvnSharing *sharing, QObject *parent) : QObject(pa
 
 void TvnCsv::DownloadCsv()
 {
-    sharing->downloadCsvFile(conf.shareCsvFile, conf.localCsvFile);
+//    sharing->downloadCsvFile(conf.shareCsvFile, conf.localCsvFile);
+    LoadCsv();
 }
 
 void TvnCsv::LoadCsv()
