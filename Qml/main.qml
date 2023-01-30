@@ -169,7 +169,6 @@ Window
         y: 14
         z: 1
         searchIsActive: list.windowIsActive()
-        visible: false
     }
 
     TvnHeader

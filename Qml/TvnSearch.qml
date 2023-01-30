@@ -59,6 +59,7 @@ Item
         comboWidth: 130
         textItems: constant.tvn_COMBO_STATUS_ITEMS
         onChangeSelectedItems: handleCombo()
+        visible: false
     }
 
     // TODO use setting for selected items
@@ -74,6 +75,7 @@ Item
         comboWidth: 160
         textItems: constant.tvn_COMBO_KEEPING_PLACE_ITEMS
         onChangeSelectedItems: handleCombo()
+        visible: false
     }
 
 
