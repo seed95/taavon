@@ -2,7 +2,7 @@ import QtQuick 2.10
 import QtQuick.Window 2.10
 import QtQuick.Controls 2.12
 
-    ApplicationWindow
+ApplicationWindow
 {
     property int dialogType: constant.tvn_DIALOG_NOPE
     property string errorMessage: ""
@@ -26,6 +26,8 @@ import QtQuick.Controls 2.12
     {
         if (visible)
         {
+            console.log("visible view file")
+            detail.updateTexts()
             forceFocus()
         }
     }
@@ -57,6 +59,7 @@ import QtQuick.Controls 2.12
 
         TvnDetail
         {
+            id: detail
             anchors.top: parent.top
             anchors.topMargin: 5
             anchors.right: parent.right

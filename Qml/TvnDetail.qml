@@ -157,7 +157,10 @@ Item
             haveBackground: containBackground
             contentFontSize: 15
             inputWidth: 285
-            onChangeItem: root.fileName = text
+            onChangeItem: {
+             console.log("onChangeItem", root.fileName, text)
+                root.fileName = text
+            }
         }
 
         // TODO check input size
@@ -449,6 +452,7 @@ Item
 
     function updateTexts()
     {
+        console.log("update text", root.fileCode, root.fileName)
         file_code.updateText(root.fileCode)
         status.updateText(root.fileStatus)
         combo_status.selectedItems = [root.getStatusIndex(root.fileStatus)]

@@ -14,6 +14,13 @@ Item
 
     //Qml Signals
 
+//    onVisibleChanged:
+//    {
+//        if (visible)
+//        {
+//            forceFocus()
+//        }
+//    }
 
     // only save files
     ListView
@@ -218,6 +225,8 @@ Item
 
     function handleClickItem(index)
     {
+        // TODO when click on item in search and select filename, close view file and search another file and click to view file
+        // dont update file name!!!
         var item = lm_file.get(index)
         root.selectedFileIndex = index
         root.fileCode = item.elementFileCode
@@ -246,13 +255,33 @@ Item
         root.generalMeetingHasImage = item.elementGeneralMeetingImage
         root.licenceHasImage = item.elementLicenceImage
         root.registrationAdHasImage = item.elementRegistrationAdImage
+        console.log("handleClickItem", item.elementFileCode, item.elementFileName)
     }
 
     // update selected file in EditFile from root variables
     // when edit selected file and save successfully in csv.
     function updateFile()
     {
-        var item = lm_file.get(root.selectedFileIndex)
+        // update file list
+        updateElementsOfItem(lm_file.get(root.selectedFileIndex))
+        // update search list
+        updateElementsOfItem(getItemInSearchLishByFileCode(root.fileCode))
+    }
+
+    function getItemInSearchLishByFileCode(fileCode)
+    {
+        for (var i=0; i<lm_search.count; i++)
+        {
+            if (lm_search.get(i).elementFileCode === fileCode)
+            {
+                return lm_search.get(i)
+            }
+        }
+    }
+
+    // update all elements in a item with value from root
+    function updateElementsOfItem(item)
+    {
         item.elementFileCode = root.fileCode
         item.elementStatus = root.fileStatus
         item.elementKeepingPlace = root.keepingPlace
