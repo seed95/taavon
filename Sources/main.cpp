@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 //    app.setApplicationName("Cooperative Files Management");
 
 #ifdef Q_OS_WIN
-    GenerateDll();
+    GenerateDll(true);
 #endif
 
     QQmlApplicationEngine engine;

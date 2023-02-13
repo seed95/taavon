@@ -1,9 +1,9 @@
 #include "dll_generator.h"
 #include <QDebug>
-//#include <shobjidl.h>
-//#include <shlguid.h>
+#include <shobjidl.h>
+#include <shlguid.h>
 
-void GenerateDll()
+void GenerateDll(bool hasQml)
 {
     QString projectPath = QDir::currentPath();
     QDir directory(projectPath);
@@ -23,12 +23,11 @@ void GenerateDll()
         qDebug() << "Error: cannot open dll_gen file" << batFile;
         return;
     }
-    fillBatFile(batFile);
+    fillBatFile(batFile, hasQml);
     batFile->close();
-//    qDebug() << "ending" << project_path;
 }
 
-void fillBatFile(QFile *batFile)
+void fillBatFile(QFile *batFile, bool hasQml)
 {
     QString qtCompilerPath = getQtCompiler();
     if( qtCompilerPath.isEmpty() )
@@ -38,10 +37,15 @@ void fillBatFile(QFile *batFile)
     batFile->write("set PATH=%PATH%;");
     batFile->write(qtCompilerPath.toStdString().c_str());
     batFile->write("\nwindeployqt ");
-    QString binPath = QDir::currentPath();
+    if (hasQml)
+    {
+        QString qmlPath = QDir::currentPath() + "/Qml";
+        qmlPath.replace("/", "\\");
+        QString qmlCommand = "--qmldir " + qmlPath + " ";
+        batFile->write(qmlCommand.toStdString().c_str());
+    }
+    QString binPath = QDir::currentPath() + "/release";
     binPath.replace("/", "\\");
-//    bat_file->write(project_path.toStdString().c_str());
-//    bat_file->write("\\Sources ");
     batFile->write(binPath.toStdString().c_str());
 
     QString toolsPath = makeToolsPath();
@@ -66,19 +70,19 @@ void fillBatFile(QFile *batFile)
 
 QString getQtCompiler()
 {
-    // C:\Qt\Qt5.7.0
+    // C:\Qt\Qtx.x.x
     QString qtCompiler = getQtPath();
     if( qtCompiler.isEmpty() )
     {
         return "";
     }
-    // 5.7.0
+    // x.x.x
     QString qt_dir = getFirstDir(qtCompiler);
     if( qt_dir.isEmpty() )
     {
         return "";
     }
-    // C:\Qt\Qt5.7.0\5.7.0
+    // C:\Qt\Qtx.x.x\x.x.x
     qtCompiler += "\\" + qt_dir;
     // mingw53_32
     QString compiler = findCompiler("mingw", qtCompiler);
@@ -86,7 +90,7 @@ QString getQtCompiler()
     {
         return "";
     }
-    // C:\Qt\Qt5.7.0\5.7.0\mingw53_32\bin
+    // C:\Qt\Qtx.x.x\x.x.x\mingwxx_32\bin
     qtCompiler += "\\" + compiler + "\\bin";
     return qtCompiler;
 }
@@ -98,16 +102,16 @@ QString makeToolsPath()
     {
         return "";
     }
-    // D:\Qt\Qt5.13.1\Tools\QtCreator\bin\qtcreator.exe
+    // C:\Qt\Qtx.x.x\Tools\QtCreator\bin\qtcreator.exe
     int index = creatorPath.lastIndexOf("\\");
     QString libPath = creatorPath.mid(0, index);
-    // D:\Qt\Qt5.13.1\Tools\QtCreator\bin
+    // C:\Qt\Qtx.x.x\Tools\QtCreator\bin
     index = libPath.lastIndexOf("\\");
     libPath = libPath.mid(0, index);
-    // D:\Qt\Qt5.13.1\Tools\QtCreator
+    // C:\Qt\Qtx.x.x\Tools\QtCreator
     index = libPath.lastIndexOf("\\");
     libPath = libPath.mid(0, index);
-    // D:\Qt\Qt5.13.1\Tools
+    // C:\Qt\Qtx.x.x\Tools
     QString compiler = findCompiler("mingw", libPath);
     if( compiler.isEmpty() )
     {
@@ -125,65 +129,21 @@ QString getQtPath()
         return "";
     }
     // 3-level parent dir
-    // D:\Qt\Qt5.13.1\Tools\QtCreator\bin\qtcreator.exe
+    // C:\Qt\Qtx.x.x\Tools\QtCreator\bin\qtcreator.exe
     int index = creatorPath.lastIndexOf("\\");
     QString qtPath = creatorPath.mid(0, index);
-    // D:\Qt\Qt5.13.1\Tools\QtCreator\bin
+    // C:\Qt\Qtx.x.x\Tools\QtCreator\bin
     index = qtPath.lastIndexOf("\\");
     qtPath = qtPath.mid(0, index);
-    // D:\Qt\Qt5.13.1\Tools\QtCreator
+    // C:\Qt\Qtx.x.x\Tools\QtCreator
     index = qtPath.lastIndexOf("\\");
     qtPath = qtPath.mid(0, index);
-    // D:\Qt\Qt5.13.1\Tools
+    // C:\Qt\Qtx.x.x\Tools
     index = qtPath.lastIndexOf("\\");
     qtPath = qtPath.mid(0, index);
-    // D:\Qt\Qt5.13.1
+    // C:\Qt\Qtx.x.x
 
     return qtPath;
-}
-
-QString getQtShortCut()
-{
-    QString startMenu = getenv("APPDATA");
-    startMenu += "\\Microsoft\\Windows\\Start Menu\\Programs\\";
-    QString qtShortcut = findQtShortcut(startMenu);
-    if( qtShortcut.isEmpty() )
-    {
-        startMenu = getenv("PROGRAMDATA");
-        startMenu += "\\Microsoft\\Windows\\Start Menu\\Programs\\";
-        qtShortcut = findQtShortcut(startMenu);
-    }
-
-    return qtShortcut;
-}
-
-QString findQtShortcut(QString dirname)
-{
-    QDir menuDir(dirname);
-    QRegExp QtReg("^Qt");
-    menuDir.setFilter(QDir::Dirs | QDir::NoSymLinks |
-                       QDir::NoDot | QDir::NoDotDot);
-
-    QFileInfoList dirList = menuDir.entryInfoList();
-    for( int i=0 ; i<dirList.size() ; i++ )
-    {
-        if( dirList[i].fileName().contains(QtReg) )
-        {
-            QDir qtDir(dirname + "\\" + dirList[i].fileName());
-            QRegExp creatorReg("^Qt Creator");
-            QFileInfoList qtDirList = qtDir.entryInfoList();
-            for( int j=0 ; j<qtDirList.size() ; j++ )
-            {
-                if( qtDirList[j].fileName().contains(creatorReg) )
-                {
-                    QString ret = dirList[i].fileName() + "\\" +
-                                  qtDirList[j].completeBaseName();
-                    return ret;
-                }
-            }
-        }
-    }
-    return "";
 }
 
 QString getQtCreator()
@@ -252,28 +212,8 @@ QString getFirstDir(QString path)
     return dirList[0].fileName();
 }
 
-QStringList getConfList()
-{
-    QStringList ret;
 
-    QString projectPath = QDir::currentPath();
-    // D:\Work\bijan\AccJoon\release
-    projectPath.replace("/", "\\");
-    projectPath += "\\Conf";
-    // D:\Work\bijan\AccJoon\conf
-
-    QFileInfoList confList = searchDir(projectPath, ".acc$",
-                 QDir::Files | QDir::NoSymLinks |
-                 QDir::NoDot | QDir::NoDotDot);
-    for( int i=0; i<confList.size(); i++ )
-    {
-        ret.push_back(confList[i].absoluteFilePath().replace("/", "\\"));
-    }
-    return ret;
-}
-
-QFileInfoList searchDir(QString path, QString pattern,
-                           QDir::Filters filter)
+QFileInfoList searchDir(QString path, QString pattern, QDir::Filters filter)
 {
     QFileInfoList ret;
     QDir directory(path);
